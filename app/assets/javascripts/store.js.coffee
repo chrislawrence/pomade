@@ -1,1 +1,2 @@
-Pomade.Store = DS.Store.extend()
+Pomade.Store = DS.Store.extend
+  adapter: DS.RESTAdapter.create()
