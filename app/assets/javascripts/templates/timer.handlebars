@@ -1,23 +1,24 @@
 <div id="timer_wrapper">
-  {{#with model}}
-  <div id="timer_status">
-    <p>{{seconds}}</p>
-  </div>
+  <div class="container">
+    {{#with model}}
+    <div id="timer_status">
+      <p>{{seconds}}</p>
+    </div>
   
-  <div class="clear"></div>
+    <div class="clear"></div>
   
-  <button id="timerController" class="ss-icon" {{bindAttr class="status"}} {{action toggleTimer}}>{{nextAction}}</button>
+    <button id="timerController" class="ss-icon" {{bindAttr class="status"}} {{action toggleTimer}}>{{nextAction}}</button>
 
-  {{/with}}
+    {{/with}}
   
-  <div id="timer_type">
-    <!-- show break/work -->
+    <div id="timer_type">
+      {{type}}
+    </div> 
+  
+    <div id="timer_counter">
+      <!-- show number of pomodoros complete today -->
+    </div>
   </div>
-  
-  <div id="timer_counter">
-    <!-- show number of pomodoros complete today -->
-  </div>
-  
 </div>
 
 {{ outlet }}
