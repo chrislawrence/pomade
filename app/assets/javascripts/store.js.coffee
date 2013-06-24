@@ -1,0 +1,1 @@
+Pomade.Store = DS.Store.extend()
