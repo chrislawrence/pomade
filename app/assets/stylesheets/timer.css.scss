@@ -1,4 +1,7 @@
 $orange: #E47B57;
+$green: #6BC682;
+$yellow: #E1D997;
+$red: #E65C54;
 
 #timer_wrapper {
   background: #2D3538;
@@ -12,7 +15,34 @@ $orange: #E47B57;
   font-size: 5em;
   line-height: 170px;
   margin: 0 auto;
-  max-width: 250px;
+  max-width: 300px;
   border: 9px solid #293032;
+  box-sizing: border-box;
   background: #49555A;
+}
+
+#timerController {
+  margin-top: 2em;
+  height: 75px;
+  line-height: 65px;
+  padding: 0;
+  width: 100%;
+  max-width: 300px;
+  background: $green;
+  border: 8px solid $green - 20;
+  color: $green - 30;
+  text-shadow: none;
+  font-size: 2.2em;
+}
+
+#timerController.running {
+  background: $yellow;
+  border-color: $yellow - 20;
+  color: $yellow - 30;
+}
+
+#timerController.pause {
+  background: $red;
+  border-color: $red - 20;
+  color: $red - 30;
 }
