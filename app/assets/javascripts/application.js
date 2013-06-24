@@ -19,5 +19,4 @@
 //= require_self
 //= require pomade
 Pomade = Ember.Application.create();
-
 //= require_tree .

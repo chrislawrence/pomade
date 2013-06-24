@@ -46,3 +46,15 @@ $red: #E65C54;
   border-color: $red - 20;
   color: $red - 30;
 }
+
+#timer_details {
+  text-align: left;
+  margin: 0 auto;
+  max-width: 300px;
+  
+  #timer_type {
+    color: #748489;
+    font-weight: bold;
+    text-transform: uppercase;
+  }
+}

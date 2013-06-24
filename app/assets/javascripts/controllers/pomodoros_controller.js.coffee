@@ -1,0 +1,1 @@
+Pomade.PomodorosController = Ember.ArrayController.extend()

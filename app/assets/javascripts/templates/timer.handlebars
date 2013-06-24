@@ -10,13 +10,15 @@
     <button id="timerController" class="ss-icon" {{bindAttr class="status"}} {{action toggleTimer}}>{{nextAction}}</button>
 
     {{/with}}
+    
+    <div id="timer_details">
+      <div id="timer_type">
+        {{type}}
+      </div> 
   
-    <div id="timer_type">
-      {{type}}
-    </div> 
-  
-    <div id="timer_counter">
-      <!-- show number of pomodoros complete today -->
+      <div id="timer_counter">
+        {{pomodoroCount}}
+      </div>
     </div>
   </div>
 </div>

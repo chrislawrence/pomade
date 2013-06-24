@@ -1,15 +1,22 @@
 class PomodorosController < ApplicationController
+respond_to :json
   def index
-    render json: Pomodoro.all
+    respond_with Pomodoro.all
+  end
+  
+  def show
+    respond_with Pomodoro.find(params[:id])
   end
   
   def create
-    render json: Pomodoro.create(pomodoro_params)
+    respond_with Pomodoro.create(pomodoro_params)
   end
   
-  private
+  def destroy
+    respond_with Pomodoro.destroy(params[:id])
+  end
   
   def pomodoro_params
-    params.require(:pomodoro).permit(:start_date,:end_date,:tag)
+    params.require(:pomodoro).permit(:start_time,:end_time,:tag)
   end
 end
