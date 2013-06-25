@@ -1,0 +1,41 @@
+$orange: #ED996D;
+#landing {
+  height: 600px;
+  overflow: hidden;
+  background-image: image-url('bg.jpg');
+  background-position: center left;
+}
+
+.landing_header {
+  color: #fff;
+  line-height: 1em;
+  text-align: right;
+  font-size: 3em;
+  font-weight: bold;
+  max-width: 700px;
+  float: right;
+  margin: 2em;
+  text-shadow: 0 0 8px #333;
+}
+
+.start_now {
+  line-height: 5em;
+  background: $orange;
+  padding: 1em;
+  box-shadow: 0 5px 0 #d98559;
+  border-radius: 4px;
+  text-transform: uppercase;
+  color: #fff;
+  text-decoration:none;
+  text-shadow: none;
+  &:hover {
+    color: #bbb;
+  }
+}
+
+.more_info {
+  background: #fff;
+  text-align: center;
+  margin-top: 5em;
+  font-size: 1.2em;
+}
