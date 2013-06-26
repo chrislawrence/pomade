@@ -1,7 +1,7 @@
 <div class="container">
   <div class="today_list">
   <ul>
-  {{#each controller}}
+  {{#each reversedContent}}
     <li>
       {{pomodoro_time startTime}}—{{pomodoro_time endTime}} {{#if tag}}<span class="tag">{{tag}}</span>{{/if}}
       <a {{action deletePomodoro id }} class="delete_pomodoro">X</a>

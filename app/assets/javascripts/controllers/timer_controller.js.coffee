@@ -2,6 +2,8 @@ Pomade.TimerController = Ember.ObjectController.extend
   type: ''
   nextAction: 'play'
   status: 'idle'
+  tone: new buzz.sound("/assets/tone", { formats: ["mp3"]})
+  
   start: ->
     console.log('Starting timer...')
     @set('type','work') if @type is ''
@@ -19,6 +21,7 @@ Pomade.TimerController = Ember.ObjectController.extend
         
   reset: ->
     console.log('Timer finished...')
+    @playSound()
     @pause() if @nextAction is 'pause'
     @set('status','idle')
     @createPomodoro() if @type is 'work'
@@ -50,3 +53,5 @@ Pomade.TimerController = Ember.ObjectController.extend
       @pause()
     else
       @start()
+  playSound: ->
+   @tone.play()
