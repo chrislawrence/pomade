@@ -9,6 +9,8 @@ gem 'jquery-rails'
 gem 'turbolinks'
 gem 'jbuilder', '~> 1.2'
 
+gem 'bcrypt-ruby'
+
 # Ember
 gem 'ember-rails'
 gem 'ember-source', '1.0.0.rc5'
@@ -29,3 +31,4 @@ end
 
 gem 'bourbon'
 gem 'neat'
+gem 'simple_form'

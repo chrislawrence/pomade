@@ -1,18 +1,14 @@
 Pomade::Application.routes.draw do
-  class FormatTest
-    attr_accessor :mime_type
-
-    def initialize(format)
-      @mime_type = Mime::Type.lookup_by_extension(format)
-    end
-
-    def matches?(request)
-      request.format == mime_type
-    end
+  controller :static do
+    get 'index'
+  end
+  controller :sessions do
+    get 'login' => :new
+    post 'login' => :create
+    post 'logout' => :destroy
   end
 
-  resources :pomodoros, :constraints => FormatTest.new(:json)
-  get "*foo", :to => "application#index", :constraints => FormatTest.new(:html)
-  get "/", :to => "application#index", :constraints => FormatTest.new(:html)
+  resources :pomodoros 
+  root :to => "application#index"
   
 end 
