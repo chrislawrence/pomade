@@ -1,10 +1,9 @@
 class Pomodoro < ActiveRecord::Base
-  WORKING_TIME = 25
-  
-  def self.create_by_tag(tag)
-    pomodoro = Pomodoro.new(:tag => tag)
-    pomodoro.start_time = Time.now
-    pomodoro.end_time = pomodoro.start_time - WORKING_TIME
-    pomodoro.save
+  before_save :set_times
+  WORKING_TIME = 25.minutes
+
+  def set_times
+    self.start_time ||= Time.now
+    self.end_time ||= self.start_time - WORKING_TIME
   end
 end

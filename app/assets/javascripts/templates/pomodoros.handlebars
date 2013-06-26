@@ -1,7 +1,10 @@
+{{ timer.seconds }}
+
 <h2>Stats</h2>
+{{view Ember.TextField valueBinding="newPomodoroTag" action="addPomodoro"}}
 
 <ul>
 {{#each controller}}
-  <li>{{startTime}}—{{endTime}}: {{tag}}</li>
+  <li>{{pomodoro_time startTime}}—{{pomodoro_time endTime}} ({{tag}})</li>
 {{/each}}
 </ul>

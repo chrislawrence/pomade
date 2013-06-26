@@ -12,6 +12,7 @@
  *= require ss-standard
  */
 @import "bourbon";
+@import "neat";
 @import "normalise";
 @import "landing";
 @import "timer";
@@ -20,6 +21,7 @@ body {
   font-family: Helvetica, Arial, sans-serif;
   font-size: 15px;
   background: #DEE7EF;
+  color: #444;
 }
 
 h1 {
@@ -28,4 +30,12 @@ h1 {
   letter-spacing: 0.5em;
   text-transform: uppercase;
   text-align: center;
+}
+
+.container {
+  @include outer-container;
+}
+
+p {
+  margin: 0;
 }

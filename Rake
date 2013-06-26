@@ -1,0 +1,12 @@
+require 'spec_helper'
+
+describe Pomodoro do
+  it 'sets the start and end times when not specified' do
+    pomodoro = Pomodoro.create_by_tag('working')
+    Pomodoro.first.start_time.should be_within(1.minute).of(DateTime.now)
+  end
+  it 'does not set times when time is specified' do
+    pomodoro = Pomodoro.new(:tag => 'working', :start_time => DateTime.new(2001,01,01,0,0,0))
+    expect(pomodoro.save).to_not change(pomodoro.start_date)
+  end
+end

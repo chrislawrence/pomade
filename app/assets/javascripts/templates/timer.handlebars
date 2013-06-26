@@ -1,6 +1,5 @@
 <div id="timer_wrapper">
   <div class="container">
-    {{#with model}}
     <div id="timer_status">
       <p>{{time seconds}}</p>
     </div>
@@ -8,8 +7,6 @@
     <div class="clear"></div>
   
     <button id="timerController" class="ss-icon" {{bindAttr class="status"}} {{action toggleTimer}}>{{nextAction}}</button>
-
-    {{/with}}
     
     <div id="timer_details">
       <div id="timer_type">
@@ -22,5 +19,4 @@
     </div>
   </div>
 </div>
-
 {{ outlet }}

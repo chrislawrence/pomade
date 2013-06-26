@@ -4,14 +4,14 @@ $yellow: #E1D997;
 $red: #E65C54;
 $bg: #22262A;
 
-$header-height: 80px;
+$header-height: 100px;
 
 header {
   height: $header-height;
   background: $bg + 5 ;
   border-top: 5px solid $orange;
-  
   h1 {
+    margin: 0;
     font-size: 1.3em;
     line-height: $header-height;
     color: #fff;

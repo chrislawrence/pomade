@@ -7,6 +7,7 @@ $orange: #ED996D;
 }
 
 .landing_header {
+  @include span-columns(12);
   color: #fff;
   line-height: 1em;
   text-align: right;
@@ -14,11 +15,12 @@ $orange: #ED996D;
   font-weight: bold;
   max-width: 700px;
   float: right;
-  margin: 2em;
+
   text-shadow: 0 0 8px #333;
 }
 
 .start_now {
+  
   line-height: 5em;
   background: $orange;
   padding: 1em;
@@ -34,7 +36,10 @@ $orange: #ED996D;
 }
 
 .more_info {
-  background: #fff;
+  height: 500px;
+  @include span-columns(12);
+  @include pad(30px);
+  background: rgba(255,255,255,0.7);
   text-align: center;
   margin-top: 5em;
   font-size: 1.2em;
