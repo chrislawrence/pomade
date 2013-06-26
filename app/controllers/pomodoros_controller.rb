@@ -1,7 +1,11 @@
 class PomodorosController < ApplicationController
 respond_to :json
   def index
-    respond_with Pomodoro.today
+    if current_user
+      respond_with User.find(current_user.id).pomodoros.today
+    else
+      render :nothing => true
+    end
   end
   
   def show
@@ -9,7 +13,13 @@ respond_to :json
   end
   
   def create
-    respond_with Pomodoro.create(pomodoro_params)
+    if current_user
+      pomodoro = Pomodoro.create(pomodoro_params)
+      current_user.pomodoros << pomodoro
+      respond_with pomodoro
+    else
+      render :nothing => true
+    end
   end
   
   def destroy

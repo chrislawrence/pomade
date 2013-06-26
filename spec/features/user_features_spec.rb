@@ -16,7 +16,4 @@ describe 'UserFeatures' do
     click_button "Log In"
     expect(page).to have_content("Email or password was invalid")
   end
-  
-
-
 end
