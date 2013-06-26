@@ -1,10 +1,10 @@
 Pomade.TimerController = Ember.ObjectController.extend
-
-  type: 'work'
+  type: ''
   nextAction: 'play'
   status: 'idle'
   start: ->
     console.log('Starting timer...')
+    @set('type','work') if @type is ''
     @set('status','running')
     window.tick = =>
       @tick()
@@ -18,11 +18,12 @@ Pomade.TimerController = Ember.ObjectController.extend
     @set('status','pause')
         
   reset: ->
+    console.log('Timer finished...')
     @pause() if @nextAction is 'pause'
     @set('status','idle')
     @createPomodoro() if @type is 'work'
     @setBreakWork()
-    Pomade.Timer.seconds = 1
+    Pomade.Timer.set('seconds',1)
     @start() if @type is 'break'
     
   createPomodoro: ->
@@ -35,7 +36,7 @@ Pomade.TimerController = Ember.ObjectController.extend
   tick: ->
     s = Pomade.Timer.seconds
     Pomade.Timer.set('seconds', s - 1)
-    if @seconds < 0
+    if Pomade.Timer.seconds < 0
         @reset()
   
   setBreakWork: ->

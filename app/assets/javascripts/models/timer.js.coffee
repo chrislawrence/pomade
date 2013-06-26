@@ -1,2 +1,2 @@
 Pomade.Timer = Ember.Object.create
-  seconds: 100
+  seconds: 1

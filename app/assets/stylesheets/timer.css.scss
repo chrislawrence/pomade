@@ -78,8 +78,8 @@ header {
 }
 
 #timer_details {
-  text-align: left;
-  margin: 0 auto;
+  text-align: center;
+  margin: 2em auto 0 auto;
   max-width: 300px;
   
   #timer_type {
@@ -110,4 +110,9 @@ header {
 .tag {
   color: #DEE7EF - 170;
   margin-left: 2em;
+}
+
+.delete_pomodoro {
+    display: block;
+    float: right;
 }

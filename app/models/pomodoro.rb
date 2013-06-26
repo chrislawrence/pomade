@@ -1,6 +1,7 @@
 class Pomodoro < ActiveRecord::Base
   belongs_to :user
-  
+  scope :today, -> { where("start_time > ?", Date.today).order(:start_time).reverse_order}
+
   before_save :set_times
   WORKING_TIME = 25.minutes
 
