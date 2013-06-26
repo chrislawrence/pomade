@@ -6,6 +6,10 @@ $bg: #22262A;
 
 $header-height: 100px;
 
+body {
+  background: $bg + 5;
+}
+
 header {
   height: $header-height;
   background: $bg + 5 ;
@@ -63,12 +67,14 @@ header {
   background: $yellow;
   border-color: $yellow - 20;
   color: $yellow - 30;
+  box-shadow: 0px 0px 10px $yellow;
 }
 
 #timerController.pause {
   background: $red;
   border-color: $red - 20;
   color: $red - 30;
+  box-shadow: 0px 0px 10px $red;
 }
 
 #timer_details {
@@ -81,4 +87,27 @@ header {
     font-weight: bold;
     text-transform: uppercase;
   }
+}
+
+.today_list {
+  @include span-columns(12);
+  ul {
+    max-width: 300px;
+    margin: 0 auto;
+    padding: 0;
+    list-style: none;
+    text-transform: uppercase;
+    font-size: 1.2em;
+    color: #DEE7EF - 130;
+    li {
+      padding: 1em;
+      border-bottom: 1px solid;
+      border-bottom-color: $bg + 10;
+    }
+  }
+}
+
+.tag {
+  color: #DEE7EF - 170;
+  margin-left: 2em;
 }

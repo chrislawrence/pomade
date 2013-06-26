@@ -3,7 +3,7 @@ class Pomodoro < ActiveRecord::Base
   WORKING_TIME = 25.minutes
 
   def set_times
-    self.start_time ||= Time.now
-    self.end_time ||= self.start_time - WORKING_TIME
+    self.end_time ||= Time.now
+    self.start_time ||= self.end_time - WORKING_TIME
   end
 end

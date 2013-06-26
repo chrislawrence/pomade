@@ -1,12 +1,14 @@
 <div id="timer_wrapper">
   <div class="container">
     <div id="timer_status">
-      <p>{{time seconds}}</p>
+      <p>{{time model.seconds}}</p>
     </div>
   
     <div class="clear"></div>
   
-    <button id="timerController" class="ss-icon" {{bindAttr class="status"}} {{action toggleTimer}}>{{nextAction}}</button>
+    <button id="timerController" class="ss-icon" {{bindAttr class="status"}} {{action toggleTimer}}>
+      {{nextAction}}
+    </button>
     
     <div id="timer_details">
       <div id="timer_type">
@@ -19,4 +21,7 @@
     </div>
   </div>
 </div>
-{{ outlet }}
+
+{{outlet}}
+
+
