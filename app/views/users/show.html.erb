@@ -2,22 +2,29 @@
 
 <div class="wide_content">
   <h2>Stats</h2>
-
-  <div class="statistic">
-    <p class="stat_number"><%= @stats.today %></p>
-    <p>Today</p>
-  </div>
-
-  <div class="stastistic">
-    <p class="stat_number"><%= @stats.average %></p>
-    <p>Average per day</p>
-  <div class="statistic">
-    <p class="stat_number"><%= @stats.this_month %></p>
-    <p>This month</p>
-  </div>
-
-  <div class="statistic">
-    <p class="stat_number"><%= @stats.this_year %></p>
-    <p>This year</p>
-  </div>
+  
+  <ul class="stat_wrapper">
+    <li>
+      <div class="statistic">
+        <p class="stat_number"><%= @stats.today %></p>
+        <p>Today</p>
+      </div>
+    </li>
+    <li>
+      <div class="statistic">
+        <p class="stat_number"><%= @stats.average %></p>
+        <p>Average per day</p>
+      </div>
+    </li>
+    <li>
+      <div class="statistic">
+        <p class="stat_number"><%= @stats.this_month %></p>
+        <p>This month</p>
+      </div>
+      <li class="last">
+      <div class="statistic">
+        <p class="stat_number"><%= @stats.this_year %></p>
+        <p>This year</p>
+      </div>
+    </li>
 </div>
