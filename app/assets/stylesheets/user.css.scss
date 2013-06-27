@@ -1,0 +1,37 @@
+input {
+  border-radius: 4px;
+  border: 0;
+}
+
+.user {
+  max-width: 300px;
+  margin: 0 auto;
+  
+  .input {
+    margin: 1em 0;
+  }
+  .string {
+    font-size: 1.5em;
+    width: 100%;
+  }
+  label {
+    font-size: 0.8em;
+    text-transform: uppercase;
+    color: #5c656d;
+  }
+
+  .button {
+    font-size: 1.2em;
+    text-transform: uppercase;
+    margin: 0 auto;
+    display: block;
+    width: 100%;
+    max-width: 150px;
+    padding: 0.5em 0;
+    background: $orange;
+    box-shadow: 0 5px 0 #d98559;
+    border: none;
+    border-radius: 4px;
+    color: #fff;
+  } 
+}

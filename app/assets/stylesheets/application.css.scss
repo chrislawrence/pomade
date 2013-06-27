@@ -8,34 +8,15 @@
  * You're free to add application-wide styles to this file and they'll appear at the top of the
  * compiled file, but it's generally better to create a new file per style scope.
  *
- *= require_self
  *= require ss-standard
+ *= require normalise
+ *= require_self
  */
-@import "bourbon";
-@import "neat";
-@import "normalise";
+
+@import "colours";
+
+@import "global";
 @import "landing";
 @import "timer";
+@import "user";
 
-body {
-  font-family: Helvetica, Arial, sans-serif;
-  font-size: 15px;
-  background: #272b2f; /*#DEE7EF;*/
-  color: #444;
-}
-
-h1 {
-  font-size: 1em;
-  font-weight: bold;
-  letter-spacing: 0.5em;
-  text-transform: uppercase;
-  text-align: center;
-}
-
-.container {
-  @include outer-container;
-}
-
-p {
-  margin: 0;
-}

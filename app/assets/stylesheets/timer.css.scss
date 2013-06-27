@@ -10,24 +10,6 @@ body {
   background: $bg + 5;
 }
 
-header {
-  height: $header-height;
-  background: $bg + 5 ;
-  border-top: 5px solid $orange;
-  h1 {
-    margin: 0;
-    font-size: 1.3em;
-    line-height: $header-height;
-    color: #fff;
-    font-weight: 900;
-  }
-  
-  h1:before, h1:after {
-    color: $bg+15;
-    content: "\00b7";
-  }
-}
-
 #timer_wrapper {
   padding: 3em 0;
   background: $bg;
@@ -39,8 +21,6 @@ header {
   height: 2em;
   font-size: 6em;
   line-height: 1.8em;
-  margin: 0 auto;
-  max-width: 300px;
   border: 9px solid $bg + 4;
   box-sizing: border-box;
   background: $bg + 10;
@@ -53,7 +33,6 @@ header {
   line-height: 65px;
   padding: 0;
   width: 100%;
-  max-width: 300px;
   background: $green;
   border: 8px solid $green - 20;
   color: $green - 30;
@@ -80,7 +59,6 @@ header {
 #timer_details {
   text-align: center;
   margin: 2em auto 0 auto;
-  max-width: 300px;
   
   #timer_type {
     color: $bg + 30;
@@ -90,7 +68,7 @@ header {
 }
 
 .today_list {
-  @include span-columns(12);
+  /* FIX WIDTH */
   ul {
     max-width: 300px;
     margin: 0 auto;

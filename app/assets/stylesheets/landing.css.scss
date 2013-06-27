@@ -1,4 +1,3 @@
-$orange: #ED996D;
 #landing {
   height: 600px;
   overflow: hidden;
@@ -7,7 +6,6 @@ $orange: #ED996D;
 }
 
 .landing_header {
-  @include span-columns(12);
   color: #fff;
   line-height: 1em;
   text-align: right;
@@ -37,8 +35,7 @@ $orange: #ED996D;
 
 .more_info {
   height: 500px;
-  @include span-columns(12);
-  @include pad(30px);
+
   background: rgba(255,255,255,0.7);
   text-align: center;
   margin-top: 5em;
