@@ -15,6 +15,7 @@ class UsersController < ApplicationController
   
   def show
     @user = User.where(:username => params[:username]).first
+    @stats = UserStats.new(@user)
     redirect_to '/404' if !@user
   end
 

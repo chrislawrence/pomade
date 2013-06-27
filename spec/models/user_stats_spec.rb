@@ -10,12 +10,19 @@ describe UserStats do
    @stats = UserStats.new(user)
  end
 
+ it "gets today's pomodoros" do
+   expect(@stats.today).to eq(500)
+ end
+
+
  it "gets Pomodoros in the last month" do
-   expect(@stats.last_month.count).to eq(500)
+   expect(@stats.this_month).to eq(500)
  end
 
  it "calculates the average pomodoros per day" do
-   puts @stats.average
    expect(@stats.average).to eq(8)
+ end
+ it "calculates the total this year" do
+   expect(@stats.this_year).to eq(501)
  end
 end
