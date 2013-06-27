@@ -1,0 +1,6 @@
+<h2>Pomodoros</h2>
+<ul class="pomodoros">
+  <% @pomodoros.each do |pomodoro| %>
+    <li><%= pomodoro.start_time %>&mdash;<%= pomodoro.end_time %>: <%= pomodoro.tag %></li>
+  <% end %>
+</ul>

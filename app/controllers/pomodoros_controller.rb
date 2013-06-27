@@ -1,29 +1,30 @@
 class PomodorosController < ApplicationController
-respond_to :json
   def index
     if current_user
-      respond_with current_user.pomodoros.today
-    else
-      render :nothing => true
+      respond_to do |format|
+        format.json { render json:  current_user.pomodoros.today }
+        format.html {@pomodoros = current_user.pomodoros.today }  
+      end
+      
     end
   end
   
   def show
-    respond_with Pomodoro.find(params[:id])
+    render json: Pomodoro.find(params[:id])
   end
   
   def create
     if current_user
       pomodoro = Pomodoro.new(pomodoro_params)
       current_user.pomodoros << pomodoro
-      respond_with pomodoro 
+      render json: pomodoro 
     else
       render :nothing => true
     end
   end
   
   def destroy
-    respond_with Pomodoro.destroy(params[:id])
+    render json: Pomodoro.destroy(params[:id])
   end
   
   def pomodoro_params

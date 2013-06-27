@@ -8,19 +8,18 @@ Pomade::Application.routes.draw do
     post 'logout' => :destroy
   end
   
- controller :users do
-   get 'users' => :index
-   get '/:id' => :show
-   get 'users/:id' => redirect('/%{id}')
-   get '/edit_profile' => :edit
- end
-
-  get 'edit_profile' => 'users#edit'
+   get 'edit_profile' => 'users#edit'
 
   get 'signup' => 'users#new' 
 
   resources :pomodoros 
   root :to => "application#index"
- 
-  # Vanity URLS
+ controller :users do
+   get 'users' => :index
+   get '/:id' => :show
+  get 'signup' => :new
+   get 'users/:id' => redirect('/%{id}')
+   get '/edit_profile' => :edit
+ end
+
 end 
