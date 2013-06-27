@@ -13,6 +13,10 @@ describe User do
     expect(pomodoro.end_time - pomodoro.start_time).to eq(user.work_time.minutes)
   end
   it "adds a pomodoro in the past" do
-  
-  end
+  end 
+  it "only allows letters and numbers in username" do
+    user = create(:user, :username => 'bigboi10')
+    User.count.should eq(1)
+ end
+
 end

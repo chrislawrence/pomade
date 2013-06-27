@@ -1,4 +1,4 @@
-Pomade.PomodorosController = Ember.ArrayController.extend
+Pomade.PomodorosController = Ember.ArrayController.extend  
   reversedContent: (->
     @get('content').toArray().reverse()
   ).property('content.@each').cacheable()

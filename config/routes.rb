@@ -7,8 +7,14 @@ Pomade::Application.routes.draw do
     post 'login' => :create
     post 'logout' => :destroy
   end
+  
+  resources :users
+
+  get 'signup' => 'users#new' 
 
   resources :pomodoros 
   root :to => "application#index"
-  
+ 
+  # Vanity URLS
+  get '/:username', :controller => 'users', :action => 'show'
 end 

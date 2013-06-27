@@ -2,7 +2,7 @@ class PomodorosController < ApplicationController
 respond_to :json
   def index
     if current_user
-      respond_with User.find(current_user.id).pomodoros.today
+      respond_with current_user.pomodoros.today
     else
       render :nothing => true
     end
@@ -14,9 +14,9 @@ respond_to :json
   
   def create
     if current_user
-      pomodoro = Pomodoro.create(pomodoro_params)
+      pomodoro = Pomodoro.new(pomodoro_params)
       current_user.pomodoros << pomodoro
-      respond_with pomodoro
+      respond_with pomodoro 
     else
       render :nothing => true
     end

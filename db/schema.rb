@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20130626040938) do
+ActiveRecord::Schema.define(version: 20130627020706) do
 
   create_table "pomodoros", force: true do |t|
     t.datetime "start_time"
@@ -30,6 +30,7 @@ ActiveRecord::Schema.define(version: 20130626040938) do
     t.string   "auth_token"
     t.integer  "work_time",       default: 25
     t.integer  "break_time",      default: 5
+    t.string   "username"
   end
 
 end
