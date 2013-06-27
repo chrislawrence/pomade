@@ -6,8 +6,8 @@ $bg: #22262A;
 
 $header-height: 100px;
 
-body {
-  background: $bg + 5;
+body.ember-application {
+  background: $bg + 10;
 }
 
 #timer_wrapper {

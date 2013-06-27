@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20130627020706) do
+ActiveRecord::Schema.define(version: 20130627073759) do
 
   create_table "pomodoros", force: true do |t|
     t.datetime "start_time"
@@ -28,9 +28,13 @@ ActiveRecord::Schema.define(version: 20130627020706) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "auth_token"
-    t.integer  "work_time",       default: 25
-    t.integer  "break_time",      default: 5
+    t.integer  "work_time",           default: 25
+    t.integer  "break_time",          default: 5
     t.string   "username"
+    t.string   "avatar_file_name"
+    t.string   "avatar_content_type"
+    t.integer  "avatar_file_size"
+    t.datetime "avatar_updated_at"
   end
 
 end

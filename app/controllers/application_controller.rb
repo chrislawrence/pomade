@@ -6,4 +6,8 @@ class ApplicationController < ActionController::Base
   def current_user
     User.where(:auth_token => cookies[:auth_token]).first
   end
-end
+
+  def authorise
+    redirect_to login_url, alert: "Please log in" if current_user.nil?
+  end
+  end

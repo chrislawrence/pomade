@@ -8,7 +8,14 @@ Pomade::Application.routes.draw do
     post 'logout' => :destroy
   end
   
-  resources :users
+ controller :users do
+   get 'users' => :index
+   get '/:id' => :show
+   get 'users/:id' => redirect('/%{id}')
+   get '/edit_profile' => :edit
+ end
+
+  get 'edit_profile' => 'users#edit'
 
   get 'signup' => 'users#new' 
 
@@ -16,5 +23,4 @@ Pomade::Application.routes.draw do
   root :to => "application#index"
  
   # Vanity URLS
-  get '/:username', :controller => 'users', :action => 'show'
 end 

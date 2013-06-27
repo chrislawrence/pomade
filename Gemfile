@@ -32,3 +32,4 @@ end
 gem 'bourbon'
 gem 'neat'
 gem 'simple_form'
+gem 'paperclip'

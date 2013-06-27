@@ -1,0 +1,6 @@
+<h2>Edit Profile</h2>
+
+<%= simple_form_for @user do |f| %>
+  <%= f.input :username %>
+  <%= f.file_field :avatar, :label => "Avatar"%>
+<% end %>
