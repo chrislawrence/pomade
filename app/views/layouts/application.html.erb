@@ -12,7 +12,7 @@
   <header>
     <div class="wide_content">
       <h1><a href="/#timer">Pomade</a></h1>
-      <div class="logout"><p><%= link_to 'Logout', logout_path, method: :delete %></p></div>
+      <%= raw current_user.header %>
     </div>
   </header>
   <% flash.each do |name, msg| %>

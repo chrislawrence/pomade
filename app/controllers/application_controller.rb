@@ -4,7 +4,7 @@ class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
   before_filter :authorise 
   def current_user
-    User.where(:auth_token => cookies[:auth_token]).first
+    User.current(cookies[:auth_token])
   end
 
   def authorise

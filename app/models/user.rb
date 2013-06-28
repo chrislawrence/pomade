@@ -15,6 +15,14 @@ class User < ActiveRecord::Base
    self.pomodoros << pomodoro
   end
 
+  def self.current(auth_token)
+    where(:auth_token => auth_token).first || GuestUser.new
+  end
+  
+  def header
+    "<div class='logout'><a data-method='delete' href='/logout' rel='nofollow'>Log out</a></div>"
+  end
+
   private
 
   def generate_auth_token
