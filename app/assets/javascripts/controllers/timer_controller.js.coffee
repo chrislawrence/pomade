@@ -31,7 +31,7 @@ Pomade.TimerController = Ember.ObjectController.extend
     
   createPomodoro: ->
     console.log('creating pomodoro...')
-    tag = prompt('Tag', @lastTag)
+    tag = @get('pomodoroTag') 
     Pomade.Pomodoro.createRecord({tag: tag})
     @get('store').commit()
     @set('lastTag',tag)

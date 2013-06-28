@@ -1,12 +1,6 @@
-$orange: #ED996D;
-$green: #6BC682;
-$yellow: #E1D997;
-$red: #E65C54;
-$bg: #22262A;
-
 $header-height: 100px;
 
-body.ember-application {
+.timer {
   background: $bg + 10;
 }
 
@@ -17,14 +11,33 @@ body.ember-application {
 }
 
 #timer_status {
-  color: $bg + 170;
+  color: $bg-light; 
   height: 2em;
   font-size: 6em;
   line-height: 1.8em;
   border: 9px solid $bg + 4;
-  box-sizing: border-box;
   background: $bg + 10;
   border-radius: 7px;
+}
+
+.tag_field {
+  margin-top: 3em;
+  h3 {
+    text-align: left;
+    text-transform:uppercase;
+    font-weight: normal;
+    font-size: 1em;
+    color: $bg + 100;
+    line-height: 0;
+}
+  input {
+    background: $bg + 100;
+    border: 2px solid $bg + 50;
+    color: #000;
+    @include placeholder {
+      color: #666;
+    }
+  }
 }
 
 #timerController {

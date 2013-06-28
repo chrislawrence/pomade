@@ -1,5 +1,16 @@
 <div class="wide_content">
-  <h2>Stats</h2>
+  
+  <div class="user_profile">
+    <%= image_tag @user.avatar(:profile) %>
+    <div>
+      <h3><%= @user.username %></h3>
+      <p><%=link_to @user.url, @user.url, :target => "_blank" %></p>
+    </div>
+  </div>
+
+  <div class="clear"></div>
+  
+  <h2 class="stats">Stats</h2>
   
   <ul class="stat_wrapper">
     <li>

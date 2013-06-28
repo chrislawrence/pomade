@@ -1,6 +1,12 @@
+<div class="wide_content">
 <h2>Edit Profile</h2>
 
 <%= simple_form_for @user do |f| %>
   <%= f.input :username %>
-  <%= f.file_field :avatar, :label => "Avatar"%>
+  <%= f.input :url %>
+  <%= f.input :work_time, :as => 'string', :input_html => {:size => 5, :maxlength => 3} %>
+  <%= f.input :break_time %>
+  <%= f.input :avatar %>
+  <%= f.submit 'Save Profile' %>
 <% end %>
+</div>

@@ -3,7 +3,10 @@
       <p>{{time model.seconds}}</p>
     </div>
     <div class="clear"></div>
-    
+    <div class="tag_field content">
+      <h3>What are you working on?</h3>
+      {{view Ember.TextField valueBinding="pomodoroTag" placeholder="The Penske File"}}
+    </div>
     <button id="timerController" class="ss-icon content" {{bindAttr class="status"}} {{action toggleTimer}}>
       {{nextAction}}
     </button>
@@ -14,7 +17,10 @@
       </div> 
     </div>
   </div>
+  
+
 </div>
+
 
 {{outlet}}
 

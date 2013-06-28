@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-  skip_before_filter :authorise, :except => [:show,:new,:create]
+  skip_before_filter :authorise, :only => [:show,:new,:create]
   def index
   end
 
@@ -24,7 +24,7 @@ class UsersController < ApplicationController
   def update
     @user = current_user
     if @user.update(user_params)
-      redirect_to @user.where(:username => current_user.username), notice: 'Profile updated.'
+      redirect_to '/#timer', :notice => "Profile updated" 
     else
       render action: 'edit'
     end
@@ -42,7 +42,7 @@ class UsersController < ApplicationController
   private
 
   def user_params
-    params.require(:user).permit(:email,:username,:password,:password_confirmation, :avatar)
+    params.require(:user).permit(:email,:username,:password,:password_confirmation, :avatar, :url, :break_time, :work_time)
   end
 
 end
