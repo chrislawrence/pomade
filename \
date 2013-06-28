@@ -1,0 +1,14 @@
+require 'spec_helper'
+
+describe UserStats do
+ before do
+   user = create(:user)
+   user.pomodoros << Pomodoro.new(:end_date => 2.months.ago)
+   user.pomodoros << [Pomodoro.new, Pomodoro.new]
+   @stats = UserStats.new(user)
+ end
+
+ it "gets Pomodoros in the last month" do
+   expect(@stats.last_month).to eq(2)
+ end
+end

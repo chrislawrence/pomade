@@ -14,11 +14,19 @@ p {
 }
 
 h1 {
-  font-size: 1em;
+  font-size: 1.3em;
   font-weight: bold;
   letter-spacing: 0.5em;
   text-transform: uppercase;
   text-align: center;
+  line-height: $header-height;
+  margin: 0;
+  color: #fff;
+}
+
+h1:before, h1:after {
+  color: $bg+15;
+  content: "\00b7";
 }
 
 h2 {
@@ -53,16 +61,30 @@ header {
   height: $header-height;
   background: $bg + 5 ;
   border-top: 5px solid $orange;
-  h1 {
-    margin: 0;
-    font-size: 1.3em;
-    line-height: $header-height;
-    color: #fff;
-    font-weight: 900;
-  }
-  
-  h1:before, h1:after {
-    color: $bg+15;
-    content: "\00b7";
+ }
+
+/* Messages */
+
+.flash {
+  width: 100%;
+  background: $green;
+  color: #fff;
+  font-weight: bold;
+  text-align: center;
+  font-size: 1.4em;
+}
+
+.logout {
+  float: right;
+  margin-top: -$header-height;
+  height: $header-height;
+  line-height: $header-height;
+  font-size: 1.2em;
+  background: $bg + 20;
+  padding: 0 1em;
+  a {
+    text-transform:uppercase;
+    color: #CCD0D4;
+    text-decoration: none;
   }
 }

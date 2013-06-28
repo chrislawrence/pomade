@@ -1,4 +1,6 @@
 class SessionsController < ApplicationController
+  skip_before_filter :authorise
+
   def new
   end
 
@@ -13,6 +15,8 @@ class SessionsController < ApplicationController
   end
 
   def destroy
+    cookies[:auth_token] = nil
+    redirect_to root_path, notice: 'Logged out'
   end
 
   private

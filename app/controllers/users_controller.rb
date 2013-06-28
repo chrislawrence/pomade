@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-  before_filter :authorise, :except => [:show,:new]
+  skip_before_filter :authorise, :except => [:show,:new,:create]
   def index
   end
 

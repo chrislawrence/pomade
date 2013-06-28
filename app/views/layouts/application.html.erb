@@ -10,7 +10,10 @@
 </head>
 <body>
   <header>
-    <h1>Pomade</h1>
+    <div class="wide_content">
+      <h1>Pomade</h1>
+      <div class="logout"><p><%= link_to 'Logout', logout_path, method: :delete %></p></div>
+    </div>
   </header>
   <% flash.each do |name, msg| %>
     <%= content_tag :div, msg, id: "flash_#{name}", class: "flash" %>
