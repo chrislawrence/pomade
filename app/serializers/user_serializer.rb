@@ -1,0 +1,3 @@
+class UserSerializer < ActiveModel::Serializer
+  attributes :id, :work_time, :break_time
+end

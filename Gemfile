@@ -29,6 +29,9 @@ end
 
 #Everything else
 
+gem 'quiet_assets', :group => :development
+
+
 gem 'bourbon'
 gem 'neat'
 gem 'simple_form'

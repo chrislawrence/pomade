@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-  skip_before_filter :authorise, :only => [:show,:new,:create]
+  skip_before_filter :authorise, :only => [:show,:new,:create, :index]
   def index
   end
 
@@ -19,6 +19,10 @@ class UsersController < ApplicationController
     @user = User.where(:username => params[:id]).first  
     redirect_to '/404' if !@user
     @stats = UserStats.new(@user) if @user
+  end
+  
+  def me
+    render json: current_user
   end
 
   def update

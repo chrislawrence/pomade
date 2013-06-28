@@ -3,9 +3,12 @@ Pomade.TimerController = Ember.ObjectController.extend
   nextAction: 'play'
   status: 'idle'
   tone: new buzz.sound("/assets/tone", { formats: ["mp3"]})
-  
+  workTime: 1500
+  breakTime: 25
+
   start: ->
     console.log('Starting timer...')
+    Pomade.Timer.set('seconds',@workTime)
     @set('type','work') if @type is ''
     @set('status','running')
     window.tick = =>

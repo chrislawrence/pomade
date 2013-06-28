@@ -14,10 +14,13 @@ Pomade::Application.routes.draw do
   resources :pomodoros 
   root :to => "application#index"
   
+  get 'users/me' => 'users#me'
+  
   resources :users, :except => 'show'
   controller :users do
    get '/:id' => :show
    get 'users/:id' => redirect('/%{id}')
   end
+  
 
 end 
