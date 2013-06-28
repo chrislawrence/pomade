@@ -2,11 +2,15 @@
 <h2>Edit Profile</h2>
 
 <%= simple_form_for @user do |f| %>
-  <%= f.input :username %>
-  <%= f.input :url %>
-  <%= f.input :work_time, :as => 'string', :input_html => {:size => 5, :maxlength => 3} %>
-  <%= f.input :break_time %>
-  <%= f.input :avatar %>
+  <div class="left_column">
+    <%= f.input :username %>
+    <%= f.input :url %>
+    <%= f.input :avatar %>
+  </div>
+  <div class="right_column">
+    <%= f.input :work_time, collection: [5,10,15,20,25,30,35,40,45,50,55,60]%>
+    <%= f.input :break_time, collection: [1,2,3,4,5,10,15,20,25]%> 
+  </div>
   <%= f.submit 'Save Profile' %>
 <% end %>
 </div>

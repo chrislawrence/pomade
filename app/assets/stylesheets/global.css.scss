@@ -61,7 +61,19 @@ header {
   height: $header-height;
   background: $bg + 5 ;
   border-top: 5px solid $orange;
- }
+}
+
+.left_column {
+  width:48%;
+  margin-right: 2%;
+  float: left;
+}
+
+.right_column {
+  width: 48%;
+  margin-left: 2%;
+  float: right;
+}
 
 /* Messages */
 
@@ -92,28 +104,58 @@ header {
 /* Forms */
 
 input {
-  border-radius: 4px;
-  border: 0;
+  border-radius: 7px;
+  box-sizing: border-box;
+  border: 3px solid #E8ECF1;
   width: 96%;
   font-size: 1.5em;
   padding: 0.3em 2% ;
   color: #666;
 }
 
-  input[type=submit] {
-    font-size: 1.2em;
-    text-transform: uppercase;
-    margin: 0 auto;
-    display: block;
-    width: 100%;
-    max-width: 150px;
-    padding: 0.5em 0;
-    background: $orange;
-    box-shadow: 0 5px 0 #d98559;
-    border: none;
-    border-radius: 4px;
-    color: #fff;
-  } 
+input[type=submit] {
+  clear: both;
+  font-size: 1.2em;
+  text-transform: uppercase;
+  margin: 0 auto;
+  display: block;
+  width: 100%;
+  max-width: 150px;
+  padding: 0.5em 0;
+  background: $orange;
+  box-shadow: 0 5px 0 #d98559;
+  border: none;
+  border-radius: 4px;
+  color: #fff;
 }
 
+select {
+  -webkit-appearance: none;
+  width: 100px;
+  border: 3px solid #E8ECF1;
+  font-size: 1.5em;
+  padding: 0.3em 2%;
+  top: 5%; 
+}
+
+label.select {
+  margin-right: 200px;
+}
+
+input[type=file] {
+  border: none;
+  font-size: 1em;
+  background: $bg-light - 10;
+  padding: 1em;
+}
+
+.input {
+  margin: 1.5em 0;
+  max-width: 300px;  
+}
+
+label {
+  text-transform: uppercase;
+  color: #5c656d;
+}
 

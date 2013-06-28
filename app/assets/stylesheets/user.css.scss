@@ -1,24 +1,16 @@
-.user {
   
-  .input {
-    margin: 1.5em 0;
-    max-width: 300px;  
-}
-  label {
-    text-transform: uppercase;
-    color: #5c656d;
-  }
-
 .user_profile {
-  margin-top: 3em;
-  max-width: 400px;
+margin-top: 3em;
+max-width: 400px;
   img {
     float: left;
   }
   div {
     float:left;
     margin-left: 1em;
-    a { color: #ADB3BA; }
+    a { 
+      color: #ADB3BA;
+    }
     h3 {
       color: #272B2F;
       margin:0;
