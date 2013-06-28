@@ -1,39 +1,43 @@
 .stat_wrapper {
   list-style: none;
   padding: 0;
+  margin: 0;
   text-align: center;
   li {
     display: inline-block;
     width: 15%;
     padding-right: 10%;
-  }
+    vertical-align: top;
+}
   li.last {
     padding-right: 0;
   }
 }
 .statistic {
-  
+  border: 7px solid $border;
+  box-sizing: auto;
   position: relative;
-  width: 100%;
+  width: 110%;
   border-radius: 50%;
   height: auto;
   padding-top: 100%;
   background: white;
-  text-align: center;
-  vertical-align: middle;
+  color: #636363;
+  font-weight: bold;
   p {
-    color: #888;
-    margin: 0;
-    line-height: 0;
-    position: absolute;
-    top: 75%;
     width: 100%;
     text-align: center;
-  }
-  p.stat_number {
-    color: #5A5A5A;
-    font-weight: bold;
-    top: 50%;
     font-size: 4em;
+    line-height: 0;
+    position: absolute;
+    top: 50%;
   }
-} 
+}
+
+.statistic_type {
+  font-size: 1.2em;
+  color: #7D8185;
+  text-transform: uppercase;
+  margin-top: 1em;
+}
+

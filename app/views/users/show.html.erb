@@ -15,24 +15,32 @@
   <ul class="stat_wrapper">
     <li>
       <div class="statistic">
-        <p class="stat_number"><%= @stats.today %></p>
+        <p><%= @stats.today %></p>
+      </div>
+      <div class="statistic_type">
         <p>Today</p>
       </div>
     </li>
     <li>
       <div class="statistic">
-        <p class="stat_number"><%= @stats.average %></p>
+        <p><%= @stats.average %></p>
+      </div>
+      <div class="statistic_type">
         <p>Average per day</p>
       </div>
     </li>
     <li>
       <div class="statistic">
-        <p class="stat_number"><%= @stats.this_month %></p>
+        <p><%= @stats.this_month %></p>
+      </div>
+      <div class="statistic_type">
         <p>This month</p>
       </div>
       <li class="last">
       <div class="statistic">
-        <p class="stat_number"><%= @stats.this_year %></p>
+        <p><%= @stats.this_year %></p>
+      </div>
+      <div class="statistic_type">
         <p>This year</p>
       </div>
     </li>

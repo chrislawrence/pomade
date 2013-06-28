@@ -25,7 +25,6 @@ class UserStats
 
   def days_since(date)
     days = (Date.today - date.to_date).to_i
-    days = 1 if days == 0
-    days
+    days + 1
   end
 end

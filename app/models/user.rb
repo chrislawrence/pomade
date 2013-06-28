@@ -6,6 +6,7 @@ class User < ActiveRecord::Base
   validates_uniqueness_of :email
   validates :username, :presence => true, :uniqueness => true, :length => {:minimum => 2, :maximum => 20}, :format => /\A[-a-z|0-9|-|_]+\z/
   validate :vanity_url
+  
   has_attached_file :avatar, :styles => { :profile => "150x150>", :thumb => "60x60>" }, :url => "/assets/avatars/:id/:style/:basename.:extension", :path => ":rails_root/public/assets/avatars/:id/:style/:basename.:extension"
 
 
