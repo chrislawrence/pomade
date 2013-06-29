@@ -1,9 +1,11 @@
+<div class="content">
 <h2>Sign Up</h2>
 
-<%= simple_form_for @user, :html => { :multipart => true } do |f| %>
+<%= simple_form_for @user, :html => { :multipart => true, :novalidate => true} do |f| %>
   <%= f.input :email %>
   <%= f.input :username %>
   <%= f.input :password %>
-  <%= f.input :password_confirmation, label: 'Confirm Password'%>
+  <%= f.input :password_confirmation, required: true, label: 'Confirm Password'%>
   <%= f.submit "Create Account" %>
 <% end %>
+</div>

@@ -117,11 +117,12 @@ header {
     left: 40px;
     line-height: 0;
     float: left;
+    background: #fff;
     img {
       margin: 0;
       border-radius: 50%;
-      border: 5px solid $bg + 15;
-  }
+      border: 5px solid $bg + 28;  
+    }
     a:hover img {
       background: #fff;
       opacity: 0.7;
@@ -221,7 +222,6 @@ input[type=file] {
 .input {
   margin: 1.5em 0;
   max-width: 300px;  
-  clear: both;
 }
 
 label {
@@ -229,22 +229,3 @@ label {
   color: #5c656d;
 }
 
-.error {
-  float: left;
-  color: $red;
-  margin-bottom: 1em;
-}
-
-.error:after {
-  content: "";
-  clear: both;
-  display: block;
-}
-
-.field_with_errors input {
-  border-color: $red;
-}
-
-abbr {
-  display: none;
-}

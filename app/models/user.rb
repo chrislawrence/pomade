@@ -2,8 +2,7 @@ class User < ActiveRecord::Base
   has_secure_password
   has_many :pomodoros
   before_create :generate_auth_token
-  validates_presence_of :email, :username
-  validates_uniqueness_of :email
+  validates :email, :presence => true, :uniqueness => true, :format => /\A[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]+\z/
   validates :username, :presence => true, :uniqueness => true, :length => {:minimum => 2, :maximum => 20}, :format => /\A[-a-z|0-9|-|_]+\z/
   validate :vanity_url
   
@@ -11,7 +10,7 @@ class User < ActiveRecord::Base
 
 
   def add_pomodoro(tag)
-   pomodoro = Pomodoro.new_for_user(tag, self.work_time,Time.now)
+   pomodoro = Pomodoro.new_for_user(self.work_time,Time.now,tag)
    self.pomodoros << pomodoro
   end
 
@@ -20,7 +19,7 @@ class User < ActiveRecord::Base
   end
   
   def header
-    "<div class='logout'><a data-method='delete' href='/logout' rel='nofollow'>Log out</a></div>"
+    "<div class='control_wrapper'><div class='controls'><div class='avatar_small'><a href='/#{username}'><img src='#{avatar(:thumb)}' /></a></div></div><div class='logout ss-icon'><a data-method='delete' href='/logout' rel='nofollow'>logout</a> <a href='/settings'>settings</a></div></div>"
   end
 
   private

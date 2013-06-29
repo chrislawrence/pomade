@@ -4,7 +4,7 @@ class UsersController < ApplicationController
   end
 
   def new
-    if current_user
+    if !current_user.kind_of?(GuestUser)
       redirect_to '/#timer'
     else
       @user = User.new

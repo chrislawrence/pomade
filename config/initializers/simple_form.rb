@@ -11,10 +11,10 @@ SimpleForm.setup do |config|
   # config.hint_class = :hint
 
   # CSS class used on errors.
-  # config.error_class = :error
+   config.error_class = :error
 
   # Default tag used on errors.
-  # config.error_tag = :span
+   config.error_tag = :span
 
   # Method used to tidy up errors.
   # config.error_method = :first
@@ -59,7 +59,7 @@ SimpleForm.setup do |config|
   # config.form_class = :simple_form
 
   # Whether attributes are required by default (or not). Default is true.
-  # config.required_by_default = true
+  # config.required_by_default = false
 
   # Tell browsers whether to use default HTML5 validations (novalidate option).
   # Default is enabled.

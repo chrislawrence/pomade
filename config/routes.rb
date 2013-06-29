@@ -7,19 +7,20 @@ Pomade::Application.routes.draw do
     post 'login' => :create
     delete 'logout' => :destroy
   end
-  
-  get 'edit_profile' => 'users#edit'
-  get 'signup' => 'users#new' 
+ 
+  post 'import' => 'io#import'
 
   resources :pomodoros 
   root :to => "application#index"
   
   get 'users/me' => 'users#me'
   
-  resources :users, :except => 'show'
+  resources :users, :except => ['show','new','edit']
   controller :users do
-   get '/:id' => :show
-   get 'users/:id' => redirect('/%{id}')
+    get 'settings' => :edit
+    get 'signup' => :new
+    get '/:id' => :show
+    get 'users/:id' => redirect('/%{id}')
   end
   
 

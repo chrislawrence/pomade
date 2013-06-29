@@ -12,12 +12,14 @@
 //
 //= require jquery
 //= require jquery_ujs
+//= require jquery.turbolinks
 //= require turbolinks
 //= require handlebars
 //= require ember
 //= require ember-data
 //= require_self
 //= require buzz
+//= require controls
 //= require pomade
 Pomade = Ember.Application.create();
 //= require_tree .
