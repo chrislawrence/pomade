@@ -4,9 +4,9 @@ describe Importer do
   it "takes a user ID and csv file" do
     user = create(:user)
     importer = Importer.new(user)
-    importer.import(File.new('/Users/Chris/Downloads/tomatoes.csv'))
+    importer.import(File.new("#{Rails.root}/spec/support/pomodoros.csv"))
     expect(Pomodoro.count).to be(280)
-    expect(Pomodoro.last.end_time).to eq(DateTime.new(2013,06,27,12,44,1))
+    expect(Pomodoro.last.end_time.to_date).to eq(Date.new(2013,06,27))
   end
   
   it "creates a pomodoro based on the column" do

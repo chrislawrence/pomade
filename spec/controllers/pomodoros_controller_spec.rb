@@ -11,9 +11,9 @@ describe PomodorosController do
     expect(response.body).to_not eq(" ") # this test stinks.
   end
 
-  it "does not return pomodoros if user not logged in" do
+  it "returns default values if user not logged in" do
     get :index, :format => :json
-    expect(response.body).to eq(" ")
+    expect(response.body).to eq("{\"user\":{\"id\":1,\"work_time\":25,\"break_time\":5}}")
   end
 
   it "creates a pomodoro when user logged in" do
@@ -25,7 +25,6 @@ describe PomodorosController do
   
   it "does not create a pomodoro when user not logged in" do
     post :create, :pomodoro => {:tag => 'working'}, :format => :json
-    expect(response.body).to eq(" ")
     expect(Pomodoro.count).to eq(0)
   end
 end

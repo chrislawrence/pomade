@@ -11,6 +11,15 @@ class GuestUser
     "<div class='controls guest'><ul><li class='first'><a href='/login'>Login</a></li><li><a href='/signup'>Signup</a></li></div>"  
   end
 
+  def work_time
+    @work_time
+  end
+
+  def break_time
+    @break_time
+  end
+
+
   def method_missing(*args, &block)
         self
           end

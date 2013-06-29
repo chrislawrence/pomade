@@ -18,7 +18,12 @@ gem 'ember-source', '1.0.0.rc5'
 gem 'handlebars-source', '1.0.0.rc4'
 
 # Test
-gem 'rspec-rails', :group => [:test, :development]
+group :test, :development do
+  gem 'rspec-rails'
+  gem 'parallel_tests'
+  gem 'zeus-parallel_tests'
+end
+
 group :test do
   gem 'factory_girl_rails'
   gem 'database_cleaner'

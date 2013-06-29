@@ -1,4 +1,5 @@
 class PomodorosController < ApplicationController
+  skip_before_filter :authorise, only: :create
   def index
     if current_user
       respond_to do |format|
@@ -14,13 +15,9 @@ class PomodorosController < ApplicationController
   end
   
   def create
-    if current_user
-      pomodoro = Pomodoro.new(pomodoro_params)
-      current_user.pomodoros << pomodoro
-      render json: pomodoro 
-    else
-      render :nothing => true
-    end
+    pomodoro = Pomodoro.new_for_user(current_user.work_time, Time.now, params[:tag] )
+    current_user.pomodoros << pomodoro
+    render json: pomodoro 
   end
   
   def destroy
