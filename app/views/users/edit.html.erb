@@ -10,6 +10,7 @@
   <div class="right_column">
     <%= f.input :work_time, collection: [5,10,15,20,25,30,35,40,45,50,55,60]%>
     <%= f.input :break_time, collection: [1,2,3,4,5,10,15,20,25]%> 
+    <%= f.input :long_break_time, collection: [5,10,15,20,25] %>
   </div>
   <%= f.submit 'Save Profile' %>
 <% end %>

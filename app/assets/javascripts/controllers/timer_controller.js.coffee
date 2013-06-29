@@ -5,7 +5,8 @@ Pomade.TimerController = Ember.ObjectController.extend
   tone: new buzz.sound("/assets/tone", { formats: ["mp3"]})
   workTime: 1500
   breakTime: 25
-
+  longBreakTime: 900
+  pomodoroCount: 0
   start: ->
     console.log('Starting timer...')
     if @type is ''
@@ -30,7 +31,7 @@ Pomade.TimerController = Ember.ObjectController.extend
     @set('status','idle')
     @createPomodoro() if @type is 'work'
     @setBreakWork()
-    @start() if @type is 'break'
+    @start() if @type is 'break' or @type is 'long break'
     
   createPomodoro: ->
     console.log('creating pomodoro...')
@@ -46,12 +47,17 @@ Pomade.TimerController = Ember.ObjectController.extend
         @reset()
   
   setBreakWork: ->
-    if @type is 'break'
+    if @type is 'break' or @type is 'long break'
       @set('type','work')
       Pomade.Timer.set('seconds',@workTime)
     else
-      @set('type','break')
-      Pomade.Timer.set('seconds',@breakTime)
+      @set('pomodoroCount', @pomodoroCount + 1)
+      if @pomodoroCount % 4 is 0
+        Pomade.Timer.set('seconds',@longBreakTime)
+        @set('type','long break')
+      else
+        Pomade.Timer.set('seconds',@breakTime)
+        @set('type','break')
   
   toggleTimer: ->
     if @nextAction is 'pause'
