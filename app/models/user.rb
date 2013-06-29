@@ -29,6 +29,15 @@ class User < ActiveRecord::Base
     }.sort_by{ |k,v| -v}  
   end
 
+  def by_day
+    (2.weeks.ago.to_date..Date.today).map do |date|
+    {
+      day: date,
+      count: pomodoros.where("date(start_time) = ?", date).count
+    }
+    end
+  end
+
   private
 
   def generate_auth_token

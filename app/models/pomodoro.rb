@@ -9,6 +9,10 @@ class Pomodoro < ActiveRecord::Base
     self.end_time ||= Time.now
     self.start_time ||= self.end_time - WORKING_TIME
   end
+  
+  def start_day
+    start_time.to_date
+  end
 
   def self.new_for_user(work_time,end_time,tag)
   Pomodoro.new(:end_time => end_time, :start_time => end_time - work_time.minutes, :tag => tag)

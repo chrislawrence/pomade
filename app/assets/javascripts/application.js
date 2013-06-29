@@ -18,7 +18,7 @@
 //= require ember
 //= require ember-data
 //= require_self
-//= require buzz
+//= require lib/buzz
 //= require controls
 //= require pomade
 Pomade = Ember.Application.create();

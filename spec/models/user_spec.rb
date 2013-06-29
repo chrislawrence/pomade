@@ -24,4 +24,11 @@ describe User do
     user.add_pomodoro('working')
     expect(user.tags).to eq([["working", 1], ["study", 1]])
   end
+
+  it "returns a hash of pomodoros by day" do
+    user = create(:user)
+    user.add_pomodoro('study')
+    user.add_pomodoro('study')
+    expect(user.by_day).to eq({"day": "#{Date.today}", "count": 2})
+  end
 end
