@@ -27,7 +27,7 @@ class UserStats
 
   def average
     if !@pomodoros.count.to_f.nan?
-      days = days_since @pomodoros.first.start_time
+      days = days_since @pomodoros.last.start_time
       average = (@pomodoros.count.to_f / days.to_f).round(0)
     else
       average = 0

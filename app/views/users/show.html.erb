@@ -43,5 +43,16 @@
       <div class="statistic_type">
         <p>This year</p>
       </div>
-    </li>
+      </li>
+    </ul>
+    <h2 class="stats">Tags</h2>
+    <ul class="tags">
+      <% @user.tags.each do |tag| %>
+        <li class="<%= cycle('','alt') %>">
+          <p class="tags_tag"><%= tag[0] %></p> 
+          <p class="tags_count"><%= tag[1] %></p>
+          <div class="clear"></div>
+          </li>
+      <% end %>
+    </ul>
 </div>

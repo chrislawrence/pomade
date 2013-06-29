@@ -29,3 +29,28 @@ h2.stats {
   background: $bg-green;
   border-radius: 4px;
 }
+
+.tags {
+  text-align: left;
+  max-width: 300px;
+  margin: 0 auto;
+  list-style: none;
+  font-size: 1.5em;
+  border: 2px solid $bg-light - 5;
+  padding: 0;
+  li {
+    clear: both;
+    max-width: 400px;
+    display: block;
+    padding: 1em;  
+}
+  li.alt {
+    background: $bg-light - 15;
+  }
+  p.tags_tag {
+    float: left;
+  }
+  p.tags_count {
+    float: right;
+  }
+}

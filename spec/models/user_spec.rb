@@ -18,5 +18,10 @@ describe User do
     user = create(:user, :username => 'bigboi10')
     User.count.should eq(1)
  end
-
+  it "returns a hash of tags" do
+    user = create(:user)
+    user.add_pomodoro('study')
+    user.add_pomodoro('working')
+    expect(user.tags).to eq([["working", 1], ["study", 1]])
+  end
 end

@@ -3,7 +3,7 @@ class PomodorosController < ApplicationController
     if current_user
       respond_to do |format|
         format.json { render json:  current_user.pomodoros.today }
-        format.html {@pomodoros = current_user.pomodoros.today }  
+        format.html {@pomodoros = current_user.pomodoros }  
       end
       
     end

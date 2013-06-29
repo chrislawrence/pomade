@@ -15,7 +15,9 @@ Pomade::Application.routes.draw do
   
   get 'users/me' => 'users#me'
   
-  resources :users, :except => ['show','new','edit']
+  resources :users, :except => ['show','new','edit'] do
+    resources :pomodoros
+  end
   controller :users do
     get 'settings' => :edit
     get 'signup' => :new
