@@ -1,5 +1,6 @@
 class PomodorosController < ApplicationController
   skip_before_filter :authorise, only: :create
+  respond_to :html, :json
   def index
     if current_user
       respond_to do |format|
@@ -21,7 +22,9 @@ class PomodorosController < ApplicationController
   end
   
   def destroy
-    render json: Pomodoro.destroy(params[:id])
+    respond_to do |format|
+      format.json {respond_with Pomodoro.destroy(params[:id])}
+    end
   end
   
   def pomodoro_params
