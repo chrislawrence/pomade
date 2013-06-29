@@ -37,7 +37,8 @@ class UsersController < ApplicationController
   def create
     @user = User.new(user_params)
     if @user.save
-      redirect_to '/#timer', notice: 'Account created. Please confirm your email address.'
+      cookies[:auth_token] = @user.auth_token
+      redirect_to settings_path, notice: 'Account created. Please confirm your email address.'
     else
       render action: 'new'
     end

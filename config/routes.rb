@@ -19,7 +19,7 @@ Pomade::Application.routes.draw do
     resources :pomodoros
   end
   controller :users do
-    get 'settings' => :edit
+    get 'settings' => :edit, :as => 'settings'
     get 'signup' => :new
     get '/:id' => :show
     get 'users/:id' => redirect('/%{id}')

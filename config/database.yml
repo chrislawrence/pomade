@@ -11,4 +11,7 @@ test:
   adapter: postgresql
   database: pomade_test
   host: localhost
-
+production:
+  adapter: postgresql
+  database: pomade_production
+  host: localhost
