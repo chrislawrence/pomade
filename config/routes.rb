@@ -1,4 +1,5 @@
 Pomade::Application.routes.draw do
+  resources :password_resets
   controller :static do
     get 'index'
   end

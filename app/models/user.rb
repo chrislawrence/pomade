@@ -5,9 +5,8 @@ class User < ActiveRecord::Base
   validates :email, :presence => true, :uniqueness => true, :format => /\A[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]+\z/
   validates :username, :presence => true, :uniqueness => true, :length => {:minimum => 2, :maximum => 20}, :format => /\A[-a-z|0-9|-|_]+\z/
   validate :vanity_url
-  
+ 
   has_attached_file :avatar, :styles => { :profile => "150x150>", :thumb => "60x60>" }, :url => "/assets/avatars/:id/:style/:basename.:extension", :path => ":rails_root/public/assets/avatars/:id/:style/:basename.:extension"
-
 
   def add_pomodoro(tag)
    pomodoro = Pomodoro.new_for_user(self.work_time,Time.now,tag)
@@ -38,11 +37,16 @@ class User < ActiveRecord::Base
     end
   end
 
-  private
-
   def generate_auth_token
     self.auth_token = SecureRandom.urlsafe_base64
   end
+  
+  def password_and_confirmation=(value)
+    self.password = value
+    self.password_confirmation = value
+  end
+
+  private  
   
   def vanity_url
     if FancyUrls.new.initial_path_segments.include?(username)

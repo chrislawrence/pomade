@@ -31,4 +31,10 @@ describe User do
     user.add_pomodoro('study')
     expect(user.by_day.count).to_not be_zero
   end
-end
+  it "changes the password" do
+    user = create(:user)
+    expect do
+      user.update_attribute(:password_and_confirmation, 'test')
+    end.to change{user.password}
+    end
+ end

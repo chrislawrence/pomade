@@ -1,0 +1,7 @@
+<div class="content">
+  <%= simple_form_for @user, :url => password_reset_path(params[:id]) do |f| %>
+   <%= f.input :password, label: "New password" %>
+   <%= f.hidden_field :email  %>
+   <%= f.submit "Reset password" %>
+ <% end %>
+ </div>

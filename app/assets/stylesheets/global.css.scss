@@ -119,8 +119,8 @@ header {
     float: left;
     img {
       margin: 0;
+      border: 7px solid $bg + 25;
       border-radius: 50%;
-      border: 5px solid $bg + 15;
   }
     a:hover img {
       background: #fff;
