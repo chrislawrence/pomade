@@ -46,6 +46,20 @@ class User < ActiveRecord::Base
     self.password_confirmation = value
   end
 
+  def delete_pomodoro(id)
+    pomodoro = pomodoros.find_by_id(id) || NoPomodoro.new
+    pomodoro.destroy
+  end
+
+  class NoPomodoro
+    def method_missing? (*args, &block)
+     self 
+    end
+    def destroy
+      nil
+    end
+  end
+
   private  
   
   def vanity_url

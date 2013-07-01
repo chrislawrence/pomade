@@ -37,4 +37,19 @@ describe User do
       user.update_attribute(:password_and_confirmation, 'test')
     end.to change{user.password}
     end
+
+  it "destroys a pomodoro if it belongs to the user" do
+    user = create(:user)
+    user.pomodoros << Pomodoro.new
+    id = user.pomodoros.first.id
+    user.delete_pomodoro(id)
+    expect(Pomodoro.count).to eq(0)
+  end
+
+  it "does not destroy a pomodoro if it doesn't belong to the user" do
+    pomodoro = Pomodoro.create
+    user = create(:user)
+    user.delete_pomodoro(pomodoro.id)
+    expect(Pomodoro.count).to be(1)
+  end
  end

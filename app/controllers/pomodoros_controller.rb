@@ -22,9 +22,7 @@ class PomodorosController < ApplicationController
   end
   
   def destroy
-    respond_to do |format|
-      format.json {respond_with Pomodoro.destroy(params[:id])}
-    end
+    respond_with current_user.destroy_pomodoro(params[:id])
   end
   
   def pomodoro_params
