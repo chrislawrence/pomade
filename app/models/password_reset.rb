@@ -7,7 +7,7 @@ class PasswordReset < ActiveRecord::Base
    reset = PasswordReset.where(:email => email, :token => token).first 
     if reset 
       user = User.where(:email => email).first
-      user.update_attribute(:password_and_confirmation, new_password)
+      user.new_password(new_password)
       reset.destroy
     end
   end

@@ -1,9 +1,6 @@
 Pomade::Application.routes.draw do
   resources :password_resets
-  controller :static do
-    get 'index'
-  end
-  controller :sessions do
+    controller :sessions do
     get 'login' => :new
     post 'login' => :create
     delete 'logout' => :destroy
@@ -12,8 +9,8 @@ Pomade::Application.routes.draw do
   post 'import' => 'io#import'
 
   resources :pomodoros 
-  root :to => "application#index"
-  
+  root to:  "application#index"
+
   get 'users/me' => 'users#me'
   
   resources :users, :except => ['show','new','edit'] do

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Pomade: Ember</title>
+  <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
+  <%= javascript_include_tag "ember-app", "data-turbolinks-track" => true %>
+  <%= csrf_meta_tags %>
+  <script type="text/javascript" src="//use.typekit.net/wty3xxz.js"></script>
+  <script type="text/javascript">try{Typekit.load();}catch(e){}</script>
+</head>
+<body class='<%= controller_path %>'>
+  <header>
+    <div class="wide_content">
+      <h1><a href="/#timer">Pomade</a></h1>
+      <%= raw current_user.header %>
+    </div>
+  </header>
+  <% flash.each do |name, msg| %>
+    <%= content_tag :div, msg, id: "flash_#{name}", class: "flash" %>
+  <% end %>
+  
+  <%= yield %>
+  
+</body>
+</html>

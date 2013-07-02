@@ -34,7 +34,7 @@ describe User do
   it "changes the password" do
     user = create(:user)
     expect do
-      user.update_attribute(:password_and_confirmation, 'test')
+      user.new_password('test')
     end.to change{user.password}
     end
 

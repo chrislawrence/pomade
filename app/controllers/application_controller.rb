@@ -7,7 +7,11 @@ class ApplicationController < ActionController::Base
   def current_user
     User.current(cookies[:auth_token])
   end
-
+  
+  def index
+    render 'index', :layout => 'ember'
+  end
+  
   def authorise
     #TODO: fix this to no longer have an if statement
     redirect_to login_url, alert: "Please log in" if current_user.kind_of?(GuestUser)

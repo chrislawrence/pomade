@@ -22,7 +22,7 @@ class PomodorosController < ApplicationController
   end
   
   def destroy
-    respond_with current_user.destroy_pomodoro(params[:id])
+    respond_with current_user.delete_pomodoro(params[:id])
   end
   
   def pomodoro_params

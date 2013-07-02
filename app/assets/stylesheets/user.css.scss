@@ -61,3 +61,13 @@ h2.stats {
 .chart {
   width: 100%;
 }
+
+.forgot {
+  text-align: center;
+  a {
+    color: $bg;
+    &:hover {
+      color: $bg + 20;
+    }
+  }
+}

@@ -41,9 +41,11 @@ class User < ActiveRecord::Base
     self.auth_token = SecureRandom.urlsafe_base64
   end
   
-  def password_and_confirmation=(value)
+  def new_password(value) 
     self.password = value
     self.password_confirmation = value
+    self.auth_token = SecureRandom.urlsafe_base64
+    self.save
   end
 
   def delete_pomodoro(id)
