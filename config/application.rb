@@ -13,6 +13,8 @@ module Pomade
     config.assets.paths << Rails.root.join("app", "assets", "fonts")
     config.assets.paths << Rails.root.join("app","assets","sounds")
     
+    config.assets.precompile += %w( ember-app.js)
+
     config.action_mailer.default_url_options = { :host => "pomade.io" }
 
     # Settings in config/environments/* take precedence over those specified here.
