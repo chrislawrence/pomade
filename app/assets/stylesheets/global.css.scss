@@ -111,15 +111,16 @@ header {
   .avatar_small {
     border-radius: 50%;
     position: relative;
-    width: 60px;
-    height: 60px;
+    width: 74px;
+    height: 74px;
     top: 15px;
     left: 40px;
     line-height: 0;
     float: left;
+    border: 7px solid $bg + 25;
     img {
+      width: 100%;
       margin: 0;
-      border: 7px solid $bg + 25;
       border-radius: 50%;
   }
     a:hover img {

@@ -5,7 +5,7 @@ class UsersController < ApplicationController
 
   def new
     if !current_user.kind_of?(GuestUser)
-      redirect_to '/#timer'
+      redirect_to root_path
     else
       @user = User.new
     end
@@ -28,7 +28,7 @@ class UsersController < ApplicationController
   def update
     @user = current_user
     if @user.update(user_params)
-      redirect_to '/#timer', :notice => "Profile updated" 
+      redirect_to root_path, :notice => "Profile updated" 
     else
       render action: 'edit'
     end

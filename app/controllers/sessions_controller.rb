@@ -8,7 +8,7 @@ class SessionsController < ApplicationController
     user = User.where(:email => params[:user][:email]).first
     if user and user.authenticate(params[:user][:password])
       cookies.permanent[:auth_token] = user.auth_token
-      redirect_to '/#timer', :notice => "Logged in"
+      redirect_to root_path, :notice => "Logged in"
     else
       redirect_to login_url, alert: "Email or password was invalid."
     end
