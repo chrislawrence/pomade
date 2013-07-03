@@ -27,6 +27,10 @@ class PomodorosController < ApplicationController
     respond_with current_user.delete_pomodoro(params[:id])
   end
   
+  def update
+    respond_with Pomodoro.update(params[:id], pomodoro_params)
+  end
+  
   def pomodoro_params
     params.require(:pomodoro).permit(:start_time,:end_time,:tag)
   end

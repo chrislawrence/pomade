@@ -10,3 +10,6 @@ Pomade.PomodorosController = Ember.ArrayController.extend
   deletePomodoro: (id) ->
     Pomade.Pomodoro.find(id).deleteRecord()
     @get('store').commit()
+  
+  updatePomodoros: ->
+      @get('store').commit()
