@@ -1,7 +1,6 @@
 <div class="wide_content">
-<h2>Edit Profile</h2>
-
-<%= simple_form_for @user, :html => {:multipart => true} do |f| %>
+  <h2>Edit Profile <%= link_to "Import Pomodoros", io_path %></h2>
+  <%= simple_form_for @user, :html => {:multipart => true} do |f| %>
   <div class="left_column">
     <%= f.input :username %>
     <%= f.input :url %>
@@ -13,11 +12,6 @@
     <%= f.input :long_break_time, collection: [5,10,15,20,25] %>
   </div>
   <%= f.submit 'Save Profile' %>
-<% end %>
-
-<%= form_tag import_path, multipart: true do %>
-  <%= file_field_tag :file %>
-  <%= submit_tag "Import" %>
-<% end %>
-
+  <% end %>
 </div>
+

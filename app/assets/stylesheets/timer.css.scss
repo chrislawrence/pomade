@@ -11,7 +11,11 @@ $header-height: 100px;
   input {
     background: #99A9BA;
     border-color: #99A9BA - 25;
-  }
+    color: #313941;
+    @include placeholder {
+      color: #7E8C9B;
+    }
+}
 }
 
 #timer_status {
@@ -108,7 +112,7 @@ $header-height: 100px;
     border: none;
     padding: 0.3em 1em;
     margin: 0;
-  }
+      }
 }
 
 .tag {

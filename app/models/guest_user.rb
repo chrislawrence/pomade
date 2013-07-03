@@ -8,9 +8,6 @@ class GuestUser
   def as_json(options={})
     { 'user' => {:id => @id , :work_time => @work_time, :break_time => @break_time, :long_break_time => @long_break_time}}
   end
-  def header
-    "<div class='controls guest'><ul><li class='first'><a href='/login'>Login</a></li><li><a href='/signup'>Signup</a></li></div>"  
-  end
 
   def work_time
     @work_time
@@ -20,6 +17,9 @@ class GuestUser
     @break_time
   end
 
+  def to_partial_path
+    "users/guest_header"
+  end
 
   def method_missing(*args, &block)
         self

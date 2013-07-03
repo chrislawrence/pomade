@@ -7,6 +7,7 @@ Pomade::Application.routes.draw do
   end
  
   post 'import' => 'io#import'
+  get 'io' => 'io#index'
 
   resources :pomodoros 
   root to:  "application#index"

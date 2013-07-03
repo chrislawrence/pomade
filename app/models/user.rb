@@ -6,7 +6,11 @@ class User < ActiveRecord::Base
   validates :username, :presence => true, :uniqueness => true, :length => {:minimum => 2, :maximum => 20}, :format => /\A[-a-z|0-9|-|_]+\z/
   validate :vanity_url
  
-  has_attached_file :avatar, :styles => { :profile => "150x150>", :thumb => "60x60>" }, :url => "/assets/avatars/:id/:style/:basename.:extension", :path => ":rails_root/public/assets/avatars/:id/:style/:basename.:extension"
+  has_attached_file :avatar, 
+    :styles => { :profile => "150x150>", :thumb => "60x60>" }, 
+    :url => "/assets/avatars/:id/:style/:basename.:extension", 
+    :path => ":rails_root/public/assets/avatars/:id/:style/:basename.:extension",
+    :default_url => '/assets/avatars/:style/avatar.jpg'
 
   def add_pomodoro(tag)
    pomodoro = Pomodoro.new_for_user(self.work_time,Time.now,tag)
@@ -17,8 +21,12 @@ class User < ActiveRecord::Base
     where(:auth_token => auth_token).first || GuestUser.new
   end
   
-  def header
-    "<div class='control_wrapper'><div class='controls'><div class='avatar_small'><a href='/#{username}'><img src='#{avatar(:thumb)}' /></a></div></div><div class='logout ss-icon'><a data-method='delete' href='/logout' rel='nofollow'>logout</a> <a href='/settings'>settings</a></div></div>"
+  def to_param
+    "#{username}"
+  end
+  
+  def to_partial_path
+    "users/header"
   end
 
   def tags

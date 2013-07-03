@@ -41,6 +41,13 @@ h1 a {
   }
 }
 
+h2 a {
+  color: $bg-light - 70;
+  text-decoration: none;
+  &:hover {
+    text-decoration: underline;
+  }
+}
 
 /* Grid */
 
@@ -82,7 +89,7 @@ header {
 }
 
 .right_column {
-  width: 48%;
+  width: 30%;
   margin-left: 2%;
   float: right;
 }
@@ -201,22 +208,22 @@ input[type=submit] {
 
 select {
   -webkit-appearance: none;
-  width: 100px;
+  width: 100%;
   border: 3px solid $border;
   font-size: 1.5em;
   padding: 0.3em 2%;
   top: 5%; 
 }
 
-label.select {
-  margin-right: 200px;
-}
 
 input[type=file] {
   border: none;
   font-size: 1em;
   background: $bg-light - 10;
   padding: 1em;
+  margin: 1em 0;
+  width: 100%;
+  border-radius: 0;
 }
 
 .input {
