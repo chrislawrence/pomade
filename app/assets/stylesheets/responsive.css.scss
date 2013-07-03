@@ -1,0 +1,49 @@
+@media screen and (max-width: 700px) {
+
+  .statistic {
+    font-size: 0.5em;
+  }
+  
+  .content, .wide_content {
+    width: 96%;
+    padding: 0 2%;
+  }
+
+}
+
+@media screen and (max-width: 500px) {
+  .controls {
+    display: none;
+  }
+  .stat_wrapper {
+    display: inline;
+    li {
+      display: inline;
+      padding: 0;
+      width: 100%;
+      margin: 0;
+  }
+}
+  .statistic {
+    background: none;
+    border: none;
+    border-radius: 0;
+    padding: 0;
+    float: right;
+    width: 45%;
+    font-size: 0.5em;
+    p {
+     text-align: left;
+      position: relative;
+    
+    line-height: 70px;
+  }
+  }
+ .statistic_type {
+   margin: 0;
+   text-align: right;
+   float: left;
+   width: 50%;
+   line-height: 70px;
+ }
+}

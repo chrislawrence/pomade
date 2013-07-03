@@ -37,25 +37,28 @@
       <div class="statistic_type">
         <p>This month</p>
       </div>
-      <li class="last">
+    </li>
+    <li class="last">
       <div class="statistic">
         <p><%= @stats.this_year %></p>
       </div>
       <div class="statistic_type">
         <p>This year</p>
       </div>
-      </li>
-    </ul>
-    <h2 class="stats">Tags</h2>
-    <ul class="tags">
-      <% @user.tags.each do |tag| %>
-        <li class="<%= cycle('','alt') %>">
-          <p class="tags_tag"><%= tag[0] %></p> 
-          <p class="tags_count"><%= tag[1] %></p>
-          <div class="clear"></div>
-          </li>
-      <% end %>
-    </ul>
+    </li>
+  </ul>
+  <div class="clear"></div>
+  <h2 class="stats">Tags</h2>
+  <ul class="tags">
+    <% @user.tags.each do |tag| %>
+      <li class="<%= cycle('','alt') %>">
+        <p class="tags_tag"><%= tag[0] %></p> 
+        <p class="tags_count"><%= tag[1] %></p>
+        <div class="clear"></div>
+        </li>
+    <% end %>
+  </ul>
 
-    <h2 class="stats">Charts</h2>
-
+  <h2 class="stats">Charts</h2>
+    <%= content_tag :div, "", id: "pomodoros", data: {pomodoros: @user.by_day}  %>
+  </div>

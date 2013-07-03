@@ -1,12 +1,15 @@
 $ ->
-  data = {
-    datasets: [
-      {
-        data: $('#chart').data('pomodoros')
-      }
-      ]
-    }
-  ctx = document.getElementById("chart").getContext("2d")
-  chart = new Chart(ctx).Bar(data)
-  
-
+  $('#pomodoros').highcharts
+    chart:
+      type: 'bar'
+    title:
+      text: 'Pomodoros by day'
+    yAxis:
+      title:
+        text: 'Pomodoros'
+    xAxis:
+      title:
+        text: 'Day'
+    series:
+      name: 'Pomodoros by day'
+      data: $('#pomodoros').data('pomodoros')
