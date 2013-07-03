@@ -8,6 +8,10 @@ $header-height: 100px;
   padding: 3em 0;
   background: $bg;
   text-align: center;
+  input {
+    background: #99A9BA;
+    border-color: #99A9BA - 25;
+  }
 }
 
 #timer_status {
@@ -93,18 +97,42 @@ $header-height: 100px;
     color: #DEE7EF - 130;
     li {
       padding: 1em;
+
       border-bottom: 1px solid;
       border-bottom-color: $bg + 10;
     }
+  }
+  input {
+    font-size: 0.8em;
+    background: #99A9BA;
+    border: none;
+    padding: 0.3em 1em;
+    margin: 0;
   }
 }
 
 .tag {
   color: #DEE7EF - 170;
-  margin-left: 2em;
+  margin-left: 0.5em;
 }
 
-.delete_pomodoro {
-    display: block;
-    float: right;
+.pomodoro_details {
+  float: left;
+  width: 85%;
+}
+
+.actions {
+  float: right;
+  text-align: right;
+  width: 10%;
+  letter-spacing: 0.3em;
+  a {
+    color: $bg + 20;
+    &:hover {
+      color: $green;
+    }
+  }
+  a.destroy:hover {
+    color: $red;
+  }
 }
