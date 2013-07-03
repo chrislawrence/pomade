@@ -16,7 +16,9 @@ class PomodorosController < ApplicationController
   end
   
   def create
-    pomodoro = Pomodoro.new_for_user(current_user.work_time, Time.now, params[:tag] )
+    tag = params[:pomodoro][:tag]
+    logger.debug("Tag: #{tag}")
+    pomodoro = Pomodoro.new_for_user(current_user.work_time, Time.now, tag )
     current_user.pomodoros << pomodoro
     render json: pomodoro 
   end
