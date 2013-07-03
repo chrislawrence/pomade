@@ -63,8 +63,9 @@ h2.stats {
 
 .forgot {
   text-align: center;
+  margin-top: 2em;
   a {
-    color: $bg;
+    color: $bg-light - 100;
     &:hover {
       color: $bg + 20;
     }
