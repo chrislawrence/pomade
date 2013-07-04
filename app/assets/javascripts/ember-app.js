@@ -10,3 +10,4 @@
 //= require lib/buzz
 //= require pomade
 Pomade = Ember.Application.create();
+

@@ -20,25 +20,9 @@ default_run_options[:pty] = true
 ssh_options[:forward_agent] = true
 
 after "deploy", "deploy:cleanup" # keep only the last 5 releases
-after "depoly:restart", "unicorn:restart"
+after "deploy:restart", "unicorn:restart"
 
 namespace :deploy do
-#  
-#  desc "Zero-downtime restart of Unicorn"
-#  task :restart, :except => { :no_release => true } do
-#    run "kill -s USR2 `cat /tmp/unicorn.pomade.pid`"
-#  end
-#
-#  desc "Start unicorn"
-#  task :start, :except => { :no_release => true } do
-#    run "cd #{current_path} ; bundle exec unicorn_rails -c config/unicorn.rb -D"
-#  end
-#
-#  desc "Stop unicorn"
-#  task :stop, :except => { :no_release => true } do
-#    run "kill -s QUIT `cat /tmp/unicorn.pomade.pid`"
-#  end
-#
   task :setup_config, roles: :app do
     sudo "ln -nfs #{current_path}/config/nginx.conf /etc/nginx/sites-enabled/#{application}"
     sudo "ln -nfs #{current_path}/config/unicorn_init.sh /etc/init.d/unicorn_#{application}"
@@ -62,4 +46,5 @@ namespace :deploy do
     end
   end
   before "deploy", "deploy:check_revision"
+  
 end
