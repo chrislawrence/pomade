@@ -8,7 +8,7 @@ timeout 30
 
 working_directory "/home/chris/apps/pomade/current"
 user "chris"
-shared_path = "/home/chris/apps/pomade/shared"
+shared_path "/home/chris/apps/pomade/shared"
 
 stderr_path "#{shared_path}/log/unicorn.stderr.log"
 stdout_path "#{shared_path}/log/unicorn.stdout.log"
