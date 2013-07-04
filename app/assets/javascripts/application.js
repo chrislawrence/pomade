@@ -18,3 +18,4 @@
 //= require lib/buzz
 //= require controls
 //= require users
+//= require canvasjs

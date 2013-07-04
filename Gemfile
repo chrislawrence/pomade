@@ -40,9 +40,7 @@ gem 'quiet_assets', :group => :development
 
 
 gem 'bourbon'
-gem 'neat'
 gem 'simple_form'
 gem 'paperclip'
 gem 'jquery-turbolinks'
-gem 'chartkick'
 gem 'groupdate'
