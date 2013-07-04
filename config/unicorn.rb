@@ -1,36 +1,34 @@
-env = ENV["RAILS_ENV"] || "development"
-pid = "/tmp/unicorn.pomade.pid"
-worker_processes 4
+root = "/home/chris/apps/pomade/current"
+working_directory root
+pid "#{root}/tmp/pids/unicorn.pid"
+stderr_path "#{root}/log/unicorn.log"
+stdout_path "#{root}/log/unicorn.log"
 
-listen "/tmp/pomade.socket", :backlog => 64
-preload_app true
+listen "/tmp/unicorn.pomade.sock"
+worker_processes 2
 timeout 30
-
-working_directory "/home/chris/apps/pomade/current"
-user "chris"
-shared_path "/home/chris/apps/pomade/shared"
-
-stderr_path "#{shared_path}/log/unicorn.stderr.log"
-stdout_path "#{shared_path}/log/unicorn.stdout.log"
+preload_app true
 
 before_fork do |server, worker|
-  if defined?(ActiveRecord::Base)
+  # Disconnect since the database connection will not carry over
+  if defined? ActiveRecord::Base
     ActiveRecord::Base.connection.disconnect!
   end
 
-  old_pid = "/tmp/unicorn.pomade.pid.oldbin"
-  
-  if File.exists?(old_pid) && serer.pid != old_pid
+  # Quit the old unicorn process
+  old_pid = "#{server.config[:pid]}.oldbin"
+  if File.exists?(old_pid) && server.pid != old_pid
     begin
       Process.kill("QUIT", File.read(old_pid).to_i)
-    rescue Errno:ENOENT, Errno:ESRCH
+    rescue Errno::ENOENT, Errno::ESRCH
+      # someone else did our job for us
     end
   end
 end
 
 after_fork do |server, worker|
+  # Start up the database connection again in the worker
   if defined?(ActiveRecord::Base)
     ActiveRecord::Base.establish_connection
   end
 end
-
