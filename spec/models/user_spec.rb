@@ -52,4 +52,8 @@ describe User do
     user.delete_pomodoro(pomodoro.id)
     expect(Pomodoro.count).to be(1)
   end
- end
+  
+  it "allows a valid username" do
+    expect(build(:user, :username => "Dad01")).to be_valid
+  end
+end

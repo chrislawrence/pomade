@@ -3,7 +3,7 @@ class User < ActiveRecord::Base
   has_many :pomodoros,  -> { order("start_time DESC") }
   before_create :generate_auth_token
   validates :email, :presence => true, :uniqueness => true, :format => /\A[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]+\z/
-  validates :username, :presence => true, :uniqueness => true, :length => {:minimum => 2, :maximum => 20}, :format => /\A[-a-z|0-9|-|_]+\z/
+  validates :username, :presence => true, :uniqueness => true, :length => {:minimum => 2, :maximum => 20}, :format => /\A[-a-z|A-Z|0-9|-|_]+\z/
   validate :vanity_url
  
   has_attached_file :avatar, 
