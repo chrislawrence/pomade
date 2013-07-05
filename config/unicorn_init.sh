@@ -44,7 +44,7 @@ APP_USER=chris
 # If you specify a particular config, it will only operate on that one
 #
 # /etc/init.d/unicorn start my_app
-DEFAULT_USER=chris
+DEFAULT_USER=chris  
  
 sig () {
     test -s "$PID" && kill -$1 `cat "$PID"`
@@ -117,36 +117,3 @@ setup () {
     CMD="${SUDOCMD} RAILS_ENV=${RAILS_ENV} ${UNICORN} -E ${RAILS_ENV} -c ${RAILS_ROOT}/config/unicorn.rb -D"
     return 0
 }
- 
-# either run the start/stop/reload/etc command for every config under /etc/unicorn
-# or just do it for a specific one
- 
-# $1 contains the start/stop/etc command
-# $2 if it exists, should be the specific config we want to act on
- 
-if [ $2 ]; then
-  . /etc/unicorn/$2.conf
-  setup "/etc/unicorn/$2.conf"
-  if [ $? -eq 1 ]; then
-    exit
-  fi
-  cmd $1
-else
-  for CONFIG in /etc/unicorn/*.conf; do
-    # clean variables from prev configs
-    unset APP_NAME
-    unset APP_USER
-    unset RAILS_ROOT
-    unset RAILS_ENV
-    unset UNICORN
- 
-    # import the variables
-    . $CONFIG
-    setup $CONFIG
-    if [ $? -eq 1 ]; then
-      continue
-    fi
-    # run the start/stop/etc command
-    cmd $1
-  done
-fi
