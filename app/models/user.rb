@@ -28,6 +28,10 @@ class User < ActiveRecord::Base
   def to_partial_path
     "users/header"
   end
+  
+  def latest_pomodoro
+    self.pomodoros.last || NoPomodoro.new
+  end
 
   def tags
     pomodoros.collect(&:tag).flatten.inject(Hash.new(0)){ |hash,element|

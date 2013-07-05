@@ -5,4 +5,7 @@ class NoPomodoro
   def destroy
     nil
   end
+  def end_time
+    Time.new(0)
+  end
 end

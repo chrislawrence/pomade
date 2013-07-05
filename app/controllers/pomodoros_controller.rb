@@ -17,10 +17,8 @@ class PomodorosController < ApplicationController
   
   def create
     tag = params[:pomodoro][:tag]
-    logger.debug("Tag: #{tag}")
-    pomodoro = Pomodoro.new_for_user(current_user.work_time, Time.now, tag )
-    current_user.pomodoros << pomodoro
-    render json: pomodoro 
+    worker = UserPomodoros.new(current_user)
+    render json: worker.add_pomodoro(tag)
   end
   
   def destroy
