@@ -56,4 +56,8 @@ describe User do
   it "allows a valid username" do
     expect(build(:user, :username => "Dad01")).to be_valid
   end
+  
+  it "converts uppercase letters in username to downcase" do
+    expect(create(:user, :username => "Dad01").username).to eq('dad01')  
+  end
 end

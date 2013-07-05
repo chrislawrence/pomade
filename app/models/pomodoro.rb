@@ -19,7 +19,7 @@ class Pomodoro < ActiveRecord::Base
   end
   
   def self.by_tag(pomodoros)
-    pomodoros.collect(&:tags).flatten.inject(Hash.new(0)) do |hash, tag|
+    pomodoros.collect(&:tag).flatten.inject(Hash.new(0)) do |hash, tag|
       hash[tag] += 1; hash
     end.sort { |a, b| b[1] <=> a[1] }
   end

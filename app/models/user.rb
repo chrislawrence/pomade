@@ -5,7 +5,7 @@ class User < ActiveRecord::Base
   validates :email, :presence => true, :uniqueness => true, :format => /\A[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]+\z/
   validates :username, :presence => true, :uniqueness => true, :length => {:minimum => 2, :maximum => 20}, :format => /\A[-a-z|A-Z|0-9|-|_]+\z/
   validate :vanity_url
- 
+  before_save :parse_username 
   has_attached_file :avatar, 
     :styles => { :profile => "150x150>", :thumb => "60x60>" }, 
     :url => "/assets/avatars/:id/:style/:basename.:extension", 
@@ -59,6 +59,10 @@ class User < ActiveRecord::Base
   def delete_pomodoro(id)
     pomodoro = pomodoros.find_by_id(id) || NoPomodoro.new
     pomodoro.destroy
+  end
+
+  def parse_username 
+    self.username = self.username.downcase
   end
 
   private  

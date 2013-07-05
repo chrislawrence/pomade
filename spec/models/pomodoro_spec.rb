@@ -19,5 +19,21 @@ describe Pomodoro do
     pomodoro = Pomodoro.create(:tag => 'working', :end_time => @time)
     expect(pomodoro.start_time).to eq(@time - 25.minutes)
   end
+  
+  describe "tags" do
+  before :each do
+  @user = build(:user) 
+  @user.pomodoros << [Pomodoro.new(:tag => 'test'),
+                Pomodoro.new(:tag => 'test'),
+                Pomodoro.new(:tag => 'work'),
+                Pomodoro.new(:tag => '')]
+  end
+  it 'returns a hash of counts for tags' do
+  expect(Pomodoro.by_tag(@user.pomodoros)).to include(["test",2])  
+  end
 
+  it "does not include blank tags" do
+    expect(Pomodoro.by_tag(@user.pomodoros)).to_not include("")   
+end
+end
 end
