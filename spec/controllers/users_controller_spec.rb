@@ -11,4 +11,10 @@ describe UsersController do
     get 'me'
     expect(response.body).to include("user")
   end
+
+  it "shows the profile of an existing user" do
+    user = create(:user)
+    get 'show', id: user.username
+    expect(assigns(:user)).to eq(user)
+  end
 end

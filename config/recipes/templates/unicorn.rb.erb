@@ -1,10 +1,10 @@
-working_directory "/home/chris/apps/pomade/current"
-pid "/home/chris/apps/pomade/current/unicorn.pid"
-stderr_path "/home/chris/apps/pomade/shared/log/unicorn.log"
-stdout_path "/home/chris/apps/pomade/shared/log/unicorn.log"
+working_directory "<%= current_path %>"
+pid "<%= unicorn_pid %>"
+stderr_path "<%= unicorn_log %>"
+stdout_path "<%= unicorn_log %>"
 
-listen "/tmp/unicorn.pomade.sock"
-worker_processes 2
+listen "/tmp/unicorn.<%= application %>.sock"
+worker_processes <%= unicorn_workers %>
 timeout 30
 
 preload_app true
@@ -32,4 +32,3 @@ after_fork do |server, worker|
     ActiveRecord::Base.establish_connection
   end
 end
-
