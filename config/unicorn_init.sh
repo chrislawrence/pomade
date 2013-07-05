@@ -14,7 +14,7 @@ set -e
 TIMEOUT=${TIMEOUT-60}
 APP_ROOT="/home/chris/apps/pomade/current"
 PID="/home/chris/apps/pomade/current/tmp/pids/unicorn.pid"
-CMD="cd "/home/chris/apps/pomade/current"; bundle exec unicorn -D -c /home/chris/apps/shared/config/unicorn.rb -E production"
+CMD="cd "/home/chris/apps/pomade/current"; bundle exec unicorn -D -c /home/chris/apps/pomade/shared/config/unicorn.rb -E production"
 AS_USER=chris
 set -u
 
