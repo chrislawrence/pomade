@@ -1,17 +1,9 @@
 class UserStats
-  class NoPomodoros
-    def method_missing(*args, &block)
-      self
-    end
-    def to_s
-      return '0'
-    end
-  end
 
   NoAverage = Class.new
+  
   def initialize(user)
     @pomodoros = user.pomodoros
-    @pomodoros = NoPomodoros.new if @pomodoros.count == 0
   end
 
   def today
@@ -27,13 +19,9 @@ class UserStats
   end
 
   def average
-    if !@pomodoros.count.to_f.nan?
-      days = days_since @pomodoros.last.start_time
-      average = (@pomodoros.count.to_f / days.to_f).round(0)
-    else
-      average = 0
-    end
-    average
+    last = @pomodoros.last || NoPomodoro.new
+    days = days_since last.start_time
+    (@pomodoros.count.to_f / days.to_f).round(0)
   end
   
   private
