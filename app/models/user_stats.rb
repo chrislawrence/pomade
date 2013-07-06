@@ -17,6 +17,7 @@ class UserStats
   def today
     @pomodoros.where("start_time >= ?", Date.today.beginning_of_day).count
   end
+
   def this_month
     @pomodoros.where("start_time >= ?", Date.today.beginning_of_month).count
   end

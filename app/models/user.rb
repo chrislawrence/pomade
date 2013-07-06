@@ -11,12 +11,7 @@ class User < ActiveRecord::Base
     :url => "/assets/avatars/:id/:style/:basename.:extension", 
     :path => ":rails_root/public/assets/avatars/:id/:style/:basename.:extension",
     :default_url => '/assets/avatars/:style/avatar.jpg'
-
-  def add_pomodoro(tag)
-   pomodoro = Pomodoro.new_for_user(self.work_time,Time.now,tag)
-   self.pomodoros << pomodoro
-  end
-
+  
   def self.current(auth_token)
     where(:auth_token => auth_token).first || GuestUser.new
   end
