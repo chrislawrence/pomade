@@ -29,7 +29,8 @@ class User < ActiveRecord::Base
   end
 
   def tags
-    pomodoros.collect(&:tag).flatten.inject(Hash.new(0)){ |hash,element|
+    pomodoros = self.pomodoros.where("tag != ?", "")
+    pomodoros.collect(&:tag).map(&:downcase).flatten.inject(Hash.new(0)){ |hash,element|
       hash[element] +=1
       hash
     }.sort_by{ |k,v| -v}  

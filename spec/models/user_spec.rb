@@ -16,7 +16,17 @@ describe User do
     expect(user.tags).to eq([["working", 1], ["study", 1]])
   end
 
-   it "changes the password" do
+  it "does not return blank tags in hash" do
+    user = create(:user)
+    user.pomodoros << [Pomodoro.new(:tag => 'working'), Pomodoro.new]
+    expect(user.tags.to_json).to_not include("null")
+  end
+  it "ignores case in tags hash" do
+    user = create(:user)
+    user.pomodoros << [Pomodoro.new(:tag => 'working'), Pomodoro.new(:tag => 'Working')]
+    expect(user.tags.to_json).to eq("[[\"working\",2]]")
+  end
+  it "changes the password" do
     user = create(:user)
     expect do
       user.new_password('test')
