@@ -8,9 +8,9 @@ $ ->
     labels : $.map(pomodoro_data, (n) -> n.label)
     datasets : [
       data : $.map(pomodoro_data, (n) -> n.count)
-      fillColor : "rgba(151,187,205,0.5)",
-      strokeColor : "rgba(151,187,205,1)",
-      pointColor : "rgba(151,187,205,1)",
+      fillColor : "#C6DAEE"
+      strokeColor : "#BCD0E3" 
+      pointColor : "#AFD4F7"
       pointStrokeColor : "#fff",
     ]
   options = {
@@ -18,5 +18,11 @@ $ ->
     scaleSteps: scale
     scaleStepWidth: 1
     scaleStartValue: 0
-    }
+    scaleFontFamily: 'helvetica, arial, sans-serif'  
+    scaleFontSize: 14
+    scaleFontColor: '#444'
+    scaleFontStyle: 'bold'
+    datasetStrokeWidth: 7
+
+  }
   chart = new Chart(ctx).Line(data, options)
