@@ -39,10 +39,14 @@ class User < ActiveRecord::Base
   def by_day
     (1.weeks.ago.to_date..Date.today).map do |date|
     {
-      label: date,
+      label: first_day(date)? date.strftime("%b %d") : date.strftime("%d"),
       count: pomodoros.where("date(start_time) = ?", date).count
     }
     end
+  end
+
+  def first_day(date)
+    true if date.day == 1 || date == 1.weeks.ago.to_date
   end
 
   def generate_auth_token
