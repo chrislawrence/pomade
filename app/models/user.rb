@@ -37,10 +37,10 @@ class User < ActiveRecord::Base
   end
 
   def by_day
-    (2.weeks.ago.to_date..Date.today).map do |date|
+    (1.weeks.ago.to_date..Date.today).map do |date|
     {
       label: date,
-      y: pomodoros.where("date(start_time) = ?", date).count
+      count: pomodoros.where("date(start_time) = ?", date).count
     }
     end
   end

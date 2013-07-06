@@ -1,24 +1,22 @@
 $ ->
-
-  CanvasJS.addColorSet "pomadeColours",
-    [
-      "#ccc"
+  ctx = document.getElementById("pomodoro_chart").getContext("2d")
+  pomodoro_data = $('#pomodoro_chart').data('pomodoros')
+  counts = new Array()
+  $.map(pomodoro_data, (n) -> counts.push(n.count))
+  scale = Math.max.apply(Math, counts)
+  data =
+    labels : $.map(pomodoro_data, (n) -> n.label)
+    datasets : [
+      data : $.map(pomodoro_data, (n) -> n.count)
+      fillColor : "rgba(151,187,205,0.5)",
+      strokeColor : "rgba(151,187,205,1)",
+      pointColor : "rgba(151,187,205,1)",
+      pointStrokeColor : "#fff",
     ]
-
-  chart = new CanvasJS.Chart "pomodoros",
-    data:[ 
-      type: "column"
-      color: "#90B9E3" 
-      dataPoints:
-        $('#pomodoros').data('pomodoros')  
-    ]
-    backgroundColor: '#EFF4F9'
-    axisX:
-      gridColor: '#D1D6DB'
-      lineColor: '#8E99A3'
-      tickColor: '#8E99A3'
-    axisY:
-      gridColor: '#E7E9EC'
-      lineColor: '#8E99A3'
-      tickColor: '#8E99A3'
-  chart.render()
+  options = {
+    scaleOverride: true
+    scaleSteps: scale
+    scaleStepWidth: 1
+    scaleStartValue: 0
+    }
+  chart = new Chart(ctx).Line(data, options)

@@ -19,3 +19,4 @@
 //= require controls
 //= require users
 //= require canvasjs
+//= require lib/chart.min
