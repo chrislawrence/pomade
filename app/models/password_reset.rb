@@ -4,12 +4,12 @@ class PasswordReset < ActiveRecord::Base
   after_create :email_user
 
   def self.reset_password email, token, new_password
-   reset = PasswordReset.where(:email => email, :token => token).first 
-    if reset 
-      user = User.where(:email => email).first
+   password_reset = PasswordReset.where(:email => email, :token => token).first 
+   if password_reset 
+      user = User.find_by(email: email)
       user.new_password(new_password)
-      reset.destroy
-    end
+      password_reset.destroy
+   end
   end
 
   private

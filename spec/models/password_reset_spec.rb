@@ -10,9 +10,9 @@ describe PasswordReset do
 
   it "resets a password if token is correct" do
     user = create(:user)
-    reset = PasswordReset.create(:email => user.email)
-    PasswordReset.reset_password(user.email, reset.token, 'test')
-    expect(user.reload.password).to eq('test')
+    password_reset = PasswordReset.create(:email => user.email)
+    PasswordReset.reset_password(password_reset.email, password_reset.token, 'test')
+    expect(PasswordReset.count).to eq(0)
   end
 
   it "does not reset password if token in incorrect" do

@@ -38,7 +38,7 @@ class UsersController < ApplicationController
     @user = User.new(user_params)
     if @user.save
       cookies[:auth_token] = @user.auth_token
-      redirect_to settings_path, notice: 'Account created. Please confirm your email address.'
+      redirect_to settings_path, notice: 'Account created.'
     else
       render action: 'new'
     end

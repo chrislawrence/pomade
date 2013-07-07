@@ -9,7 +9,7 @@ describe 'SignupFeatures' do
     fill_in 'user[password]', :with => user.password
     fill_in 'Confirm Password', :with => user.password
     click_button "Create Account"
-    expect(page).to have_content('Account created. Please confirm your email address.')
+    expect(page).to have_content('Account created.') 
   end
 
   it "does not allow signup with existing email" do
