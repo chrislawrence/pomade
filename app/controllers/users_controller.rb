@@ -16,9 +16,9 @@ class UsersController < ApplicationController
   end
   
   def show
-    @user = User.where(:username => params[:id]).first
-    redirect_to '/404' if !@user
-    @stats = UserStats.new(@user) if @user
+    @user = User.find_by(username: params[:id])
+    raise ActiveRecord::RecordNotFound unless @user
+    @stats = UserStats.new(@user)
   end
   
   def me

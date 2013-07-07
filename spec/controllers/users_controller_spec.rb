@@ -17,4 +17,8 @@ describe UsersController do
     get 'show', id: user.username
     expect(assigns(:user)).to eq(user)
   end
+
+  it "raises 404 error for user that does not exist" do
+    expect{get 'show', id: 'nobody'}.to raise_error(ActiveRecord::RecordNotFound)
+  end
 end

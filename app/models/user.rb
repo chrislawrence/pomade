@@ -65,10 +65,6 @@ class User < ActiveRecord::Base
     pomodoro.destroy
   end
 
-  def parse_username 
-    self.username = self.username.downcase
-  end
-
   private  
   
   def vanity_url
@@ -77,5 +73,8 @@ class User < ActiveRecord::Base
     end
   end
 
+  def parse_username 
+    self.username = self.username.downcase
+  end
 
 end
