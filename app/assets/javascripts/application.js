@@ -16,7 +16,6 @@
 //= require turbolinks
 //= require_self
 //= require lib/buzz
+//= require lib/chart.min
 //= require controls
 //= require users
-//= require canvasjs
-//= require lib/chart.min
