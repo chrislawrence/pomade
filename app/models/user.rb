@@ -1,11 +1,16 @@
 class User < ActiveRecord::Base
   has_secure_password
   has_many :pomodoros,  -> { order("start_time DESC") }
-  before_create :generate_auth_token
+  
   validates :email, :presence => true, :uniqueness => true, :format => /\A[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]+\z/
   validates :username, :presence => true, :uniqueness => true, :length => {:minimum => 2, :maximum => 20}, :format => /\A[-a-z|A-Z|0-9|-|_]+\z/
   validate :vanity_url
+  validates_inclusion_of :time_zone, in: ActiveSupport::TimeZone.zones_map(&:name)
+  
   before_save :parse_username 
+  before_create :generate_auth_token
+  
+  
   has_attached_file :avatar, 
     :styles => { :profile => "150x150>", :thumb => "60x60>" }, 
     :url => "/assets/avatars/:id/:style/:basename.:extension", 
@@ -23,18 +28,29 @@ class User < ActiveRecord::Base
   def to_partial_path
     "users/header"
   end
+
+  def authorised?
+    true
+  end
   
   def latest_pomodoro
     self.pomodoros.last || NoPomodoro.new
   end
 
   def tags
-    pomodoros = self.pomodoros.where("tag != ?", "")
-    pomodoros.collect(&:tag).map(&:downcase).flatten.inject(Hash.new(0)){ |hash,element|
-      hash[element] +=1
-      hash
-    }.sort_by{ |k,v| -v}  
+    pomodoros = self.pomodoros.where("tag != ?", "").collect(&:tag).map(&:downcase)
+    
+    tag_counts = Hash.new(0)
+
+    pomodoros.each { |tag| tag_counts[tag] += 1 }
+
+    tag_counts
   end
+
+#    pomodoros.collect(&:tag).map(&:downcase).flatten.inject(Hash.new(0)){ |hash,element|
+#      hash[element] +=1
+#      hash
+#    }.sort_by{ |k,v| -v}
 
   def by_day
     (1.weeks.ago.to_date..Date.today).map do |date|

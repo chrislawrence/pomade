@@ -21,7 +21,15 @@ class GuestUser
     "users/guest_header"
   end
 
+  def time_zone
+    "Sydney"
+  end
+  
   def method_missing(*args, &block)
-        self
-          end
+    self
+  end
+
+  def authorised?
+    false
+  end
 end

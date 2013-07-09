@@ -1,12 +1,12 @@
 class Pomodoro < ActiveRecord::Base
   belongs_to :user
-  scope :today, -> { where("start_time > ?", Date.today).order(:start_time)}
+  scope :today, -> { where("start_time > ?", Time.zone.now.beginning_of_day).order(:start_time)}
   default_scope { order(:start_time).reverse_order }
   before_save :set_times
   WORKING_TIME = 25.minutes
 
   def set_times
-    self.end_time ||= DateTime.now
+    self.end_time ||= Time.zone.now
     self.start_time ||= self.end_time - WORKING_TIME
   end
   

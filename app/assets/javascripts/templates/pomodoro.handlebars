@@ -1,7 +1,6 @@
 {{#if view.isEditing}}
 <div class="pomodoro_details">
-  {{view Ember.TextField valueBinding="tag"}}  
-  
+  {{ view Ember.TextField valueBinding="tag" }} 
 </div>
 <div class="actions ss-icon">
   <a {{action update target="view"}}>check</a>

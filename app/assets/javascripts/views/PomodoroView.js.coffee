@@ -6,7 +6,6 @@ Pomade.Editable = Ember.Mixin.create
     console.log('finishing edit')
     @set('isEditing',false)
   isEditing: false
-
 Pomade.PomodoroView = Ember.View.extend(Pomade.Editable,{
   templateName: 'pomodoro'
   tagName: 'li'
