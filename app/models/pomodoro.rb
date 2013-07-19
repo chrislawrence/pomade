@@ -15,7 +15,7 @@ class Pomodoro < ActiveRecord::Base
   end
 
   def self.new_for_user(work_time,end_time,tag)
-  Pomodoro.new(:end_time => end_time, :start_time => end_time - work_time.minutes, :tag => tag)
+    Pomodoro.new(end_time: end_time, start_time: end_time - work_time.minutes, tag: tag)
   end
   
   def self.by_tag(pomodoros)

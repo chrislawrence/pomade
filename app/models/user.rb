@@ -12,13 +12,13 @@ class User < ActiveRecord::Base
   
   
   has_attached_file :avatar, 
-    :styles => { :profile => "150x150>", :thumb => "60x60>" }, 
-    :url => "/assets/avatars/:id/:style/:basename.:extension", 
-    :path => ":rails_root/public/assets/avatars/:id/:style/:basename.:extension",
-    :default_url => '/assets/avatars/:style/avatar.jpg'
+    styles: { :profile => "150x150>", :thumb => "60x60#" }, 
+    url: "/assets/avatars/:id/:style/:basename.:extension", 
+    path: ":rails_root/public/assets/avatars/:id/:style/:basename.:extension",
+    default_url: '/assets/avatars/:style/avatar.jpg'
   
   def self.current(auth_token)
-    where(:auth_token => auth_token).first || GuestUser.new
+    where(auth_token: auth_token).first || GuestUser.new
   end
   
   def to_param
@@ -41,10 +41,8 @@ class User < ActiveRecord::Base
     pomodoros = self.pomodoros.pluck(:tag).reject{|t| t == nil}.map(&:downcase)
     
     tag_counts = Hash.new(0)
-
     pomodoros.each { |tag| tag_counts[tag] += 1 }
-
-    tag_counts
+    tag_counts.sort_by{|k,v| v}.reverse
   end
 
   def by_day

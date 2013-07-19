@@ -112,7 +112,6 @@ header {
   margin-top: -$header-height;
   height: $header-height;
   line-height: $header-height;
-  background: $bg + 20;
   padding: 0;
   width: 150px;
   .avatar_small {
@@ -124,7 +123,7 @@ header {
     left: 40px;
     line-height: 0;
     float: left;
-    border: 7px solid $bg + 25;
+    border: 7px solid $bg + 10;
     img {
       width: 100%;
       margin: 0;
@@ -142,7 +141,7 @@ header {
     width: 150px;
     padding: 0.5em 0;
     float: right;
-    background: $bg-light - 20;
+    background: $bg-light - 10;
     text-align: center;  
     letter-spacing: 0.3em;
     a {
@@ -155,7 +154,9 @@ header {
   }
 
 }
-
+.ember-application .logout {
+  background: $bg - 5;
+}
 .guest {
   ul {
     list-style: none;
@@ -164,7 +165,7 @@ header {
     line-height: 50px;
     text-align: center;
     li.first {
-      border-bottom: 3px solid $bg+15;
+      border-bottom: 2px solid $bg+10;
     }
 }
   a {
