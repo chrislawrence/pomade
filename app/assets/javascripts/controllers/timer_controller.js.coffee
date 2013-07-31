@@ -43,6 +43,7 @@ Pomade.TimerController = Ember.ObjectController.extend
   tick: ->
     s = Pomade.Timer.seconds
     Pomade.Timer.set('seconds', s - 1)
+    console.log("%s: %s", new Date().toUTCString(), Pomade.Timer.seconds)
     if Pomade.Timer.seconds < 0
         @reset()
   
