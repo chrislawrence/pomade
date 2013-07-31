@@ -1,7 +1,7 @@
 <div class='control_wrapper'>
   <div class='controls'>
     <div class='avatar_small'>
-      <%= link_to image_tag(current_user.avatar(:thumb)), current_user %>
+      <%= link_to image_tag(current_user.avatar.url(:thumb)), current_user %>
     </div>
   </div>
   <div class='logout ss-icon'>
