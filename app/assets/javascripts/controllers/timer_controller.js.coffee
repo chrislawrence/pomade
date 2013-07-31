@@ -13,9 +13,14 @@ Pomade.TimerController = Ember.ObjectController.extend
       Pomade.Timer.set('seconds',@workTime)
       @set('type','work')
     @set('status','running')
+    @before = new Date()
     window.tick = =>
       @tick()
-    @timer = setInterval(window.tick, 1000)
+    @timer = setInterval( ->
+      @tick()
+    , 1000)
+    delay = 1000
+
     @set('nextAction','pause')
   
   pause: ->
@@ -42,8 +47,10 @@ Pomade.TimerController = Ember.ObjectController.extend
   
   tick: ->
     s = Pomade.Timer.seconds
-    Pomade.Timer.set('seconds', s - 1)
+    interval = Math.round((new Date() - @before) / 1000)
+    Pomade.Timer.set('seconds', s - interval)
     console.log("%s: %s", new Date().toUTCString(), Pomade.Timer.seconds)
+    @before = new Date()
     if Pomade.Timer.seconds < 0
         @reset()
   
