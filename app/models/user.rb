@@ -13,8 +13,8 @@ class User < ActiveRecord::Base
   
   has_attached_file :avatar, 
     styles: { :profile => "150x150>", :thumb => "60x60#" }, 
-    #url: "/assets/avatars/:id/:style/:basename.:extension", 
-    #path: ":rails_root/public/assets/avatars/:id/:style/:basename.:extension",
+    url: "/assets/avatars/:id/:style/:basename.:extension", 
+    path: ":rails_root/public/assets/avatars/:id/:style/:basename.:extension",
     default_url: '/assets/avatars/:style/avatar.jpg'
   
   def self.current(auth_token)
