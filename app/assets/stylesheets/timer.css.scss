@@ -91,7 +91,6 @@ $header-height: 100px;
 }
 
 .today_list {
-  /* FIX WIDTH */
   ul {
     max-width: 300px;
     margin: 0 auto;
@@ -101,35 +100,35 @@ $header-height: 100px;
     font-size: 1.2em;
     color: #DEE7EF - 130;
     li {
-      padding: 1em;
-
+      padding: 1em 0;
       border-bottom: 1px solid;
       border-bottom-color: $bg + 10;
     }
   }
   input {
+    float: left;
+    width: 80%;
     font-size: 0.8em;
     background: #99A9BA;
+    border-radius: 2px;
     border: none;
     padding: 0.3em 1em;
     margin: 0;
       }
 }
 
-.tag {
-  color: #DEE7EF - 170;
-  margin-left: 0.5em;
-}
-
-.pomodoro_details {
+.pomodoro_time {
   float: left;
-  width: 85%;
 }
-
+.pomodoro_tag {
+  float: left;
+  margin-left: 0.8em;
+  width: 40%;
+  color: #DEE7EF - 170;
+}
 .actions {
   float: right;
   text-align: right;
-  width: 10%;
   letter-spacing: 0.3em;
   a {
     color: $bg + 20;

@@ -8,16 +8,12 @@
 <div class="clear"></div>
 {{else}}
 
-  <div class="pomodoro_details">
-    <p>{{pomodoro_time startTime}}—{{pomodoro_time endTime}}
-    {{#if tag}}<span class="tag">{{tag}}</span>{{/if}}</p>
-  </div>
+  <div class="pomodoro_time">{{pomodoro_time startTime}}—{{pomodoro_time endTime}}</div>
+  <div class="pomodoro_tag">{{#if tag}}<span class="tag">{{tag}}</span>{{/if}}</div>
 
   <div class="actions ss-icon">
-    <p>
     <a {{action edit target="view"}}>edit</a>
     <a class="destroy" {{action deletePomodoro id }} class="delete_pomodoro">delete</a>
-    </p>
   </div>
   <div class="clear"></div>
 {{/if}}
