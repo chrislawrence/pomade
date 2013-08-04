@@ -8,16 +8,7 @@ $header-height: 100px;
   padding: 3em 0;
   background: $bg;
   text-align: center;
-  input {
-    width: 100%;
-    background: #99A9BA;
-    border-color: #99A9BA - 25;
-    color: #313941;
-    @include placeholder {
-      color: #7E8C9B;
-    }
-}
-}
+ }
 
 #timer_status {
   color: $bg-light; 
@@ -30,7 +21,9 @@ $header-height: 100px;
 }
 
 .tag_field {
-  margin-top: 3em;
+  margin-top: 5em;
+  padding-top: 1em;
+  border-top: 2px solid $bg+4;
   h3 {
     text-align: left;
     text-transform:uppercase;
@@ -40,11 +33,15 @@ $header-height: 100px;
     line-height: 0;
 }
   input {
-    background: $bg + 100;
-    border: 2px solid $bg + 50;
-    color: #000;
+    margin-top: 0.5em;
+    background: $bg+5;
+    line-height: 2;
+    border-radius: 0;
+    border: 0;
+    width: 100%;
+    color: $bg+50;
     @include placeholder {
-      color: #666;
+      color: $bg+20;
     }
   }
 }
