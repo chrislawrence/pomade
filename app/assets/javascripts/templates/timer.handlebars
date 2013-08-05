@@ -6,16 +6,16 @@
      <button id="timerController" class="ss-icon content" {{bindAttr class="status"}} {{action toggleTimer}}>
       {{nextAction}}
     </button>
-    <div class="tag_field content">
-      <h3>What are you working on?</h3>
-      {{view Ember.TextField valueBinding="pomodoroTag" placeholder="World domination"}}
-    </div>
-   
     <div id="timer_details" class="content">
       <div id="timer_type">
         {{type}}
       </div> 
     </div>
+    <div class="tag_field content">
+      <h3>What are you working on?</h3>
+      {{view Ember.TextField valueBinding="pomodoroTag" placeholder="World domination"}}
+    </div>
+   
   </div>
 </div>
 
