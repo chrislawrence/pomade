@@ -5,6 +5,7 @@ class GuestUser
     @break_time = 5
     @long_break_time = 15
   end
+
   def as_json(options={})
     { 'user' => {:id => @id , :work_time => @work_time, :break_time => @break_time, :long_break_time => @long_break_time}}
   end
