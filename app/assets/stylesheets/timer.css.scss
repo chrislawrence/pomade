@@ -20,31 +20,6 @@ $header-height: 100px;
   border-radius: 7px;
 }
 
-.tag_field {
-  margin-top: 5em;
-  padding-top: 1em;
-  border-top: 2px solid $bg+4;
-  h3 {
-    text-align: left;
-    text-transform:uppercase;
-    font-weight: normal;
-    font-size: 1em;
-    color: $bg + 100;
-    line-height: 0;
-}
-  input {
-    margin-top: 0.5em;
-    background: $bg+5;
-    line-height: 2;
-    border-radius: 0;
-    border: 0;
-    width: 100%;
-    color: $bg+50;
-    @include placeholder {
-      color: $bg+20;
-    }
-  }
-}
 
 #timerController {
   margin-top: 2em;
@@ -78,13 +53,40 @@ $header-height: 100px;
 #timer_details {
   text-align: center;
   margin: 2em auto 0 auto;
-  
-  #timer_type {
-    color: $bg + 30;
-    font-weight: bold;
-    text-transform: uppercase;
-    line-height: 0;  
+} 
+
+#timer_type {
+  color: $bg + 30;
+  font-weight: bold;
+  text-transform: uppercase;
+  line-height: 0;
+  height: 20px;  
 }
+
+.tag_field {
+  margin-top: 1em;
+  padding-top: 1em;
+  border-top: 2px solid $bg+4;      
+  h3 {
+    text-align: left;
+    text-transform:uppercase;
+    font-weight: normal;
+    font-size: 1em;
+    color: $bg + 100;
+    line-height: 0;
+  }      
+  input {
+    margin-top: 0.5em;
+    background: $bg+5;
+    line-height: 2;
+    border-radius: 0;
+    border: 0;
+    width: 100%;
+    color: $bg+50;
+    @include placeholder {
+      color: $bg+20;
+    }
+  }   
 }
 
 .today_list {
