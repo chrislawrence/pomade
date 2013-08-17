@@ -49,7 +49,6 @@ Pomade.TimerController = Ember.ObjectController.extend
     s = Pomade.Timer.seconds
     interval = Math.round((new Date() - @before) / 1000)
     Pomade.Timer.set('seconds', s - interval)
-    console.log("%s: %s", new Date().toUTCString(), Pomade.Timer.seconds)
     @before = new Date()
     if Pomade.Timer.seconds < 0
         @reset()
