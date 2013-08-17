@@ -23,7 +23,17 @@ class UserStats
     days = days_since last.start_time
     (@pomodoros.count.to_f / days.to_f).round(0)
   end
-  
+   
+
+  # For fun only :)
+
+  def average_no_rounding
+    days = days_since @pomodoros.last.start_time
+    (@pomodoros.count.to_f / days.to_f)
+  end
+
+
+
   private
 
   def days_since(date)
