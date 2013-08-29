@@ -18,6 +18,10 @@ max-width: 400px;
   }
 }
 
+img.avatar {
+  border: 7px solid $border;
+}
+
 h2.stats {
   text-align: center;
   line-height: 2;

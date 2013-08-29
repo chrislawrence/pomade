@@ -1,7 +1,7 @@
 <div class="wide_content">
   
   <div class="user_profile">
-    <%= image_tag @user.avatar(:profile) %>
+    <%= image_tag @user.avatar(:profile), class: 'avatar' %>
     <div>
       <h3><%= @user.username %></h3>
       <p><%=link_to @user.url, @user.url, :target => "_blank" %></p>
