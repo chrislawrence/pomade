@@ -12,17 +12,19 @@
   <script type="text/javascript">try{Typekit.load();}catch(e){}</script>
 </head>
 <body class='<%= controller_path %>'>
-  <header>
-    <div class="wide_content">
-      <h1><%= link_to "Pomade", root_path %></h1>
-      <%= render "#{current_user.to_partial_path}"%>
-    </div>
-  </header>
-  <% flash.each do |name, msg| %>
-    <%= content_tag :div, msg, id: "flash_#{name}", class: "flash" %>
-  <% end %>
-  
-  <%= yield %>
-  
+  <div id="container">
+    <header>
+        <div class="wide_content">
+        <h1><%= link_to "Pomade", root_path %></h1>
+        <%= render "#{current_user.to_partial_path}"%>
+      </div>
+    </header>
+    <% flash.each do |name, msg| %>
+      <%= content_tag :div, msg, id: "flash_#{name}", class: "flash" %>
+    <% end %>
+    
+    <%= yield %>
+  </div>
+<%= render 'footer' %>
 </body>
 </html>

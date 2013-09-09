@@ -258,3 +258,42 @@ label {
 abbr {
   display: none;
 }
+
+/* Footer */
+
+footer {
+  height: 150px;
+  background: $bg-light - 20;
+  color: $bg-light - 100;
+  text-align: center;
+  line-height: 150px;
+  a {
+    color: $bg-light - 150;
+    &:hover {
+      color: $red;
+    }
+  }
+}
+
+html, body {
+  height: 100%;
+}
+
+#container {
+  min-height: 100%;
+  margin-bottom: -150px;
+  &:after {
+    content: "";
+    display: block;
+    height: 220px;
+  }
+}
+
+
+body.application footer {
+  color: $bg + 50;
+  background: $bg+10;
+  a {
+    color: $bg + 75;
+  }
+}

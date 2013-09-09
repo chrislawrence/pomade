@@ -9,5 +9,7 @@
 //= require controls 
 //= require lib/buzz
 //= require pomade
-Pomade = Ember.Application.create();
+Pomade = Ember.Application.create({
+  rootElement: '#container'
+});
 

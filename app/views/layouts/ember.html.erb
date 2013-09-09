@@ -12,6 +12,7 @@
   <script type="text/javascript">try{Typekit.load();}catch(e){}</script>
 </head>
 <body class='<%= controller_path %>'>
+  <div id="container">
   <header>
     <div class="wide_content">
       <h1>Pomade</h1>
@@ -23,6 +24,7 @@
   <% end %>
   
   <%= yield %>
-  
+</div>
+<%= render 'footer' %>
 </body>
 </html>
