@@ -13,16 +13,11 @@ Pomade::Application.routes.draw do
   root to:  "application#index"
 
   get 'users/me' => 'users#me'
-  
-  resources :users, :except => ['show','new','edit'] do
+
+  resources :users, :path => 'u' do
     resources :pomodoros
   end
-  controller :users do
-    get 'settings' => :edit, :as => 'settings'
-    get 'signup' => :new
-    get '/:id' => :show
-    get 'users/:id' => redirect('/%{id}')
-  end
   
-
+  get 'settings' => 'users#edit'
+  get 'signup' => 'users#new'
 end 
