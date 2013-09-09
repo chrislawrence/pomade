@@ -4,7 +4,7 @@
     <%= image_tag @user.avatar(:profile), class: 'avatar' %>
     <div>
       <h3><%= @user.username %></h3>
-      <p><%=link_to @user.url, @user.url, :target => "_blank" %></p>
+      <p><%=link_to @user.external_link, @user.external_link, :target => "_blank" %></p>
     </div>
   </div>
 

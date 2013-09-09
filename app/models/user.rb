@@ -4,7 +4,6 @@ class User < ActiveRecord::Base
   
   validates :email, :presence => true, :uniqueness => true, :format => /\A[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]+\z/
   validates :username, :presence => true, :uniqueness => true, :length => {:minimum => 2, :maximum => 20}, :format => /\A[-a-z|A-Z|0-9|-|_]+\z/
-  validate :vanity_url
   validates_inclusion_of :time_zone, in: ActiveSupport::TimeZone.zones_map(&:name)
   
   before_save :parse_username 
@@ -32,7 +31,11 @@ class User < ActiveRecord::Base
   def authorised?
     true
   end
-  
+ 
+  def external_link
+    self.url || "http://pomade.io/u/#{self.username}"
+  end
+
   def latest_pomodoro
     self.pomodoros.last || NoPomodoro.new
   end
@@ -76,12 +79,6 @@ class User < ActiveRecord::Base
 
   private  
   
-  def vanity_url
-    if FancyUrls.new.initial_path_segments.include?(username)
-      errors.add(:username, "is not available")
-    end
-  end
-
   def parse_username 
     self.username = self.username.downcase
   end
