@@ -7,6 +7,7 @@ Pomade.TimerController = Ember.ObjectController.extend
   breakTime: 25
   longBreakTime: 900
   pomodoroCount: 0
+  alert: false
   start: ->
     console.log('Starting timer...')
     if @type is ''
@@ -32,6 +33,7 @@ Pomade.TimerController = Ember.ObjectController.extend
   reset: ->
     console.log('Timer finished...')
     @playSound()
+    alert('Pomodoro finished') if @type is 'work' and @alert is true
     @pause() if @nextAction is 'pause'
     @set('status','idle')
     @createPomodoro() if @type is 'work'

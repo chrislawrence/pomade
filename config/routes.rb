@@ -13,11 +13,11 @@ Pomade::Application.routes.draw do
   root to:  "application#index"
 
   get 'users/me' => 'users#me'
-
+  
   resources :users, :path => 'u' do
     resources :pomodoros
   end
-  
+
   get 'settings' => 'users#edit'
   get 'signup' => 'users#new'
 end 

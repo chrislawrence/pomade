@@ -78,3 +78,17 @@ h2.stats {
   }
 }
 
+label.boolean {
+  width: 90%;
+  float: right;
+  text-transform: none;
+  margin-top: -3px;
+}
+input.boolean {
+  float: left;
+  width: 5%;
+  margin-bottom: 2em;
+}
+input[type="checkbox"] {
+  float: left;
+}

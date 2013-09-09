@@ -1,9 +1,10 @@
 <div class="wide_content">
   <h2>Edit Profile <%= link_to "Import Pomodoros", io_path %></h2>
-  <%= simple_form_for @user, :html => {:multipart => true} do |f| %>
+  <%= simple_form_for @user, :url => "/u/#{@user.username}", :html => {:multipart => true} do |f| %>
   <div class="left_column">
     <%= f.input :username %>
     <%= f.input :url %>
+    <%= f.input :alert, label: 'Popup alert when pomodoro finished' %>
     <%= f.input :avatar %>
   </div>
   <div class="right_column">
