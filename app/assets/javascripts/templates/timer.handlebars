@@ -1,9 +1,9 @@
 <div id="timer_wrapper">
-    <div id="timer_status" class="content">
+    <div id="timer_status" class="content" data-intro="Pomade is a pomodoro timer. Work for 25 minutes, break for 5 minutes. Repeat." data-position="left">
       <p>{{time model.seconds}}</p>
     </div>
     <div class="clear"></div>
-     <button id="timerController" class="ss-icon content" {{bindAttr class="status"}} {{action toggleTimer}}>
+    <button id="timerController" class="ss-icon content" {{bindAttr class="status"}} {{action toggleTimer}}> 
       {{nextAction}}
     </button>
     <div id="timer_details" class="content">
@@ -11,7 +11,7 @@
         {{type}}
       </div> 
     </div>
-    <div class="tag_field content">
+    <div class="tag_field content" data-intro="Attach a tag to your pomodoro" data-position="top">
       <h3>What are you working on?</h3>
       {{view Ember.TextField valueBinding="pomodoroTag" placeholder="World domination"}}
     </div>

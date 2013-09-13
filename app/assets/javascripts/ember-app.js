@@ -8,6 +8,8 @@
 //= require_self
 //= require controls 
 //= require lib/buzz
+//= require lib/chardinjs
+//= require intro
 //= require pomade
 Pomade = Ember.Application.create({
   rootElement: '#container'
