@@ -33,14 +33,4 @@ describe 'SignupFeatures' do
     expect(current_path).to_not eq(signup_path)
   end
 
-  it "does not allow a reserved word as username" do
-    user = build(:user, :username => 'users')
-    visit signup_path
-    fill_in 'Email', :with => user.email
-    fill_in 'Username', :with => user.username
-    fill_in 'user[password]', :with => user.password
-    fill_in 'Confirm Password', :with => user.password
-    click_button "Create Account"
-    expect(page).to have_content('not available')
-  end
 end
