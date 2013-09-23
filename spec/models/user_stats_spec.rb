@@ -26,7 +26,12 @@ describe UserStats do
   it "calculates the total this year" do
     expect(@stats.this_year).to eq(51)
   end
+ it "gets the most productive day" do
+   expect(@stats.day).to eq(Date.today.strftime("%a"))
  end
+  
+ end
+
 
  describe "No pomodoros present" do
    before do
