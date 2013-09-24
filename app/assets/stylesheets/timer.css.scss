@@ -119,12 +119,12 @@ $header-height: 100px;
 
 .pomodoro_time {
   float: left;
-  max-width: 100px;
+  width: 105px;
 }
 .pomodoro_tag {
   float: left;
   margin-left: 0.8em;
-  width: 40%;
+  max-width: 120px;
   color: #DEE7EF - 170;
 }
 .actions {
