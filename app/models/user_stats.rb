@@ -7,15 +7,15 @@ class UserStats
   end
 
   def today
-    @pomodoros.where("start_time >= ?", Date.today.beginning_of_day).count
+    @pomodoros.where("start_time >= ?", Time.zone.today.beginning_of_day).count
   end
 
   def this_month
-    @pomodoros.where("start_time >= ?", Date.today.beginning_of_month).count
+    @pomodoros.where("start_time >= ?", Time.zone.today.beginning_of_month).count
   end
 
   def this_year
-    @pomodoros.where("start_time >= ?", Date.today.beginning_of_year).count
+    @pomodoros.where("start_time >= ?", Time.zone.today.beginning_of_year).count
   end
 
   def average
