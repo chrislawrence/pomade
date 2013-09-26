@@ -30,6 +30,9 @@ class UserStats
     parse_day(best_day)
   end
 
+  def best_day
+    @pomodoros.unscoped.select("date(start_time)").group("date(start_time)").count.first
+  end
 
   # For fun only :)
 

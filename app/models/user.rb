@@ -42,7 +42,6 @@ class User < ActiveRecord::Base
 
   def tags
     pomodoros = self.pomodoros.pluck(:tag).reject{|t| t == nil}.map(&:downcase)
-    
     tag_counts = Hash.new(0)
     pomodoros.each { |tag| tag_counts[tag] += 1 }
     tag_counts.sort_by{|k,v| v}.reverse

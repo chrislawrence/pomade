@@ -15,7 +15,6 @@ describe UserStats do
     expect(@stats.today).to eq(50)
   end
 
-
   it "gets Pomodoros in the last month" do
     expect(@stats.this_month).to eq(50)
   end
@@ -23,15 +22,20 @@ describe UserStats do
   it "calculates the average pomodoros per day" do
     expect(@stats.average).to eq(1)
   end
+  
   it "calculates the total this year" do
     expect(@stats.this_year).to eq(51)
   end
- it "gets the most productive day" do
+  
+  it "gets the average most productive day" do
    expect(@stats.day).to eq(Date.today.strftime("%a"))
- end
+  end
+
+  it "gets the best day ever" do
+    expect(@stats.best_day).to include(Date.today)
+  end
   
  end
-
 
  describe "No pomodoros present" do
    before do
