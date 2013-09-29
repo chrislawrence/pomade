@@ -64,4 +64,18 @@ describe User do
   it "converts uppercase letters in username to downcase" do
     expect(create(:user, :username => "Dad01").username).to eq('dad01')  
   end
+
+  it "gets the right number of tags for today" do
+    user = create(:user)
+    user.pomodoros << Pomodoro.new(end_time: Time.zone.parse("8:00"))
+    expect(user.by_day).to include({:label => "#{Date.today.day}", :count => 1})
+  end
+
+  it "gets the right count for overseas user" do
+    user = create(:user, time_zone: 'Eastern Time (US & Canada)')
+    Time.use_zone('Eastern Time (US & Canada)'){
+    user.pomodoros << Pomodoro.new(end_time: Time.zone.parse("22:00"))
+    expect(user.by_day).to include({:label => "#{Date.today.day}", :count => 1})
+    }
+  end
 end

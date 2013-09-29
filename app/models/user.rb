@@ -51,7 +51,7 @@ class User < ActiveRecord::Base
     (1.weeks.ago.to_date..Date.today).map do |date|
     {
       label: first_day(date)? date.strftime("%b %d") : date.strftime("%d"),
-      count: pomodoros.where("date(start_time) = ?", date).count
+      count: pomodoros.where("start_time BETWEEN ? AND ? ", date.beginning_of_day, date.end_of_day).count
     }
     end
   end

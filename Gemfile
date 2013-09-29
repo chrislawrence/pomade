@@ -32,6 +32,7 @@ group :test do
   gem 'guard-rspec'
   gem 'rb-fsevent', '~> 0.9'
   gem 'faker'
+  gem 'timecop'
 end
 
 #Everything else
