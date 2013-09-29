@@ -61,7 +61,17 @@ class UserStats
     end
   end
 
-  # For fun only :)
+
+  def tags
+    tags = @pomodoros.pluck(:tag).reject{|t| t == nil}.map(&:downcase)
+    tag_counts = []
+    tags.each do |tag, value|
+      tag_counts.push(
+        label: tag, 
+        value: value) 
+    end
+    tag_counts
+  end
 
   def average_no_rounding
     days = days_since @pomodoros.last.start_time

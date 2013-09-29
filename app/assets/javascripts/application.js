@@ -15,6 +15,7 @@
 //= require jquery.turbolinks
 //= require turbolinks
 //= require_self
-//= require lib/chart.min
+//= require lib/raphael-min
+//= require lib/morris
 //= require controls
 //= require users
