@@ -1,7 +1,13 @@
 class UserStats
 
-  NoAverage = Class.new
-  
+  def self.get_user(user)
+    if user.pomodoros.count > 0
+      UserStats.new(user)
+    else
+      NoUserStats.new
+    end
+  end
+
   def initialize(user)
     @pomodoros = user.pomodoros
   end
@@ -19,18 +25,18 @@ class UserStats
   end
 
   def average
-    last = @pomodoros.last || NoPomodoro.new
+    last = @pomodoros.last
     days = days_since last.start_time
     (@pomodoros.count.to_f / days.to_f).round(0)
   end
   
   def best_day
-    day = @pomodoros.pluck("extract(DOW FROM start_time)").group_by(&:to_i).values.max_by(&:size).first
-    parse_day(day)
+    day = @pomodoros.pluck("extract(DOW FROM start_time)").group_by(&:to_i).values.max_by(&:size)
+    parse_day(day.first)
   end
 
   def most_in_one
-    @pomodoros.unscoped.order("date(start_time)").group("date(start_time)").count
+    @pomodoros.unscoped.order("date(start_time)").group("date(start_time)").count.first
   end
 
   def most_productive_time
@@ -47,11 +53,11 @@ class UserStats
     end
     max = [morning, afternoon, night].max
     if max == morning
-      "morning"
+      "<i class='icon-sunrise'></i><div class='icon-desc'>Morning</div>"
     elsif max == afternoon
-      "afternoon"
+      "<i class='icon-sunset'></i><div class='icon-desc'>Afternoon</div>"
     else 
-      "night"
+      "<i class='icon-moon'></i><div class='icon-desc'>Night</div>"
     end
   end
 

@@ -23,14 +23,13 @@ img.avatar {
 }
 
 h2.stats {
-  text-align: center;
-  line-height: 2;
   width: 100%;
-  display: block;
-  color: #fff;
-  margin: 2em 0;
-  background: $bg-green;
-  border-radius: 4px;
+  color: #333;
+  text-transform: uppercase;
+  font-size: 1.2em;
+  border-top: 2px solid #EAEDF0;
+  padding-top: 1.5em;
+  margin-top: 3em;
 }
 
 .tags {

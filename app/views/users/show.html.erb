@@ -47,13 +47,38 @@
     </li>
   </ul>
   <div class="clear"></div>
+
+  <h2 class="stats">Trends</h2>
+  <ul class="stat_wrapper" id="trends">
+    <li>
+    <div class="trend">
+        <p><%=raw @stats.most_productive_time %></p>
+    </div>
+      <p class="statistic_type">Most productive time</p>
+    </li>
+    <li>
+      <div class="trend " id="most_in_one">
+        <p><%= @stats.most_in_one[1] %></p>
+      </div>
+        <p class="statistic_type">Most in one day<br />
+          <span class="most_date"><%= @stats.most_in_one[0] %></span></p>
+    </li>
+    <li>
+      <div class="trend">
+        <p><%= @stats.best_day%></p>
+      </div>
+        <p class="statistic_type">Most productive day</p>
+    </li>
+  </ul>
+  <div class="clear"></div>
+  
   <h2 class="stats">Tags</h2>
   <ul class="tags">
     <% @user.tags.each do |tag| %>
       <li class="<%= cycle('','alt') %>">
         <p class="tags_tag"><%= tag[0] %></p> 
         <p class="tags_count"><%= tag[1] %></p>
-        <div class="clear"></div>
+      <div class="clear"></div>
         </li>
     <% end %>
   </ul>

@@ -41,25 +41,4 @@ describe UserStats do
 
  end
 
- describe "No pomodoros present" do
-   before do
-    @stats = UserStats.new(build(:user))
-   end
-
-   it "gets today's pomodoros" do
-     expect(@stats.today).to eq(0)
-   end
-
-   it "gets pomodoros in last month" do
-     expect(@stats.this_month).to eq(0)
-   end
-
-   it "gets pomodoros in this year" do
-     expect(@stats.this_year).to eq(0)
-   end
-
-   it "gets the average daily count" do
-     expect(@stats.average).to eq(0)
-   end
- end
 end

@@ -18,7 +18,7 @@ class UsersController < ApplicationController
   def show
     @user = User.find_by(username: params[:id])
     raise ActiveRecord::RecordNotFound unless @user
-    @stats = UserStats.new(@user)
+    @stats = UserStats.get_user(@user)
   end
   
   def me

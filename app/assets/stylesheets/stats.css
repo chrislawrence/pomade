@@ -1,43 +1,93 @@
 .stat_wrapper {
   list-style: none;
+  color: #636363;
   padding: 0;
   margin: 0;
   text-align: center;
   li {
     display: inline-block;
     width: 15%;
-    padding-right: 10%;
     vertical-align: top;
-  }
-  li.last {
-    padding-right: 0;
   }
 }
 .statistic {
-  border: 7px solid $border;
-  box-sizing: auto;
-  position: relative;
-  width: 110%;
+  border: 9px solid $border;
   border-radius: 50%;
-  height: auto;
-  padding-top: 100%;
+  width: 100px;
+  height: 100px;
+  position: relative;
   background: white;
   color: #636363;
   font-weight: bold;
   p {
-    width: 100%;
+    line-height: 82px; /* 100 - 18 (border) */
     text-align: center;
-    font-size: 4em;
-    line-height: 0;
-    position: absolute;
-    top: 50%;
+    font-size: 2.4em;
   }
 }
 
 .statistic_type {
-  font-size: 1.2em;
+  font-size: 1em;
   color: #7D8185;
   text-transform: uppercase;
   margin-top: 1em;
 }
 
+.trend {
+  background: #FAFCFD;
+  border: 9px solid #E6EDF2;
+  border-radius: 10px;
+  width: 100%;
+  font-size: 1.6em;
+  height: 81px;
+  text-transform: uppercase;
+  max-width: 160px;
+  float: left;
+  p { line-height: 65px }
+}
+
+#trends li {
+  width: 20%;
+  margin: 0;
+  padding: 0 5%;
+}
+
+#most_in_one {
+  font-size: 2.5em;
+}
+
+.most_date {
+  color: $green;
+}
+
+i {
+  font-size: 3em;
+}
+
+.icon-sunrise {
+  color: #E7C49D;
+}
+
+.icon-sunset {
+  color: #C88653;
+}
+
+.icon-moon {
+  color: #7D94B6;
+}
+
+.icon-desc {
+  margin-top: -65px;
+  display: none;
+  z-index: 1000px;
+  position: relative;
+  font-size: 0.7em;
+}
+
+.trend:hover .icon-desc {
+  display: block
+}
+
+.trend:hover .icon-sunrise {
+  opacity: 0.4;
+}
