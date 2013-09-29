@@ -3,15 +3,29 @@
   color: #636363;
   padding: 0;
   margin: 0;
-  text-align: center;
   li {
     display: inline-block;
-    width: 15%;
+    width: 118px;
     vertical-align: top;
+    text-align: center;
   }
+
+  /* for box sizing */
+  text-align: justify;
+  -ms-text-justify: distribute-all-lines;
+  text-justify: distribute-all-lines;
 }
+
+.div-stretch {
+  width: 100%;
+  display: inline-block;
+  font-size: 0;
+  line-height: 0
+}
+
 .statistic {
   border: 9px solid $border;
+  box-sizing: content-box;
   border-radius: 50%;
   width: 100px;
   height: 100px;
@@ -20,8 +34,7 @@
   color: #636363;
   font-weight: bold;
   p {
-    line-height: 82px; /* 100 - 18 (border) */
-    text-align: center;
+    line-height: 100px;
     font-size: 2.4em;
   }
 }
@@ -48,8 +61,6 @@
 
 #trends li {
   width: 20%;
-  margin: 0;
-  padding: 0 5%;
 }
 
 #most_in_one {
