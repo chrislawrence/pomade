@@ -34,7 +34,7 @@ describe UserStats do
   it "gets the best day ever" do
     expect(@stats.best_day).to include(Date.today)
   end
-  
+
  end
 
  describe "No pomodoros present" do
