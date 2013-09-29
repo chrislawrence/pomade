@@ -27,12 +27,16 @@ describe UserStats do
     expect(@stats.this_year).to eq(51)
   end
   
-  it "gets the average most productive day" do
-   expect(@stats.day).to eq(Date.today.strftime("%a"))
+  it "gets the most productive day" do
+   expect(@stats.best_day).to eq(Date.today.strftime("%a"))
   end
 
-  it "gets the best day ever" do
-    expect(@stats.best_day).to include(Date.today)
+  it "gets the most in one day" do
+    expect(@stats.most_in_one).to include(Date.today)
+  end
+
+  it "gets the most productive time of day" do
+    expect(@stats.most_productive_time).to eq("morning")
   end
 
  end
