@@ -36,7 +36,7 @@ class UserStats
   end
 
   def most_in_one
-    @pomodoros.unscoped.order("date(start_time)").group("date(start_time)").count.max_by{|k,v| v}
+    @pomodoros.select("start_time, date(start_time)").group("start_time, date(start_time)").count.max_by{|k,v| v}
   end
 
   def most_productive_time
