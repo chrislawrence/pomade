@@ -60,7 +60,7 @@
 }
 
 #trends li {
-  width: 20%;
+  width: 160px;
 }
 
 #most_in_one {
@@ -70,6 +70,8 @@
 .most_date {
   color: $green;
 }
+
+/* Icons */
 
 i {
   font-size: 3em;
@@ -99,6 +101,6 @@ i {
   display: block
 }
 
-.trend:hover .icon-sunrise {
+.trend:hover .icon-sunrise, .trend:hover .icon-moon, .trend:hover .icon-sunset {
   opacity: 0.4;
 }

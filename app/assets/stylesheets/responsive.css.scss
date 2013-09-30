@@ -1,49 +1,43 @@
-@media screen and (max-width: 700px) {
-
-  .statistic {
-    font-size: 0.5em;
-  }
-  
+@media screen and (max-width: 700px) { 
   .content, .wide_content {
     width: 96%;
     padding: 0 2%;
   }
+}
 
+@media screen and (max-width: 550px) {
+  .stat_wrapper li {
+    margin: 0 10% 2em 0;
+  }
+  
+  #trends li {
+    width: 120px;
+    margin: 0;
+  }
+  
+  #pomodoro-chart {
+    display: none;
+  }
 }
 
 @media screen and (max-width: 500px) {
   .controls {
     display: none;
   }
-  .stat_wrapper {
-    display: inline;
-    li {
-      display: inline;
-      padding: 0;
-      width: 100%;
-      margin: 0;
-  }
 }
-  .statistic {
-    background: none;
-    border: none;
-    border-radius: 0;
-    padding: 0;
-    float: right;
-    width: 45%;
-    font-size: 0.5em;
-    p {
-     text-align: left;
-      position: relative;
-    
-    line-height: 70px;
+
+@media screen and (max-width: 350px) {
+  .stat_wrapper li {
+    margin-right: 0;
   }
+  
+  #trends li {
+    width: 160px;
+    display: block;
+    margin: 0 auto;
   }
- .statistic_type {
-   margin: 0;
-   text-align: right;
-   float: left;
-   width: 50%;
-   line-height: 70px;
- }
+  
+  footer {
+    font-size: 0.8em;
+  }
 }

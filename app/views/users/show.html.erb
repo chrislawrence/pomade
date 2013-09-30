@@ -76,7 +76,7 @@
   
   <h2 class="stats">Tags</h2>
 
-  <%= content_tag :div, "", id: 'tag-chart', style: "width: 420px; margin: 0 auto", data: {tags: @stats.tags}%>
+  <%= content_tag :div, "", id: 'tag-chart', style: "width: 300px; margin: 0 auto", data: {tags: @stats.tags}%>
 
   <h2 class="stats">Recent Pomodoros</h2>
   <%= content_tag :div, "", id: 'pomodoro-chart', style: "height: 300px; width: 600px; margin: 0 auto", data: {pomodoros: @stats.by_day} %>
