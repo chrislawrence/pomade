@@ -47,19 +47,6 @@ class User < ActiveRecord::Base
     tag_counts.sort_by{|k,v| v}.reverse
   end
 
-  def by_day
-    (1.weeks.ago.to_date..Date.today).map do |date|
-    {
-      label: first_day(date)? date.strftime("%b %d") : date.strftime("%d"),
-      count: pomodoros.where("start_time BETWEEN ? AND ? ", date.beginning_of_day, date.end_of_day).count
-    }
-    end
-  end
-
-  def first_day(date)
-    true if date.day == 1 || date == 1.weeks.ago.to_date
-  end
-
   def generate_auth_token
     self.auth_token = SecureRandom.urlsafe_base64
   end

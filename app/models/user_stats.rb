@@ -64,13 +64,25 @@ class UserStats
 
   def tags
     tags = @pomodoros.pluck(:tag).reject{|t| t == nil}.map(&:downcase)
-    tag_counts = []
-    tags.each do |tag, value|
-      tag_counts.push(
-        label: tag, 
-        value: value) 
+    tag_counts = Hash.new(0)
+    tags.each do |tag|
+      tag_counts[tag] += 1
     end
-    tag_counts
+    # Get into format that morris likes
+    tag_array = []
+    tag_counts.each do |count|
+      tag_array.push(:label => count[0], :value => count[1])
+    end
+    tag_array
+  end
+  
+  def by_day
+    (1.weeks.ago.to_date..Date.today).map do |date|
+    {
+      label: date, 
+      count: @pomodoros.where("start_time BETWEEN ? AND ? ", date.beginning_of_day, date.end_of_day).count
+    }
+    end
   end
 
   def average_no_rounding
@@ -87,6 +99,10 @@ class UserStats
     days + 1
   end
 
+  def first_day(date)
+    true if date.day == 1 || date == 1.weeks.ago.to_date
+  end
+  
   def parse_day(day)
     case day
     when 1 

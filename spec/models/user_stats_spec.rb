@@ -4,7 +4,7 @@ describe UserStats do
  describe "Pomodoros present" do
    before do
     user = create(:user)
-    user.pomodoros << Pomodoro.new(:end_time => 2.months.ago)
+    user.pomodoros << Pomodoro.new(:end_time => 2.months.ago, tag: 'test')
     50.times do
       user.pomodoros << Pomodoro.new
     end
@@ -37,6 +37,10 @@ describe UserStats do
 
   it "gets the most productive time of day" do
     expect(@stats.most_productive_time).to eq("morning")
+  end
+
+  it "gets the tags" do
+    expect(@stats.tags).to include({:label => "test", :"value" => 1})
   end
 
  end
