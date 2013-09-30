@@ -81,8 +81,6 @@ GEM
       i18n (~> 0.5)
     ffi (1.9.0)
     formatador (0.2.4)
-    groupdate (1.0.2)
-      activerecord (>= 3.0.0)
     guard (1.8.1)
       formatador (>= 0.2.4)
       listen (>= 1.0.0)
@@ -228,7 +226,6 @@ DEPENDENCIES
   ember-source (= 1.0.0.rc5)
   factory_girl_rails
   faker
-  groupdate
   guard-rspec
   handlebars-source (= 1.0.0.rc4)
   jbuilder (~> 1.2)

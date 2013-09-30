@@ -38,9 +38,7 @@ end
 
 gem 'quiet_assets', :group => :development
 
-
 gem 'bourbon'
 gem 'simple_form'
 gem 'paperclip', '~> 3.5.0'
 gem 'jquery-turbolinks'
-gem 'groupdate'

@@ -18,6 +18,10 @@
   #pomodoro-chart {
     display: none;
   }
+  
+  .trend .no-stats {
+    font-size: 0.5em;
+  }
 }
 
 @media screen and (max-width: 500px) {

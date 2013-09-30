@@ -1,7 +1,7 @@
 <div class="wide_content">
   <div class="upload_form">
   <h2>Import Pomodoros</h2>
-  <p>You can import past pomodoros from a CSV file. Must be in the format <i>"end date, tag"</i>
+  <p>You can import past pomodoros from a CSV file. Must be in the format <strong>"end date, tag"</strong></p>
   <%= form_tag import_path, multipart: true do %>
     <%= file_field_tag :file %>
     <%= submit_tag "Import" %>

@@ -56,7 +56,12 @@
   text-transform: uppercase;
   max-width: 160px;
   float: left;
-  p { line-height: 65px }
+  p { 
+    line-height: 65px;
+  }
+  .no-stats {
+    font-size: 0.7em;
+  }
 }
 
 #trends li {

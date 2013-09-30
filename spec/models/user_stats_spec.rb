@@ -36,7 +36,7 @@ describe UserStats do
   end
 
   it "gets the most productive time of day" do
-    expect(@stats.most_productive_time).to eq("morning")
+    expect(@stats.most_productive_time).to eq("<i class='icon-sunrise'></i><div class='icon-desc'>Morning</div>")
   end
 
   it "gets the tags" do

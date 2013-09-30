@@ -5,11 +5,11 @@ class NoUserStats
   end
 
   def best_day
-    "No stats yet"
+    "<span class='no-stats'>No stats yet</span>"
   end
 
   def most_productive_time
-    "No stats yet"
+    "<span class='no-stats'>No stats yet</span>"
   end
 
 end
