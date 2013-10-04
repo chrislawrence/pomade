@@ -8,3 +8,6 @@ Pomade.TimerRoute = Ember.Route.extend
       controller.set('alert', data.user.alert)
       Pomade.Timer.set('seconds',data.user.work_time * 60)
     )
+  keyDown: (e) ->
+    console.log(e)
+
