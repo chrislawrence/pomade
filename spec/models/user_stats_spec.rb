@@ -32,7 +32,7 @@ describe UserStats do
   end
 
   it "gets the most in one day" do
-    expect(@stats.most_in_one).to include(Date.today)
+    expect(@stats.most_in_one).to include(Date.today, 50)
   end
 
   it "gets the most productive time of day" do
