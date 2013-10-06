@@ -61,7 +61,7 @@
         <p><%= @stats.most_in_one[1] %></p>
       </div>
         <p class="statistic_type">Most in one day<br />
-          <span class="most_date"><%= @stats.most_in_one[0] %></span></p>
+          <span class="most_date"><%= @stats.most_in_one[0].strftime("%b %d, %Y") %></span></p>
     </li>
     <li>
       <div class="trend">
