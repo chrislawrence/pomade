@@ -34,6 +34,7 @@ Pomade.TimerController = Ember.ObjectController.extend
     console.log('Timer finished...')
     @playSound()
     alert('Pomodoro finished') if @type is 'Work' and @alert is true
+    $('title').text("Pomade")
     @pause() if @nextAction is 'pause'
     @set('status','idle')
     @createPomodoro() if @type is 'Work'
