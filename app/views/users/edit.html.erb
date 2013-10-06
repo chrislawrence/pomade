@@ -3,15 +3,15 @@
   <h2>Edit Profile <%= link_to "Import Pomodoros", io_path %></h2>
   <%= simple_form_for @user, :url => "/u/#{@user.username}", :html => {:multipart => true} do |f| %>
   <div class="left_column">
+    <%= f.input :first_name, wrapper_html: {id: 'first_name'} %>
+    <%= f.input :last_name, wrapper_html: {id: 'last_name'} %>
     <%= f.input :username %>
-    <%= f.input :first_name %>
-    <%= f.input :last_name %>
-    <%= f.input :url %>
+    <%= f.input :url, label: "Website Link" %>
     <%= f.input :time_zone %>
-    <%= f.input :avatar %>
     <%= f.input :alert, label: 'Popup alert when pomodoro finished' %>
   </div>
   <div class="right_column">
+    <%= f.input :avatar %>
     <%= f.input :work_time, collection: [5,10,15,20,25,30,35,40,45,50,55,60]%>
     <%= f.input :break_time, collection: [1,2,3,4,5,10,15,20,25]%> 
     <%= f.input :long_break_time, collection: [5,10,15,20,25] %>

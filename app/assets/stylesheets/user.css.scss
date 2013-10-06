@@ -89,3 +89,14 @@ input[type="checkbox"] {
 select.time_zone {
   font-size: 1em;
 }
+
+#first_name {
+  float: left;
+  width: 38%;
+}
+
+#last_name {
+  float: right;
+  width: 60%;
+  clear: none;
+}
