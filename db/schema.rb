@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20130926010637) do
+ActiveRecord::Schema.define(version: 20131006004723) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -49,6 +49,8 @@ ActiveRecord::Schema.define(version: 20130926010637) do
     t.integer  "long_break_time",     default: 15
     t.string   "time_zone",           default: "Sydney"
     t.boolean  "alert",               default: false
+    t.string   "first_name"
+    t.string   "last_name"
   end
 
 end

@@ -24,6 +24,14 @@ class User < ActiveRecord::Base
     "#{username}"
   end
   
+  def name
+    if first_name or last_name
+      [first_name, last_name].compact.join(' ')
+    else
+      username
+    end
+  end
+
   def to_partial_path
     "users/header"
   end
@@ -62,6 +70,8 @@ class User < ActiveRecord::Base
     pomodoro = pomodoros.find_by_id(id) || NoPomodoro.new
     pomodoro.destroy
   end
+
+
 
   private  
   

@@ -4,6 +4,8 @@
   <%= simple_form_for @user, :url => "/u/#{@user.username}", :html => {:multipart => true} do |f| %>
   <div class="left_column">
     <%= f.input :username %>
+    <%= f.input :first_name %>
+    <%= f.input :last_name %>
     <%= f.input :url %>
     <%= f.input :time_zone %>
     <%= f.input :avatar %>

@@ -64,4 +64,16 @@ describe User do
   it "converts uppercase letters in username to downcase" do
     expect(create(:user, :username => "Dad01").username).to eq('dad01')  
   end
+
+  it "gets the user's full name" do
+    expect(build(:user, first_name: 'Chris', last_name: 'Lawrence').name).to eq('Chris Lawrence')
+  end
+
+  it "returns only the first name if set" do
+    expect(build(:user, first_name: 'Chris').name).to eq('Chris')
+  end
+
+  it "returns username if no name set" do
+    expect(build(:user).name).to eq("chrislawrence")
+  end
 end
