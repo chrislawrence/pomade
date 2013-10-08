@@ -16,4 +16,9 @@ class UserPomodoros
       "Pomodoros must be #{@work_time} minutes apart"
     end
   end
+
+  def delete_pomodoro(id)
+    pomodoro = user.pomodoros.find_by_id(id) || NoPomodoro.new
+    pomodoro.destroy
+  end
 end

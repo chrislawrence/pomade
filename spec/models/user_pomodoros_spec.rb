@@ -26,5 +26,22 @@ describe UserPomodoros do
     expect(user.pomodoros.count).to eq(1)
     expect(second_request).to eq("Pomodoros must be #{user.work_time} minutes apart")
   end
+  
+  describe "Destroying pomodoros" do
+    before do
+      @user = create(:user)
+      @worker = UserPomodoros.new(@user)
+      @user_pomodoro = Pomodoro.new
+      @user.pomodoros << @user_pomodoro
+      @anon_pomodoro = Pomodoro.create
+    end
 
+    it "destroys a pomodoro belonging to the user" do
+      expect{@worker.delete_pomodoro(@user_pomodoro.id)}.to change{Pomodoro.count}.by(-1)
+    end
+
+    it "does not destroy a pomodoro not belonging to the user" do
+      expect{@worker.delete_pomodoro(@anon_pomodoro.id)}.to change{Pomodoro.count}.by(0)
+    end
+  end
 end

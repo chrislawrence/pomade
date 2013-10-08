@@ -66,13 +66,6 @@ class User < ActiveRecord::Base
     self.save
   end
 
-  def delete_pomodoro(id)
-    pomodoro = pomodoros.find_by_id(id) || NoPomodoro.new
-    pomodoro.destroy
-  end
-
-
-
   private  
   
   def parse_username 

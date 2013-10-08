@@ -22,7 +22,8 @@ class PomodorosController < ApplicationController
   end
   
   def destroy
-    respond_with current_user.delete_pomodoro(params[:id])
+    worker = UserPomodoros.new(current_user)
+    respond_with worker.delete_pomodoro(params[:id])
   end
   
   def update
