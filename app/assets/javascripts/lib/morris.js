@@ -1655,7 +1655,7 @@
 
     Donut.prototype.drawEmptyDonutLabel = function(xPos, yPos, color, fontSize, fontWeight) {
       var text;
-      text = this.raphael.text(xPos, yPos, '').attr('font-size', fontSize).attr('fill', color);
+      text = this.raphael.text(xPos, yPos, '').attr('font-size', fontSize).attr('fill', color).attr('font', 'inherit');
       if (fontWeight != null) {
         text.attr('font-weight', fontWeight);
       }

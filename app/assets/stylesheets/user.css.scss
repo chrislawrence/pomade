@@ -100,3 +100,14 @@ select.time_zone {
   width: 60%;
   clear: none;
 }
+
+#tag-chart {
+  text-transform: uppercase;
+  svg text {
+    font-family: Verdana;
+  }
+}
+
+.morris-hover.morris-default-style {
+  font-family: inherit;
+}
