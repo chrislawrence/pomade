@@ -7,7 +7,13 @@ class SessionsController < ApplicationController
   def create
     user = User.where(:email => params[:user][:email]).first
     if user and user.authenticate(params[:user][:password])
-      cookies.permanent[:auth_token] = user.auth_token
+      
+      if params[:remember]
+        cookies.permanent[:auth_token] = user.auth_token
+      else
+        cookies[:auth_token] = user.auth_token
+      end
+      
       redirect_to root_path, :notice => "Logged in"
     else
       redirect_to login_url, alert: "Email or password was invalid."
@@ -22,6 +28,6 @@ class SessionsController < ApplicationController
   private
 
   def login_params
-    params.require(:user).permit(:email,:password)
+    params.require(:user, :remember).permit(:email,:password)
   end
 end
