@@ -10,8 +10,10 @@ group :doc do
   gem 'sdoc', require: false
 end
 
-gem 'ember-rails'
+gem 'active_model_serializers'
+gem 'ember-rails', github: 'emberjs/ember-rails'
 gem 'ember-source'
+gem 'haml-rails'
 
 gem 'rspec-rails', :group => [:test, :development]
 group :test do

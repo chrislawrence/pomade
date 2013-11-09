@@ -1,3 +1,17 @@
+GIT
+  remote: git://github.com/emberjs/ember-rails.git
+  revision: 88d56f22088cd5e5df63c04998eba928592e88f0
+  specs:
+    ember-rails (0.14.0)
+      active_model_serializers
+      barber (>= 0.4.1)
+      ember-data-source
+      ember-source
+      execjs (>= 1.2)
+      handlebars-source
+      jquery-rails (>= 1.0.17)
+      railties (>= 3.1)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -51,17 +65,10 @@ GEM
       execjs
     coffee-script-source (1.6.3)
     database_cleaner (1.2.0)
-    diff-lcs (1.2.4)
-    ember-data-source (0.13)
+    diff-lcs (1.2.5)
+    ember-data-source (0.14)
       ember-source
-    ember-rails (0.12.0)
-      active_model_serializers
-      barber (>= 0.4.1)
-      ember-data-source
-      ember-source (>= 1.0.0.rc2.2)
-      execjs (>= 1.2)
-      railties (>= 3.1)
-    ember-source (1.0.0)
+    ember-source (1.1.2)
       handlebars-source (= 1.0.12)
     erubis (2.7.0)
     execjs (2.0.2)
@@ -81,6 +88,13 @@ GEM
     guard-rspec (4.0.3)
       guard (>= 2.1.1)
       rspec (~> 2.14)
+    haml (4.0.4)
+      tilt
+    haml-rails (0.4)
+      actionpack (>= 3.1, < 4.1)
+      activesupport (>= 3.1, < 4.1)
+      haml (>= 3.1, < 4.1)
+      railties (>= 3.1, < 4.1)
     handlebars-source (1.0.12)
     hike (1.2.3)
     i18n (0.6.5)
@@ -139,7 +153,7 @@ GEM
       rspec-expectations (~> 2.14.0)
       rspec-mocks (~> 2.14.0)
     rspec-core (2.14.7)
-    rspec-expectations (2.14.3)
+    rspec-expectations (2.14.4)
       diff-lcs (>= 1.1.3, < 2.0)
     rspec-mocks (2.14.4)
     rspec-rails (2.14.0)
@@ -186,13 +200,15 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  active_model_serializers
   capybara
   coffee-rails (~> 4.0.0)
   database_cleaner
-  ember-rails
+  ember-rails!
   ember-source
   factory_girl_rails
   guard-rspec
+  haml-rails
   jbuilder (~> 1.2)
   jquery-rails
   pg
