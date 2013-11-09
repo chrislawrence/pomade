@@ -25,3 +25,4 @@ group :test do
 end
 
 gem 'validates_overlap'
+gem 'jquery-ui-rails'
