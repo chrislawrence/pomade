@@ -12,3 +12,4 @@ Pomade.Router.map ()->
   @resource('user', {path: 'users/:user_id' }, ->
     @route('edit')
   )
+  @route('timer')
