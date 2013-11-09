@@ -5,6 +5,14 @@ class Api::PomodorosController < ApplicationController
     respond_with Pomodoro.all
   end
 
+  def show
+    respond_with Pomodoro.find(params[:id])
+  end
+
+  def update
+    respond_with Pomodoro.update(params[:id], pomodoro_params)
+  end
+
   private
 
   def pomodoro_params
