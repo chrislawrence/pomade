@@ -3,5 +3,6 @@ Pomade::Application.routes.draw do
 
   namespace :api do
     resources :pomodoros
+    resources :users
   end
 end
