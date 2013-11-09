@@ -23,3 +23,5 @@ group :test do
   gem 'guard-rspec'
   gem 'rb-fsevent', '~> 0.9'
 end
+
+gem 'validates_overlap'

@@ -1,7 +1,5 @@
 {{#each user in controller}}
   {{#link-to "user" user}}
-    {{user.username}}
+  {{user.username}} ({{user.first_name}} {{user.last_name}})
   {{/link-to}}
 {{/each}}
-
-{{outlet}}
