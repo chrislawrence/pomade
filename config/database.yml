@@ -4,3 +4,7 @@ development:
   pool: 5
   timeout: 5000
   host: localhost
+test:
+  adapter: postgresql
+  database: pomade-test-2
+  host: localhost
