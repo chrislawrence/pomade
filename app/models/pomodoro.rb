@@ -4,7 +4,7 @@ class Pomodoro < ActiveRecord::Base
   before_validation :complete_times
   
   def length
-    user.present? ? user.work_time : 25
+    user.present? ? user.work_time.to_i : 25
   end
 
   private

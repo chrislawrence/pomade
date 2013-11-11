@@ -1,8 +1,10 @@
-<div class="new-pomodoro">
+<form class="new-pomodoro" {{action save on="submit"}} >
+
   <label>Start Time</label>
-  {{view Pomade.Datepicker value=start_time}}
+  {{view Ember.TextField value=start_time}}
 
   <label>Tag</label>
   {{input value=tag}}
-  <button {{action save}}>Create</button>
+
+  {{input type="submit" value="Create"}}
 </div>

@@ -18,6 +18,8 @@
 //= require ember-data
 //= require_self
 //= require pomade
-Pomade = Ember.Application.create();
+Pomade = Ember.Application.create({
+  currentPath: ''
+} );
 Pomade.Store = DS.Store.extend();
 //= require_tree .
