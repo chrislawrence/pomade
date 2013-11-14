@@ -1,7 +1,8 @@
 Pomade.ApplicationRoute = Ember.Route.extend
   renderTemplate: ->
     @render()
-    @render("timer", {
+    @render("miniTimer", {
       outlet: "timer"
       into: "application"
+      controller: "timer"
     })

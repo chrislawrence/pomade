@@ -1,3 +1,3 @@
-Pomade.MiniTimerRoute = Ember.Route.extend
+Pomade.TimerRoute = Ember.Route.extend
   setupController: ->
     @controllerFor('timer')

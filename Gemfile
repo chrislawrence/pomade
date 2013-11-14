@@ -20,6 +20,7 @@ group :test do
   gem 'factory_girl_rails'
   gem 'database_cleaner'
   gem 'capybara'
+  gem 'capybara-webkit'
   gem 'guard-rspec'
   gem 'rb-fsevent', '~> 0.9'
 end

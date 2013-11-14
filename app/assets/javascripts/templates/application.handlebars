@@ -1,2 +1,4 @@
 {{ outlet }}
-{{ outlet 'timer' }}
+{{#if renderTimer}}
+  {{ outlet 'timer' }}
+{{/if}}
