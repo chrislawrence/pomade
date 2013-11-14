@@ -1,23 +1,21 @@
 Pomade.TimerController = Ember.ObjectController.extend
-  needs: ['application']
-  type: 'work'
-  nextAction: 'play'
-  status: 'idle'
   timer: Pomade.Timer
-  
-  currentPath: true if Pomade.currentPath is 'timer'
-
 
   actions:
     toggleTimer: ->
-      if @status is 'idle'
+      if !@timer.running
         @start()
       else
         @pause()
+    reset: ->
+      if confirm('Are you sure?')
+        @pause()
+        @timer.set('seconds', @timer.work_time)
+        @timer.set('type', 'work')
 
   start: ->
     console.log('Starting timer...')
-    @timer.set('status', 'running')
+    @timer.set('running', true)
     @timer.set('nextAction', 'pause')
     @before = new Date()
     window.tick = =>
@@ -28,7 +26,7 @@ Pomade.TimerController = Ember.ObjectController.extend
 
   pause: ->
     console.log('Pausing timer...')
-    @timer.set('status', 'idle')
+    @timer.set('running', false)
     @timer.set('nextAction', 'play')
     clearInterval(@counter)
 
