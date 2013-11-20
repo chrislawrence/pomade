@@ -14,3 +14,8 @@ Pomade.Router.map ()->
     @resource('pomodoros')
   )
   @route('timer')
+
+Pomade.Router.reopen({
+    rootURL: '/'
+    location: 'history'
+})
