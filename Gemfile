@@ -10,6 +10,7 @@ group :doc do
   gem 'sdoc', require: false
 end
 
+gem 'bcrypt-ruby'
 gem 'active_model_serializers'
 gem 'ember-rails', github: 'emberjs/ember-rails'
 gem 'ember-source'

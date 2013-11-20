@@ -10,13 +10,17 @@ Pomade.TimerController = Ember.ObjectController.extend
     reset: ->
       if confirm('Are you sure?')
         @pause()
+        @timer.set('showMiniTimer', false)
         @timer.set('seconds', @timer.work_time)
         @timer.set('type', 'work')
+    popup: ->
+      w = window.open('/#/timer', "Pomade", "menubar=no,resizable=yes,status=no,location=no,width=350,height=350,position=left")
 
   start: ->
     console.log('Starting timer...')
     @timer.set('running', true)
     @timer.set('nextAction', 'pause')
+    @timer.set('showMiniTimer', true)
     @before = new Date()
     window.tick = =>
       @tick()
@@ -35,6 +39,7 @@ Pomade.TimerController = Ember.ObjectController.extend
     @pause()
     if @type is 'break'
       @timer.set('seconds', @timer.work_time)
+      @timer.set('showMiniTimer', false)
     else
       @timer.set('seconds', @timer.break_time)
       @start()

@@ -47,6 +47,7 @@ GEM
       ember-source
       execjs
       handlebars-source
+    bcrypt-ruby (3.0.1)
     builder (3.1.4)
     capybara (2.1.0)
       mime-types (>= 1.16)
@@ -208,6 +209,7 @@ PLATFORMS
 
 DEPENDENCIES
   active_model_serializers
+  bcrypt-ruby
   capybara
   capybara-webkit
   coffee-rails (~> 4.0.0)

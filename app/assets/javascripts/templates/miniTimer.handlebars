@@ -1,3 +1,7 @@
-{{minutes timer.seconds}}<br />
+{{#if timer.showMiniTimer }}
+  {{minutes timer.seconds}}<br />
 <a {{action toggleTimer}}>{{timer.nextAction}}</a>
 <a {{action reset}}>Reset</a>
+{{else}}
+  <a {{action toggleTimer}}>Start a new pomodoro</a>
+{{/if}}

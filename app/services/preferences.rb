@@ -28,7 +28,7 @@ module Preferences
     p.update_attribute(:value, value)
   end
 
-  def method_missing(method, &args)
+  def preference(method, &args)
     if @@preferences.keys.any?{|k| method =~ /#{k}/}
       if method =~ /=/
         self.write_preference(method.gsub('=', ''), *args)

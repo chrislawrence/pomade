@@ -1,5 +1,4 @@
-class Api::PomodorosController < ApplicationController
-  respond_to :json
+class Api::PomodorosController < Api::BaseController 
 
   def index
     respond_with Pomodoro.all

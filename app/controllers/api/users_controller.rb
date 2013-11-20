@@ -1,5 +1,4 @@
-class Api::UsersController < ApplicationController
-  respond_to :json
+class Api::UsersController < Api::BaseController
 
   def index
     respond_with User.all

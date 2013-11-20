@@ -5,3 +5,4 @@ Pomade.Timer = Ember.Object.create
   type: 'work'
   nextAction: 'play'
   running: false
+  showMiniTimer: false
