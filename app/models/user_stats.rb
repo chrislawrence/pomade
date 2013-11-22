@@ -36,7 +36,10 @@ class UserStats
   end
 
   def most_in_one
-    @pomodoros.pluck("start_time::date").each_with_object(Hash.new(0)) {|o,h| h[o] += 1}.max_by{|k,v|v}
+    times = @pomodoros.pluck(:start_time)
+    days = []
+    times.each do |t| days << t.to_date end
+    freq = days.inject(Hash.new(0)) { |h,v| h[v] += 1; h }.max_by{|k,v|v}
   end
 
   def most_productive_time
