@@ -3,12 +3,12 @@ require 'spec_helper'
 describe UserStats do
  describe "Pomodoros present" do
    before do
-    user = create(:user)
-    user.pomodoros << Pomodoro.new(:end_time => 2.months.ago, tag: 'test')
+    @user = create(:user)
+    @user.pomodoros << Pomodoro.new(:end_time => 2.months.ago, tag: 'test')
     50.times do
-      user.pomodoros << Pomodoro.new
+      @user.pomodoros << Pomodoro.new
     end
-    @stats = UserStats.new(user)
+    @stats = UserStats.new(@user)
   end
 
   it "gets today's pomodoros" do
@@ -42,7 +42,12 @@ describe UserStats do
   it "gets the tags" do
     expect(@stats.tags).to include({:label => "test", :"value" => 1})
   end
+  
+  it "trims whitespace and capitals from tags" do
+    @user.pomodoros << [Pomodoro.new(tag: 'Test'), Pomodoro.new(tag: 'test  ')]
+    expect(@stats.tags).to include({:label => "test", :value => 3})
 
+  end
  end
 
 end

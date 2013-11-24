@@ -10,6 +10,7 @@ class UserStats
 
   def initialize(user)
     @pomodoros = user.pomodoros
+    @start_times = @pomodoros.pluck(:start_time)
   end
 
   def today
@@ -36,9 +37,8 @@ class UserStats
   end
 
   def most_in_one
-    times = @pomodoros.pluck(:start_time)
     days = []
-    times.each do |t| days << t.to_date end
+    @start_times.each do |t| days << t.to_date end
     freq = days.inject(Hash.new(0)) { |h,v| h[v] += 1; h }.max_by{|k,v|v}
   end
 
@@ -66,7 +66,7 @@ class UserStats
 
 
   def tags
-    tags = @pomodoros.pluck(:tag).reject{|t| t == nil}.map(&:downcase)
+    tags = @pomodoros.pluck(:tag).reject{|t| t == nil}.map(&:downcase).map(&:strip)
     tag_counts = Hash.new(0)
     tags.each do |tag|
       tag_counts[tag] += 1
