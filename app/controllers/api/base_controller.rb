@@ -11,8 +11,4 @@ class Api::BaseController < ApplicationController
   def default_json
     request.format = :json if params[:format].nil?
   end
-
-  def auth_only!
-    render json: {}, status: 401 unless current_user
-  end
 end

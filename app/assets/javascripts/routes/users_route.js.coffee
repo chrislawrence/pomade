@@ -1,4 +1,4 @@
-Pomade.UsersRoute = Ember.Route.extend
-  authRedirectable: true
+Pomade.UsersRoute = Ember.Route.extend(Ember.SimpleAuth.AuthenticatedRouteMixin, {
   model: ->
     @store.find('user')
+})
