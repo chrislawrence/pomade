@@ -1,0 +1,10 @@
+TEAST
+{{#if isEditing}}
+  {{view Ember.TextField valueBinding="tag"}} 
+  <a {{ action updatePomodoro }}>Update</a>
+{{else}}
+  {{tag}} ({{time start_time}})
+  <a {{ action editPomodoro }}>Edit</a>
+  <a {{ action deletePomodoro }}>Delete</a>
+  {{#if errors}}{{errors.startTime}}{{/if}}
+{{/if}}

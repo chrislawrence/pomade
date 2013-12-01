@@ -1,4 +1,4 @@
-Pomade.ApplicationRoute = Ember.Route.extend
+Pomade.ApplicationRoute = Ember.Route.extend(Ember.SimpleAuth.ApplicationRouteMixin, {
   renderTemplate: ->
     @render()
     @render("miniTimer", {
@@ -6,3 +6,5 @@ Pomade.ApplicationRoute = Ember.Route.extend
       into: "application"
       controller: "timer"
     })
+})
+

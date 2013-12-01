@@ -21,6 +21,10 @@ class Api::PomodorosController < Api::BaseController
     respond_with Pomodoro.update(params[:id], pomodoro_params)
   end
 
+  def destroy
+    respond_with Pomodoro.destroy(params[:id])
+  end
+
   private
 
   def pomodoro_params

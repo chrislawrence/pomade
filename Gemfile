@@ -30,3 +30,4 @@ end
 
 gem 'validates_overlap'
 gem 'jquery-ui-rails'
+gem 'preferences', :github => "skyeagle/preferences"

@@ -12,6 +12,12 @@ GIT
       jquery-rails (>= 1.0.17)
       railties (>= 3.1)
 
+GIT
+  remote: git://github.com/skyeagle/preferences.git
+  revision: c005b12e22ea3ad015584930b3f2a0b1ba67192a
+  specs:
+    preferences (0.6.0)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -229,6 +235,7 @@ DEPENDENCIES
   jquery-rails
   jquery-ui-rails
   pg
+  preferences!
   rails (= 4.0.0)
   rb-fsevent (~> 0.9)
   rspec-rails

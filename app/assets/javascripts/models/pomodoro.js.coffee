@@ -3,3 +3,4 @@ Pomade.Pomodoro = DS.Model.extend
   end_time: DS.attr()
   tag: DS.attr()
   user: DS.belongsTo("user")
+

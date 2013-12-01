@@ -1,14 +1,5 @@
-<ul class="pomodoro_list">
-{{#each pomodoro in controller itemController="pomodoro"}}
-
-{{#if isEditing}}
-  {{view Ember.TextField valueBinding="tag"}} 
-  <a {{ action updatePomodoro }}>Update</a>
-{{else}}
-<li>{{pomodoro.tag}} ({{pomodoro_time pomodoro.start_time}})</li>
-  <a {{ action editPomodoro }}>Edit</a>
-{{/if}}
-{{/each}}
+<ul class="pomodoro_list"Pomade.PomodoroView>
+  {{each controller itemViewClass="Pomade.PomodoroView"}}
 </ul>
 
 {{outlet}}
