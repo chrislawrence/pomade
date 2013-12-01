@@ -13,6 +13,8 @@ end
 Pomade::Application.routes.draw do
   root to: 'home#index'
   get '*foo', to: 'home#index', :constraints => FormatTest.new(:html)
+  
+  post :token, to: "api/sessions#create"
 
   namespace :api do
     resources :pomodoros
