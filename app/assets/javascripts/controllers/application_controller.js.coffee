@@ -7,4 +7,5 @@ Pomade.ApplicationController = Ember.Controller.extend
     else
       @set('renderTimer', true)
   ).observes('currentPath')
-  
+  currentUser: ->
+    @store.find('user', { authToken: @session.authToken })

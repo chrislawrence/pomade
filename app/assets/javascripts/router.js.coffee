@@ -13,10 +13,11 @@ Pomade.Router.map ()->
     @route('edit')
     @resource('pomodoros')
   )
-  @route('timer')
+  @route('timer', {path: '/'})
   @route('login')
 
 Pomade.Router.reopen({
     rootURL: '/'
     location: 'history'
 })
+

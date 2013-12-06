@@ -1,10 +1,10 @@
 development:
   adapter: postgresql 
-  database: pomade-dev-2
+  database: pomade-dev
   pool: 5
   timeout: 5000
   host: localhost
 test:
   adapter: postgresql
-  database: pomade-test-2
+  database: pomade-test
   host: localhost

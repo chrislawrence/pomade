@@ -1,6 +1,7 @@
 Pomade.TimerController = Ember.ObjectController.extend
   timer: Pomade.Timer
 
+
   actions:
     toggleTimer: ->
       if !@timer.running
@@ -13,8 +14,6 @@ Pomade.TimerController = Ember.ObjectController.extend
         @timer.set('showMiniTimer', false)
         @timer.set('seconds', @timer.work_time)
         @timer.set('type', 'work')
-    popup: ->
-      w = window.open('/#/timer', "Pomade", "menubar=no,resizable=yes,status=no,location=no,width=350,height=350,position=left")
 
   start: ->
     console.log('Starting timer...')
@@ -41,8 +40,14 @@ Pomade.TimerController = Ember.ObjectController.extend
       @timer.set('seconds', @timer.work_time)
       @timer.set('showMiniTimer', false)
     else
+      @createPomodoro()
       @timer.set('seconds', @timer.break_time)
       @start()
+
+  createPomodoro: ->
+    if @session.authToken
+      console.log('Creating pomodoro...')
+      @store.createRecord('pomodoro', {end_time: new Date, tag: 'test'}).save()
 
   tick: ->
     seconds = @timer.seconds
