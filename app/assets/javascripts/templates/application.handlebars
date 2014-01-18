@@ -1,4 +1,10 @@
-{{ loginErrorMessage }}
+<div class="error">
+  {{ loginErrorMessage }}
+</div>
+<div class="message">
+  {{ message }}
+</div>
+
 {{ outlet }}
 {{#if renderTimer}} 
   {{ outlet 'timer' }}

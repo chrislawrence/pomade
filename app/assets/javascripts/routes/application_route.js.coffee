@@ -11,6 +11,8 @@ Pomade.ApplicationRoute = Ember.Route.extend(Ember.SimpleAuth.ApplicationRouteMi
   actions: {
     loginFailed: (error) ->
       @controllerFor('application').set('loginErrorMessage', error.responseJSON.error )
+    loginSucceeded: ->
+      @controllerFor('application').set('message', 'Logged in')
   }
 })
 
