@@ -9,3 +9,4 @@ Pomade.ApplicationController = Ember.Controller.extend
   ).observes('currentPath')
   currentUser: ->
     @store.find('user', { authToken: @session.authToken })
+

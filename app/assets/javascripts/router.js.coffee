@@ -1,5 +1,3 @@
-# For more information see: http://emberjs.com/guides/routing/
-
 Pomade.Router.map ()->
   @resource('pomodoros', ->
     @resource('pomodoro', {path: '/:pomodoro_id' }, ->
@@ -15,6 +13,7 @@ Pomade.Router.map ()->
   )
   @route('timer', {path: '/'})
   @route('login')
+  @route('dashboard')
 
 Pomade.Router.reopen({
     rootURL: '/'

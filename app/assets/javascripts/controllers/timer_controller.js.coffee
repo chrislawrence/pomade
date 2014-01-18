@@ -1,7 +1,6 @@
 Pomade.TimerController = Ember.ObjectController.extend
   timer: Pomade.Timer
 
-
   actions:
     toggleTimer: ->
       if !@timer.running

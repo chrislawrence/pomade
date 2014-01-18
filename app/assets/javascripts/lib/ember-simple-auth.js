@@ -1,5 +1,5 @@
-// Version: 0.0.8-4-g8d19aba
-// Last commit: 8d19aba (2013-11-26 10:27:08 +0100)
+// Version: 0.0.11
+// Last commit: 877c4a4 (2013-12-03 20:34:53 +0100)
 
 
 (function() {
@@ -72,7 +72,10 @@ Ember.SimpleAuth.setup = function(container, application, options) {
       Ember.SimpleAuth._links[url] = link;
       return link;
     }();
-    return this.crossOriginWhitelist.indexOf(link.origin) > -1 || link.origin === window.location.origin;
+    function formatLocation(location) { return location.protocol + '//' + location.hostname + (location.port !== '' ? ':' + location.port : ''); }
+    var linkOrigin       = formatLocation(link);
+    this._locationOrigin = formatLocation(window.location);
+    return this.crossOriginWhitelist.indexOf(linkOrigin) > -1 || linkOrigin === this._locationOrigin;
   },
 
   /**
@@ -440,10 +443,14 @@ Ember.SimpleAuth.LoginControllerMixin = Ember.Mixin.create({
         this.set('password', undefined);
         var requestOptions = this.tokenRequestOptions(data.identification, data.password, data.client_id, data.client_secret);
         Ember.$.ajax(Ember.SimpleAuth.serverTokenEndpoint, requestOptions).then(function(response) {
-          _this.get('session').setup(response);
-          _this.send('loginSucceeded');
+          Ember.run(function() {
+            _this.get('session').setup(response);
+            _this.send('loginSucceeded');
+          });
         }, function(xhr, status, error) {
-          _this.send('loginFailed', xhr, status, error);
+          Ember.run(function() {
+            _this.send('loginFailed', xhr, status, error);
+          });
         });
       }
     }
