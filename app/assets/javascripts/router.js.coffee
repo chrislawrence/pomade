@@ -14,7 +14,9 @@ Pomade.Router.map ()->
     @resource('pomodoros')
   )
   @route('timer', {path: '/'})
-  @route('login')
+  @resource('auth', ->
+    @route('login')
+  )
   @route('dashboard')
 
 Pomade.Router.reopen({
