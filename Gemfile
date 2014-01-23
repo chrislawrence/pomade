@@ -10,11 +10,13 @@ group :doc do
   gem 'sdoc', require: false
 end
 
+gem 'haml-rails'
 gem 'bcrypt-ruby'
 gem 'active_model_serializers'
-gem 'ember-rails', github: 'emberjs/ember-rails'
-gem 'ember-source'
-gem 'haml-rails'
+gem 'ember-rails'
+gem 'ember-source', '~>1.3.1'
+gem 'ember-auth-rails'
+gem 'ember-auth-source', '~> 9.0.7'
 
 gem 'rspec-rails', :group => [:test, :development]
 group :test do

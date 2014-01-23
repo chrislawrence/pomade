@@ -1,4 +1,4 @@
-Pomade.UsersRoute = Ember.Route.extend(Ember.SimpleAuth.AuthenticatedRouteMixin, {
+Pomade.UsersRoute = Ember.Route.extend({
   model: ->
     @store.find('user')
 })
