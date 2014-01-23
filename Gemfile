@@ -15,7 +15,8 @@ gem 'bcrypt-ruby'
 gem 'active_model_serializers'
 gem 'ember-rails'
 gem 'ember-source', '~>1.3.1'
-gem 'ember-data-source', '~>1.0.0.beta.5'
+gem 'ember-data-source', '1.0.0.beta.2'
+
 gem 'ember-auth-rails'
 gem 'ember-auth-source', '~> 9.0.7'
 gem 'ember-auth-request-jquery-rails'
@@ -30,6 +31,8 @@ gem 'ember-auth-module-ember_data-rails'
 gem 'ember-auth-module-ember_data-source'
 gem 'ember-auth-module-action_redirectable-rails' 
 gem 'ember-auth-module-action_redirectable-source'
+gem 'ember-auth-module-rememberable-rails' 
+gem 'ember-auth-module-rememberable-source'
 
 gem 'rspec-rails', :group => [:test, :development]
 group :test do

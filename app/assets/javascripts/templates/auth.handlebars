@@ -1,0 +1,5 @@
+{{#if auth.signedIn}}
+{{render 'auth/logout'}}
+{{else}}
+{{render 'auth/login'}}
+{{/if}}
