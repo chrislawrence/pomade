@@ -6,11 +6,10 @@ Pomade.Router.map ()->
     @route('create')
   )
 
-  @resource('users')
-  @resource('user', {path: 'users/:user_id' }, ->
+  @resource 'user', {path: 'users/:user_id' }, ->
     @route('edit')
     @resource('pomodoros')
-  )
+
   @route('timer', {path: '/'})
   @route('dashboard')
   @route('login')

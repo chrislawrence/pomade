@@ -15,7 +15,7 @@ Pomade.Auth = Ember.Auth.extend
   tokenIdKey: 'user_id'
   tokenLocation: 'param'
   actionRedirectable:
-    signInRoute: '/'
+    signInSmart: true
     signOutRoute: '/'
 
   emberData:
