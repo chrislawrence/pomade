@@ -1,4 +1,5 @@
-{{#if auth.signedIn }} Yay {{auth.user.email}}{{/if}}
+{{ render 'auth' }}
+
 {{ outlet }}
 {{#if renderTimer}} 
   {{ outlet 'timer' }}
