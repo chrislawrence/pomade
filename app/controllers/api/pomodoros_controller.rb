@@ -9,7 +9,9 @@ class Api::PomodorosController < Api::BaseController
   end
 
   def create
-    @pomodoro = Pomodoro.create(pomodoro_params)
+    user = User.find_by token:  params[:auth_token]
+    @pomodoro = Pomodoro.new(pomodoro_params)
+    user.pomodoros << @pomodoro if user
     if @pomodoro.errors.present?
       render json: {errors: @pomodoro.errors.messages}, status: 422
     else
@@ -28,6 +30,6 @@ class Api::PomodorosController < Api::BaseController
   private
 
   def pomodoro_params
-    params.require(:pomodoro).permit(:start_time, :end_time, :tag, :user_id)
+    params.require(:pomodoro).permit(:start_time, :end_time, :tag, :user_id, :auth_token)
   end
 end

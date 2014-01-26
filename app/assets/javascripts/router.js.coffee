@@ -6,6 +6,8 @@ Pomade.Router.map ()->
     @route('create')
   )
 
+  @resource 'users', ->
+    @route('new')
   @resource 'user', {path: 'users/:user_id' }, ->
     @route('edit')
     @resource('pomodoros')
