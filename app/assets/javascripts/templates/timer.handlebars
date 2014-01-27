@@ -11,7 +11,10 @@
 
 <div>
   <p>Today</a>
-{{pomodoros}}
+  {{#each pomodoro in model }}
+    <li>{{ pomodoro.end_time }}</li>
+  {{/each}}
+  
 
 </div>
 

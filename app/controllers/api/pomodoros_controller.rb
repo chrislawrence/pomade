@@ -1,7 +1,11 @@
 class Api::PomodorosController < Api::BaseController 
 
   def index
-    respond_with Pomodoro.all
+    if params[:auth_token]
+      respond_with User.find_by(token: params[:auth_token]).pomodoros
+    else
+      respond_with Pomodoro.all
+    end
   end
 
   def show
