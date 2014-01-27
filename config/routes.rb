@@ -18,6 +18,7 @@ Pomade::Application.routes.draw do
     resources :pomodoros
     resources :users
     resources :sessions
+    resources :user_pomodoros
     post :login, to: 'sessions#create'
     delete :logout, to: 'sessions#destroy'
   end
