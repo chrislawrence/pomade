@@ -16,6 +16,7 @@
 #= require_self
 #= require auth
 #= require pomade
+#= require progress_circle
 
 window.Pomade = Ember.Application.create({
 	currentPath: ''})
