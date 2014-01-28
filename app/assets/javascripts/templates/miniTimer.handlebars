@@ -2,6 +2,7 @@
   {{minutes timer.seconds}}<br />
 <a {{action toggleTimer}}>{{timer.nextAction}}</a>
 <a {{action reset}}>Reset</a>
+{{#link-to 'timer'}}maximise{{/link-to}}
 {{else}}
   <a {{action toggleTimer}}>Start a new pomodoro</a>
 {{/if}}
