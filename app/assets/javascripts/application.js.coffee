@@ -16,7 +16,7 @@
 #= require_self
 #= require auth
 #= require pomade
-#= require progress_circle
+#= require jquery.knob
 
 window.Pomade = Ember.Application.create({
 	currentPath: ''})
