@@ -1,9 +1,12 @@
 $(document).ready( ->
-  canvas = document.getElementById('progress_circle')
-  if canvas.getContext
-    ctx = canvas.getContext('2d')
-    ctx.arc(125,125,100,0 + 0.5,Math.PI - 0.5,true)
-    ctx.lineWidth = 15
-    ctx.stroke()
+  $('.dial').knob({
+    width: 300
+    height: 300
+    thickness: 0.1
+    angleOffset: 180 + 40 # (360 - angleArc) / 2
+    angleArc: 280
+    displayInput: false
+    fgColor: '94CBB4'
+    bgColor: '292E33'
+  })
 )
-
