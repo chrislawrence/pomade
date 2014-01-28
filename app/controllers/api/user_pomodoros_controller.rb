@@ -6,4 +6,21 @@ class Api::UserPomodorosController < Api::BaseController
       render nothing: true
     end
   end
+
+  def destroy
+    if params[:auth_token]
+      respond_with Pomodoro.destroy(params[:id])
+    end
+  end
+
+  def update
+    if params[:auth_token]
+      respond_with Pomodoro.update(params[:id], pomodoro_params)
+    end
+  end
+
+  def pomodoro_params
+    params.require(:user_pomodoro).permit(:start_time, :end_time, :tag, :user_id, :auth_token)
+  end
+
 end

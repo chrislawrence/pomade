@@ -11,9 +11,7 @@
 
 <div>
   <p>Today</a>
-  {{#each pomodoro in model }}
-    <li>{{ pomodoro.end_time }}</li>
-  {{/each}}
+  {{each model itemController='pomodoro' itemViewClass='Pomade.PomodoroView'}}
   
 
 </div>
