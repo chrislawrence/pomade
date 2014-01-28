@@ -15,7 +15,7 @@ gem 'bcrypt-ruby'
 gem 'active_model_serializers'
 gem 'ember-rails'
 gem 'ember-source', '~>1.3.1'
-gem 'ember-data-source', '1.0.0.beta.2'
+gem 'ember-data-source', '1.0.0.beta.6'
 
 gem 'ember-auth-rails'
 gem 'ember-auth-source', '~> 9.0.7'

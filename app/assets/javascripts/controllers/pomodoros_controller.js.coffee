@@ -4,7 +4,6 @@ Pomade.PomodorosController = Ember.ArrayController.extend
 
 Pomade.PomodoroController = Ember.ObjectController.extend
   isEditing: false
-
   actions:
     editPomodoro: ->
       @set('isEditing', true)
