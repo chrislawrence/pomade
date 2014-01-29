@@ -1,3 +1,3 @@
 Pomade.PomodoroView = Ember.View.extend
   tagName: 'li'
-  templateName: 'pomodoros.show'
+  templateName: 'pomodoros/show'

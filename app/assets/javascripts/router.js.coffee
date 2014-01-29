@@ -8,9 +8,10 @@ Pomade.Router.map ()->
 
   @resource 'users', ->
     @route('new')
-  @resource 'user', {path: 'users/:user_id' }, ->
-    @route('edit')
-    @resource('pomodoros')
+    @route('show', { path: '/:user_id'}, ->
+      @resource('pomodoros')
+    )
+    @route('edit', { path: '/:user_id/edit' })
 
   @route('timer', {path: '/'})
   @route('dashboard')

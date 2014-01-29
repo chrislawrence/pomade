@@ -1,0 +1,6 @@
+= render 'header'
+= render 'auth'
+= outlet
+if renderTimer
+	= outlet 'timer'
+

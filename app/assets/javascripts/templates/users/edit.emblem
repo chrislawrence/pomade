@@ -1,0 +1,12 @@
+form submit='update'
+  label Email
+  =input type='text' value=email
+  label Username
+  =input type='text' value=username
+  label First Name
+  =input type='text' value=first_name
+  label Last Name
+  =input type='text' value=last_name
+  label Website
+  =input type='text' value=website
+  button Submit
