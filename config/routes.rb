@@ -11,6 +11,7 @@ class FormatTest
 end
 
 Pomade::Application.routes.draw do
+  devise_for :users
   root to: 'home#index'
   get '*foo', to: 'home#index', :constraints => FormatTest.new(:html)
 

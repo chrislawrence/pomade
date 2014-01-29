@@ -4,11 +4,12 @@ class Api::BaseController < ApplicationController
 
   def current_user
     return nil unless params[:auth_token]
-    User.find_by(token: params[:auth_token])
+    User.find_by(authentication_token: params[:auth_token])
   end
   private
 
   def default_json
     request.format = :json if params[:format].nil?
   end
+
 end

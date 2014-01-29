@@ -52,3 +52,4 @@ gem 'jquery-ui-rails'
 gem 'preferences', :github => "skyeagle/preferences"
 gem 'quiet_assets'
 gem 'paperclip', '~> 3.0'
+gem 'devise'

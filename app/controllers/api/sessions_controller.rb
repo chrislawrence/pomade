@@ -1,13 +1,54 @@
 class Api::SessionsController < Api::BaseController
   def create
-    @user = User.find_by(email: params[:email]) || GuestUser.new
-    if @user.authenticate(params[:password])
-      render json: {auth_token: @user.token, user_id: @user.id}, status: 201
-    else render json: {error: 'Invalid email or password'}, status: 400
+    @user = if params[:remember_token]
+              user_from_remember_token
+            else
+              user_from_credentials
+            end
+    return invalid_credentials unless @user
+    @user.ensure_authentication_token!
+
+    data = {
+      user_id: @user.id,
+      auth_token: @user.authentication_token
+    }
+
+    if params[:remember]
+      @user.remember_me!
+      data[:remember_token] = remember_token
     end
+
+    render json: data, status: 201
   end
 
   def destroy
   end
 
+  private
+
+  def remember_token
+    data = User.serialize_into_cookie @user
+    "#{data.first.first}-#{data.last}"
+  end
+
+  def user_from_credentials
+    if user = User.find_for_database_authentication(email: params[:email])
+      if user.valid_password? params[:password]
+        user
+      end
+    end
+  end
+
+  def user_from_remember_token
+    id, identifier = params[:remember_token].split '-'
+    User.serialize_from_cookie id, identifier
+  end
+
+  def missing_params
+    render json: {}, status: 400
+  end
+
+  def invalid_credentials
+    render json: {}, status: 401
+  end
 end

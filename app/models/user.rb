@@ -1,6 +1,10 @@
 class User < ActiveRecord::Base
+  # Include default devise modules. Others available are:
+  # :token_authenticatable, :confirmable,
+  # :lockable, :timeoutable and :omniauthable
+  devise :database_authenticatable, :registerable,
+         :recoverable, :rememberable, :trackable, :validatable, :token_authenticatable
   has_many :pomodoros
-  has_secure_password
   validates :username, presence: true
   has_attached_file :avatar, 
     styles: { :profile => "150x150>", :thumb => "60x60#" }, 
