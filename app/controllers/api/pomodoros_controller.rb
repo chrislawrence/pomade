@@ -2,7 +2,7 @@ class Api::PomodorosController < Api::BaseController
 
   def index
     if params[:auth_token]
-      respond_with User.find_by(token: params[:auth_token]).pomodoros
+      respond_with User.find_by(authentication_token: params[:auth_token]).pomodoros
     else
       respond_with Pomodoro.all
     end
@@ -13,7 +13,7 @@ class Api::PomodorosController < Api::BaseController
   end
 
   def create
-    user = User.find_by token:  params[:auth_token]
+    user = User.find_by authentication_token:  params[:auth_token]
     @pomodoro = Pomodoro.new(pomodoro_params)
     user.pomodoros << @pomodoro if user
     if @pomodoro.errors.present?

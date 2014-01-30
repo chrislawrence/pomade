@@ -11,7 +11,7 @@ class Api::UsersController < Api::BaseController
   end
 
   def update
-    user = User.find_by token: params[:auth_token]
+    user = User.find_by authentication_token: params[:auth_token]
     if user 
       respond_with user.update_attributes(user_params)
     else

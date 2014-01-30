@@ -2,3 +2,7 @@
 === A simple pomodoro tracking app
 
 Pomade 2.0 is rewritten from the ground up in Ember 1.0 and Rails 4.
+
+=== To Do List
+
+* Avatar uploading is way too hard to implement right now, leaving it for later.

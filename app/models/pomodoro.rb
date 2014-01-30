@@ -1,7 +1,7 @@
 class Pomodoro < ActiveRecord::Base
   belongs_to :user
   before_validation :complete_times
-  scope :today, -> { where('start_time < ? ', Time.zone.today.beginning_of_day) }
+  scope :today, -> { where('start_time > ? ', Time.zone.today.beginning_of_day) }
   
   def length
     user.present? ? user.preferred(:work_time).to_i : 25

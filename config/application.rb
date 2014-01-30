@@ -13,6 +13,7 @@ Bundler.require(:default, Rails.env)
 
 module Pomade
   class Application < Rails::Application
+    config.time_zone = 'Sydney'
     config.generators do |g|
       g.template_engine :haml
     end

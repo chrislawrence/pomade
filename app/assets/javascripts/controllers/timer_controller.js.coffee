@@ -50,7 +50,7 @@ Pomade.TimerController = Ember.ObjectController.extend
 
   createPomodoro: ->
     console.log('Creating pomodoro...')
-    @store.createRecord('pomodoro', {end_time: new Date, tag: 'test'}).save()
+    @store.createRecord('pomodoro', {end_time: new Date, tag: @get('tag')}).save()
 
   tick: ->
     seconds = @timer.seconds

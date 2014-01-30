@@ -1,11 +1,16 @@
 .timer
-	input type='text' class='dial' data-min='0' data-max='{{unbound timer.seconds}}' value='{{unbound timer.seconds}}'
+	input type='text' class='dial' data-min='0' data-max='{{unbound timer.seconds}}' value='{{unbound timer.seconds}}' readonly=true
 	.progress
 		= minutes timer.seconds
 	.timer_controller
 		a click=toggleTimer = timer.nextAction
 		a click=reset Reset
+    
+Ember.TextField valueBinding="tag"
+
 .timer_today
 	each model itemController='pomodoro' itemViewClass='Pomade.PomodoroView'
+
+
 
 

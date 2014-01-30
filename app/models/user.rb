@@ -11,6 +11,7 @@ class User < ActiveRecord::Base
     url: "/assets/avatars/:id/:style/:basename.:extension", 
     path: ":rails_root/public/assets/avatars/:id/:style/:basename.:extension",
     default_url: '/assets/avatars/:style/avatar.jpg'
+  attr_accessor :avatar_file_name
   
 
   preference :work_time, :integer, :default => 25
