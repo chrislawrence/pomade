@@ -1,4 +1,4 @@
-Pomade.User = DS.Model.extend
+App.User = DS.Model.extend
  first_name: DS.attr()
  last_name: DS.attr()
  username: DS.attr()

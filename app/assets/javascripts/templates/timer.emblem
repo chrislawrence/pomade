@@ -9,7 +9,7 @@
 Ember.TextField valueBinding="tag"
 
 .timer_today
-	each model itemController='pomodoro' itemViewClass='Pomade.PomodoroView'
+	each model itemController='pomodoro' itemViewClass='App.PomodoroView'
 
 
 

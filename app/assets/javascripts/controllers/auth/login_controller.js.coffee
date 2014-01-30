@@ -1,4 +1,4 @@
-Pomade.AuthLoginController = Ember.Controller.extend
+App.AuthLoginController = Ember.Controller.extend
   actions:
       login: ->
         @auth.signIn

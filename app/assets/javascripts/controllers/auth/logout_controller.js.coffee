@@ -1,4 +1,4 @@
-Pomade.AuthLogoutController = Ember.Controller.extend({
+App.AuthLogoutController = Ember.Controller.extend({
   actions:
     logout: ->
       @auth.destroySession()

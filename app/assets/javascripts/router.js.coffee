@@ -1,4 +1,4 @@
-Pomade.Router.map ()->
+App.Router.map ()->
   @resource('pomodoros', ->
     @resource('pomodoro', {path: '/:pomodoro_id' }, ->
       @route('edit')
@@ -17,7 +17,7 @@ Pomade.Router.map ()->
   @route('dashboard')
   @route('login')
 
-Pomade.Router.reopen({
+App.Router.reopen({
     location: 'history'
 })
 

@@ -1,8 +1,8 @@
-Pomade.PomodorosController = Ember.ArrayController.extend
+App.PomodorosController = Ember.ArrayController.extend
   sortProperties: ['end_time']
   sortAscending: false
 
-Pomade.PomodoroController = Ember.ObjectController.extend
+App.PomodoroController = Ember.ObjectController.extend
   isEditing: false
   actions:
     editPomodoro: ->
@@ -14,7 +14,7 @@ Pomade.PomodoroController = Ember.ObjectController.extend
       @get('model').deleteRecord()
       @get('model').save()
 
-Pomade.PomodorosCreateController = Ember.ObjectController.extend
+App.PomodorosCreateController = Ember.ObjectController.extend
   actions:
     save: ->
       newPomodoro = @store.createRecord('pomodoro', @get('model'))

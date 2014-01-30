@@ -1,5 +1,5 @@
-Pomade.TimerController = Ember.ObjectController.extend
-  timer: Pomade.Timer
+App.TimerController = Ember.ObjectController.extend
+  timer: App.Timer
 
   actions:
     toggleTimer: ->

@@ -1,4 +1,4 @@
-Pomade.TimerView = Ember.View.extend
+App.TimerView = Ember.View.extend
   didInsertElement: ->
     $('.dial').knob({
       width: 300

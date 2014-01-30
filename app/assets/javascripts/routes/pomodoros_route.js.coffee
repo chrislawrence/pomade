@@ -1,7 +1,7 @@
-Pomade.PomodorosRoute = Ember.Route.extend
+App.PomodorosRoute = Ember.Route.extend
   model: ->
     @store.find('pomodoro');
 
-Pomade.PomodorosCreateRoute = Ember.Route.extend
+App.PomodorosCreateRoute = Ember.Route.extend
   model: ->
     Ember.Object.create()

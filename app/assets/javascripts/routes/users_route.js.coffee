@@ -1,4 +1,4 @@
-Pomade.UsersRoute = Ember.Route.extend({
+App.UsersRoute = Ember.Route.extend({
   model: ->
     @store.find('user')
 })

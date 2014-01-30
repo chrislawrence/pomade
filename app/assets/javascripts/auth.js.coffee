@@ -1,4 +1,4 @@
-Pomade.Auth = Ember.Auth.extend
+App.Auth = Ember.Auth.extend
   request: 'jquery'
   response: 'json'
   strategy: 'token'

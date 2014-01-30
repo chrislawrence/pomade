@@ -1,4 +1,4 @@
-Pomade.ApplicationRoute = Ember.Route.extend({
+App.ApplicationRoute = Ember.Route.extend({
   actions: {
     loginFailed: (error) ->
       @controllerFor('application').set('loginErrorMessage', error.responseJSON.error )

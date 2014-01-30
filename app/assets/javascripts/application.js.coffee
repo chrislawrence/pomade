@@ -20,6 +20,6 @@
 #= require jquery.knob
 #= require progress_circle
 
-window.Pomade = Ember.Application.create({
+window.App = Ember.Application.create({
 	currentPath: ''})
-Pomade.Store = DS.Store.extend()
+App.Store = DS.Store.extend()
