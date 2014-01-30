@@ -1,9 +1,9 @@
 if timer.showMiniTimer
-	= minutes timer.seconds
-	a click='toggleTimer' = timer.nextAction
-	a click='reset' = Reset
-	linkTo 'timer' | maximise
+  = minutes timer.seconds
+  a click='toggleTimer' = timer.nextAction
+  a click='reset' = Reset
+  link-to 'timer' | maximise
 else
-	a click='toggleTimer' Start a new Pomodoro
+  a click='toggleTimer' Start a new Pomodoro
 
 

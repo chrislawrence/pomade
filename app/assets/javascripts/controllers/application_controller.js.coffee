@@ -1,10 +1,10 @@
 Pomade.ApplicationController = Ember.Controller.extend({
-  renderTimer: true
+  showMiniTimer: true
   updateCurrentPath: ( ->
     Pomade.set('currentPath', @get('currentPath'))
     if @get('currentPath') is 'timer'
-      @set('renderTimer', false)
+      @set('showMiniTimer', false)
     else
-      @set('renderTimer', true)
+      @set('showMiniTimer', true)
   ).observes('currentPath')
 })

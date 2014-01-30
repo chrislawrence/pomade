@@ -1,6 +1,7 @@
 = render 'header'
 = render 'auth'
-= outlet
-if renderTimer
-	= outlet 'timer'
 
+= outlet
+
+if showMiniTimer
+  = render 'miniTimer' controller='timer'
