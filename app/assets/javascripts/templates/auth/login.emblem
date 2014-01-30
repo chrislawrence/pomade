@@ -1,7 +1,9 @@
-form submit='login'
-	label Email
-	=input type='text' value=email
-	label Password
-	=input type='password' value=password
-	
-	button Login
+form submit='login' class='login'
+  label Email
+  =input type='text' value=email
+  label Password
+  =input type='password' value=password
+  
+  button Login
+
+  a click='hideLogin' x 

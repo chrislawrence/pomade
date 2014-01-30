@@ -14,7 +14,7 @@ gem 'haml-rails'
 gem 'bcrypt-ruby'
 gem 'active_model_serializers'
 gem 'ember-rails'
-gem 'ember-source', '~>1.3.1'
+gem 'ember-source', '1.4.0.beta.3'
 gem 'ember-data-source', '1.0.0.beta.6'
 gem 'emblem-rails'
 

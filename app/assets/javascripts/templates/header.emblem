@@ -1,3 +1,7 @@
-h1 = link-to 'timer' | Pomade
-.user_panel
-  link-to 'users.show' auth.userId | #{auth.user.username}
+header
+  .content
+    h1 = link-to 'timer' | Pomade
+    .user_panel
+      button click='showLogin' class='login_button' Login
+      link-to 'users.show' auth.userId | #{auth.user.username}
+      render 'auth/login'

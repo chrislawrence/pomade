@@ -7,4 +7,10 @@ Pomade.ApplicationController = Ember.Controller.extend({
     else
       @set('showMiniTimer', true)
   ).observes('currentPath')
+  showLogin: ->
+    $('.login').show()
+    $('.login_button').hide()
+  hideLogin: ->
+    $('.login').hide()
+    $('.login_button').show()
 })
