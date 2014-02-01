@@ -1,2 +1,1 @@
-form submit=logout
-	button Logout
+a click='logout' Logout

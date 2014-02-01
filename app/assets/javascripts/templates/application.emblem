@@ -1,6 +1,7 @@
 = render 'header'
 
-= outlet
+.content
+  = outlet
 
-if showMiniTimer
-  = render 'miniTimer' controller='timer'
+  if showMiniTimer
+    = render 'miniTimer' controller='timer'

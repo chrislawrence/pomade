@@ -1,7 +1,14 @@
 header
   .content
-    h1 = link-to 'timer' | Pomade
+    .title
+      .icon
+        .
+      h1 = link-to 'timer' | Pomad<span class="last">e</span>
     .user_panel
-      button click='showLogin' class='login_button' Login
-      link-to 'users.show' auth.userId | #{auth.user.username}
+      if auth.user
+        render 'auth/user'
+      else
+        a click='showLogin' class='login_button' Login
       render 'auth/login'
+    .clear
+      .

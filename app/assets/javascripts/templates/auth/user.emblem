@@ -1,0 +1,5 @@
+link-to 'users.show' auth.userId | #{auth.user.username}
+ul.nav
+  li: a Dashboard
+  li: a Friends
+  li: render 'auth/logout'

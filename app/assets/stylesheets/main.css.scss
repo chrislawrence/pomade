@@ -3,6 +3,7 @@ body {
   color: #E6ECF2;
   font-family: 'Brandon Grotesque';
   font-size: 18px;
+  text-align: center;
 }
 
 /* Text */
@@ -15,26 +16,20 @@ a {
   }
 }
 
-h1 {
-  text-transform: uppercase;
-  font-size: 1.55em; /* 28px / 18px */
-  letter-spacing: 0.3em;
-  display: block;
-  margin: 0;
-  line-height: 100px;
-}
-
 
 /* Grid */
 
-.content {
-  max-width: 1000px;
+.clear {
+  clear: both;
+  font-size: 0.001px;
 }
 
-header {
-  text-align: center;
-  height: 100px;
+.content {
+  width: 100%;
+  max-width: 1000px;
+  margin: 0 auto;
 }
+
 
 /* Buttons */
 
@@ -49,4 +44,15 @@ button {
   font-weight: bold;
   padding-left: 0.7em;
   padding-right: 0.7em;
+}
+
+/* Forms */
+
+label {
+  margin-right: 0.4em;
+  text-transform: uppercase;
+}
+input {
+  width: 6em;
+  margin-right: 1em;
 }

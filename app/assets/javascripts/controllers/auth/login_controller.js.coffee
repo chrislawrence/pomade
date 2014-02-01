@@ -5,3 +5,4 @@ App.AuthLoginController = Ember.Controller.extend
           data:
             email: @get 'email'
             password: @get 'password'
+        .then(App.ApplicationController.prototype.hideLogin())
