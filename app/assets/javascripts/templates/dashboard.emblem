@@ -1,0 +1,4 @@
+.user
+  p username: #{total}
+  p average: #{average}
+  p this month: #{thisMonth}

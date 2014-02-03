@@ -3,6 +3,5 @@ App.Timer = Ember.Object.create
   work_time: 1
   break_time: 300
   type: 'work'
-  nextAction: 'play'
   running: false
   showMiniTimer: false

@@ -32,6 +32,8 @@ gem 'ember-auth-module-ember_data-rails'
 gem 'ember-auth-module-ember_data-source'
 gem 'ember-auth-module-action_redirectable-rails' 
 gem 'ember-auth-module-action_redirectable-source'
+gem 'ember-auth-module-auth_redirectable-rails' 
+gem 'ember-auth-module-auth_redirectable-source'
 gem 'ember-auth-module-rememberable-rails' 
 gem 'ember-auth-module-rememberable-source'
 
@@ -53,3 +55,4 @@ gem 'preferences', :github => "skyeagle/preferences"
 gem 'quiet_assets'
 gem 'paperclip', '~> 3.0'
 gem 'devise'
+gem 'font-awesome-rails'

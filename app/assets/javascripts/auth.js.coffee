@@ -7,6 +7,7 @@ App.Auth = Ember.Auth.extend
   modules: [
     'emberData'
     'actionRedirectable'
+    'authRedirectable'
   ]
 
   signInEndPoint: '/api/login'

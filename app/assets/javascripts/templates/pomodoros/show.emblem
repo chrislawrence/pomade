@@ -1,15 +1,17 @@
 if isEditing
   Ember.TextField class='pomodoro_tag_field' valueBinding='tag' 
   .pomodoro_update_button
-    a class='ss-icon' click=updatePomodoro Check
+    a click=updatePomodoro 
+      i class='fa fa-check'
 else
   .pomodoro_time
     p #{pomodoro_time start_time} &mdash; #{pomodoro_time end_time}
   .pomodoro_tag
     p = tag
-  .pomodoro_controls class='ss-icon'
-    p 
-      a click=editPomodoro Edit
-      a click=deletePomodoro Delete
+  .pomodoro_controls
+    a click=editPomodoro
+      i class='fa fa-pencil fa-fw'
+    a click=deletePomodoro 
+      i class='fa fa-trash-o fa-fw'
   .clear
     .

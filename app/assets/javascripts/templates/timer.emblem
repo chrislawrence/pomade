@@ -8,15 +8,17 @@
         span &middot;
   .timer_reset
      a click=reset
-      span class='ss-icon' backspace
+      i class='fa fa-power-off'
       span Reset
   .timer_controller
     a click=toggleTimer
       .timer_button
-        span class='ss-icon' = timer.nextAction
+        i id='play_button' class='fa fa-fw fa-play'
+        i id='pause_button' class='fa fa-fw fa-pause'
   .timer_tag
     form
-      label class='ss-icon' Tag
+      label
+        i class='fa fa-fw fa-tag'
       Ember.TextField valueBinding='tag' placeholder='Enter tag...'
 
 ul class='pomodoro_list'

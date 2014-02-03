@@ -18,7 +18,7 @@ App.TimerController = Ember.ObjectController.extend
   start: ->
     console.log('Starting timer...')
     @timer.set('running', true)
-    @timer.set('nextAction', 'pause')
+    @showPauseButton()
     @timer.set('showMiniTimer', true)
     @setTimerColor('yellow')
     @before = new Date()
@@ -31,7 +31,7 @@ App.TimerController = Ember.ObjectController.extend
   pause: ->
     console.log('Pausing timer...')
     @timer.set('running', false)
-    @timer.set('nextAction', 'play')
+    @showPlayButton()
     clearInterval(@counter)
     @setTimerColor('red')
 
@@ -59,6 +59,14 @@ App.TimerController = Ember.ObjectController.extend
     $('.dial').val(@timer.seconds).trigger('change')
     @before = new Date()
     @reset() if @timer.seconds < 0
+
+  showPlayButton: ->
+    $('#play_button').show()
+    $('#pause_button').hide()
+
+  showPauseButton: ->
+    $('#pause_button').show()
+    $('#play_button').hide()
 
   setTimerColor: (color) ->
     if color is 'red'

@@ -11,8 +11,9 @@ App.PomodoroController = Ember.ObjectController.extend
       @set('isEditing', false)
       @get('model').save()
     deletePomodoro: ->
-      @get('model').deleteRecord()
-      @get('model').save()
+      if confirm('Really delete?')
+        @get('model').deleteRecord()
+        @get('model').save()
 
 App.PomodorosCreateController = Ember.ObjectController.extend
   actions:
