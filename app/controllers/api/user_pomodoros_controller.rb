@@ -1,4 +1,4 @@
-class Api::UserPomodorosController < Api::BaseController 
+class Api::UserPomodorosController < Api::PomodorosController
   def index
     if params[:auth_token]
       logger.debug("Time: #{Time.zone.now}")
@@ -8,20 +8,8 @@ class Api::UserPomodorosController < Api::BaseController
     end
   end
 
-  def destroy
-    if params[:auth_token]
-      respond_with Pomodoro.destroy(params[:id])
-    end
-  end
-
-  def update
-    if params[:auth_token]
-      respond_with Pomodoro.update(params[:id], pomodoro_params)
-    end
-  end
-
+private
   def pomodoro_params
     params.require(:user_pomodoro).permit(:start_time, :end_time, :tag, :user_id, :auth_token)
   end
-
 end

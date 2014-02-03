@@ -9,6 +9,7 @@
  * compiled file, but it's generally better to create a new file per style scope.
  *
  *= require normalize
+ *= require ss-standard
  *= require_self
  */
 
@@ -21,4 +22,4 @@
 @import 'main';
 @import 'header';
 @import 'timer';
-
+@import 'pomodoros';

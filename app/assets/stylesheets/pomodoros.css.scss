@@ -1,0 +1,67 @@
+.pomodoro_list {
+  max-width: 400px;
+  margin: 1em auto;
+  padding: 0;
+  list-style: none;
+  text-align: left;
+  p {
+    margin: 0;
+    padding: 0;
+  }
+  div {
+    float: left;
+  }
+  li {
+    display: inline-block;
+    width: 100%;
+    padding: 1em 0;
+    border-bottom: 1px solid $bg + 10;
+  }
+}
+
+.pomodoro_time {
+  width: 30%;
+  color: #475059;
+}
+
+.pomodoro_tag {
+  width: 50%;
+  color: #687582;
+  text-transform: uppercase;
+}
+
+.pomodoro_controls {
+  width: 20%;
+  font-size: 1.2em;
+  text-align: right;
+  letter-spacing: 0.5em;
+  a {
+    color: $bg + 20;
+    &:hover {
+      color: $green;
+    }
+  }
+}
+
+.pomodoro_tag_field {
+  float: left;
+  text-transform: uppercase;
+  background: $bg + 50;
+  border: 2px solid $bg + 80;
+  padding: 0.5em 1em;
+  width: 70%;
+}
+
+div.pomodoro_update_button {
+  float: right;
+  margin: 0.5em;
+  margin-bottom: 0;
+  text-align: right;
+  font-size: 1.2em;
+  a {
+    color: $green;
+    &:hover {
+      color: $red;
+    }
+  }
+}

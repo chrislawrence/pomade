@@ -1,7 +1,0 @@
-
-{{#if isEditing }}
-  {{ view Ember.TextField valueBinding='tag' }}
-  <a {{ action updatePomodoro }}>check</a>
-{{else}}
-{{ pomodoro_time start_time }} &mdash; {{ pomodoro_time end_time }} {{ tag }} <a {{ action editPomodoro }}>edit</a> <a {{ action deletePomodoro }}>destroy</a>
-{{/if}}

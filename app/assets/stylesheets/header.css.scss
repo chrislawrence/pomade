@@ -69,10 +69,10 @@ h1 {
   left: 50%;
   width: 400px;
   height: 300px;
-  margin-left: -200px;
-  margin-top: -150px;
-  background: red;
+  margin: -150px 0 0 -200px;
   font-size: 0.8em;
+  background: $bg-light;
+  color: #5d5d5d;
 }
 
 /* Navigation */
