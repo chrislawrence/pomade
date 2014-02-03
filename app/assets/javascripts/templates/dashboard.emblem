@@ -2,3 +2,5 @@
   p username: #{total}
   p average: #{average}
   p this month: #{thisMonth}
+  p most in one: #{bestDay}
+  p count: #{bestDayCount}

@@ -13,24 +13,41 @@ App.DashboardController = Ember.ObjectController.extend
 
   thisMonth: ( ->
     pomodoros = @get('model.pomodoros').filterProperty('start_time')
-    dates = [] 
     filteredDates = []
-
-    # Get all the dates
-    for pomodoro in pomodoros
-      dates.push(Date.parse(pomodoro.get('start_time')))
-
-    # Get all the dates in the current month
-    for date in dates
+    for date in @pomodoroDates()
       if date > @currentMonth()
         filteredDates.push(date)
-
-    # return the count
     filteredDates.length
   ).property('thisMonth')
-
+  
   mostInOneDay: ->
-    dates = 
+    days = []
+    frequency = {}
+    max = 0
+    for rawDate in @pomodoroDates()
+      date = new Date(rawDate)
+      days.push(new Date(date.getFullYear(), date.getMonth(), date.getDate()))
+    for v in [0..days.length]
+      frequency[days[v]] = (frequency[days[v]] || 0) + 1
+      if frequency[days[v]] > max
+        max = frequency[days[v]]
+        result = days[v]
+    [result, max]
+
+  bestDay: (->
+    @mostInOneDay()[0]
+  ).property('bestDay')
+
+  bestDayCount: (->
+    @mostInOneDay()[1]
+  ).property('bestDayCount')
+
+  pomodoroDates: ->
+    pomodoros = @get('model.pomodoros').filterProperty('start_time')
+    dates = [] 
+    for pomodoro in pomodoros
+      dates.push(Date.parse(pomodoro.get('start_time')))
+    dates
 
   currentMonth: ->
     date = new Date
