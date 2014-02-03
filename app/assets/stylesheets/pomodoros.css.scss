@@ -26,6 +26,7 @@
 
 .pomodoro_tag {
   width: 50%;
+  height: 1px; /* allows for empty tag */
   color: #687582;
   text-transform: uppercase;
 }

@@ -3,8 +3,9 @@
   .progress
     = minutes timer.seconds
   .timer_pomodoro_count
-    each model
-      span &middot;
+    p
+      each model
+        span &middot;
   .timer_reset
      a click=reset
       span class='ss-icon' backspace

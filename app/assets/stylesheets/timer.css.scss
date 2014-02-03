@@ -11,14 +11,17 @@
 
 .timer_pomodoro_count {
   font-size: 3em;
-  width: 70px;
-  margin: -70px auto 30px auto;
+  width: 160px;
+  height: 30px;
+  margin: -70px auto 50px auto;
   color: $bg + 20;
   text-align: center;
   span {
-    margin: 0 0.1em;
+    margin-right: 0.2em;
   }
 }
+
+/* Controls */
 
 .timer_reset {
   list-style: none;
