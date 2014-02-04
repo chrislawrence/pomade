@@ -4,7 +4,8 @@ class Api::UserPomodorosController < Api::PomodorosController
       logger.debug("Time: #{Time.zone.now}")
       respond_with User.find_by(authentication_token: params[:auth_token]).pomodoros.today
     else
-      render nothing: true, status: 200
+      respond_with user_pomodoros: []
+
     end
   end
 
