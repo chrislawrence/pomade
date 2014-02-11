@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140129001220) do
+ActiveRecord::Schema.define(version: 20140209085358) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -45,7 +45,7 @@ ActiveRecord::Schema.define(version: 20140129001220) do
     t.string   "website"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.string   "encrypted_password",     default: "", null: false
+    t.string   "encrypted_password",     default: "",   null: false
     t.string   "reset_password_token"
     t.datetime "reset_password_sent_at"
     t.datetime "remember_created_at"
@@ -55,6 +55,8 @@ ActiveRecord::Schema.define(version: 20140129001220) do
     t.string   "current_sign_in_ip"
     t.string   "last_sign_in_ip"
     t.string   "authentication_token"
+    t.integer  "work_time",              default: 1500
+    t.integer  "break_time",             default: 300
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree

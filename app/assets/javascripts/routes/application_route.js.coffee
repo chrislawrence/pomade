@@ -13,6 +13,5 @@ App.ApplicationRoute = Ember.Route.extend({
     @auth.addHandler 'signInSuccess', =>
       sessionStorage.setItem('auth_token', @auth.get('authToken'))
       sessionStorage.setItem('user_id', @auth.get('userId'))
-      @model.reload()
 })
 

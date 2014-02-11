@@ -5,5 +5,3 @@ form submit='login' class='login'
   =input type='password' value=password
   
   button Login
-
-  a click='hideLogin' x 

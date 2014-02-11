@@ -5,4 +5,6 @@ App.User = DS.Model.extend
   email: DS.attr()
   website: DS.attr()
   avatar: DS.attr()
+  work_time: DS.attr()
+  break_time: DS.attr()
   pomodoros: DS.hasMany('pomodoro')

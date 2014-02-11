@@ -8,7 +8,6 @@ header
       if auth.user
         render 'auth/user'
       else
-        a click='showLogin' class='login_button' Login
-      render 'auth/login'
+        = link-to 'login' class='login_button' | Login
     .clear
       .

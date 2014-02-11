@@ -1,9 +1,14 @@
-if timer.showMiniTimer
-  = minutes timer.seconds
-  a click='toggleTimer' = timer.nextAction
-  a click='reset' = Reset
-  link-to 'timer' | maximise
-else
-  a click='toggleTimer' Start a new Pomodoro
+footer
+  if timer.showMiniTimer
+    = minutes timer.seconds
+    a click=toggleTimer
+      i id='play_button' class='fa fa-fw fa-play' style='display: none'
+      i id='pause_button' class='fa fa-fw fa-pause' 
+    a click='reset' = Reset
+    link-to 'timer' class='mini_timer_expand'
+      i class='fa fa-expand'
+      span class='description' Back to main timer page
+  else
+    button click='toggleTimer' Start a new Pomodoro
 
 

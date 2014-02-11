@@ -7,11 +7,4 @@ App.ApplicationController = Ember.Controller.extend({
     else
       @set('showMiniTimer', true)
   ).observes('currentPath')
-  showLogin: ->
-    $('body').append('<div class="fade"></div>')
-    $('.login').show()
-    
-  hideLogin: ->
-    $('.fade').fadeOut()
-    $('.login').hide()
 })

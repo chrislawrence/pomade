@@ -5,7 +5,6 @@ class Api::UserPomodorosController < Api::PomodorosController
       respond_with User.find_by(authentication_token: params[:auth_token]).pomodoros.today
     else
       respond_with user_pomodoros: []
-
     end
   end
 

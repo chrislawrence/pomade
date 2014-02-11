@@ -17,10 +17,8 @@ App.Auth = Ember.Auth.extend
   tokenLocation: 'param'
   actionRedirectable:
     signInSmart: true
+    signInRoute: '/'
     signOutRoute: '/'
 
   emberData:
     userModel: 'user'
-  setSessionData: ->
-    sessionStorage.setItem('authToken', @auth.get('authToken'))
-    sessionStorage.setItem('authUserId', @auth.get('userId'))
