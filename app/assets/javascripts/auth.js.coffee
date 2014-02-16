@@ -15,9 +15,14 @@ App.Auth = Ember.Auth.extend
   tokenKey: 'auth_token'
   tokenIdKey: 'user_id'
   tokenLocation: 'param'
+  authRedirectable:
+    route: 'login'
   actionRedirectable:
-    signInSmart: true
     signInRoute: '/'
+    signInSmart: true
+    signInBlacklist: [
+      'login'
+    ]
     signOutRoute: '/'
 
   emberData:
