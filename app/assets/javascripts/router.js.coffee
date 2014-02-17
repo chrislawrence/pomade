@@ -7,7 +7,7 @@ App.Router.map ()->
   )
 
   @resource 'users', ->
-    @route('new')
+    @route('new', {path: '/new'})
     @route('show', { path: '/:user_id'}, ->
       @resource('pomodoros')
     )

@@ -18,7 +18,6 @@ App.Auth = Ember.Auth.extend
   authRedirectable:
     route: 'login'
   actionRedirectable:
-    signInRoute: '/'
     signInSmart: true
     signInBlacklist: [
       'login'

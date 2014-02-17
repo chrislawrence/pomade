@@ -8,6 +8,12 @@ class Api::UsersController < Api::BaseController
   end
   
   def create
+    @user = User.create(user_params)
+    if @user.errors.present?
+      render json: {errors: @user.errors.messages}, status: 422
+    else
+      render json: @user
+    end
   end
 
   def update

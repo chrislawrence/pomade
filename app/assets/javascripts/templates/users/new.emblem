@@ -1,0 +1,11 @@
+form submit='create'
+  label Email
+  =input type='text' value=email
+  label Username
+  =input type='text' value=username
+  label Password
+  =input type='password' value=password
+  label Confirm
+  =input type='password' value=password_confirmation
+  button Create Account
+  = errors.password
