@@ -1,11 +1,14 @@
-form submit='create'
+form submit='create' class='new-user-form'
   label Email
+  p class='form-error' = errors.email
   =input type='text' value=email
   label Username
+  p class='form-error' = errors.username
   =input type='text' value=username
   label Password
+  p class='form-error' = errors.password
   =input type='password' value=password
   label Confirm
+  p class='form-error' = errors.password_confirmation
   =input type='password' value=password_confirmation
   button Create Account
-  = errors.password

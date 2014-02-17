@@ -1,9 +1,18 @@
 body {
-  background: $bg;
-  color: #E6ECF2;
+  background: #F5F5F5;
+  color: #5D5D5D;
   font-family: 'Brandon Grotesque';
   font-size: 18px;
   text-align: center;
+}
+
+body.timer {
+  background: $bg;
+  color: $bg-light;
+}
+
+header {
+  background: $bg;
 }
 
 /* Text */

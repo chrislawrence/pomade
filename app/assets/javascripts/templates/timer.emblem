@@ -7,11 +7,12 @@
       each model
         span &middot;
   .timer_reset
-     a click=reset
-      i class='fa fa-power-off'
-      span Reset
+    if timer.inProgress
+      a click="reset"
+        i class='fa fa-power-off'
+        span Reset
   .timer_controller
-    a click=toggleTimer
+    a click="toggleTimer"
       .timer_button
         i id='play_button' class='fa fa-fw fa-play'
         i id='pause_button' class='fa fa-fw fa-pause'

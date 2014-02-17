@@ -22,3 +22,14 @@ App.Router.reopen({
 })
 
 
+Ember.Route.reopen
+  activate: ->
+    cssClass = this.toCssClass()
+    # you probably don't need the application class
+    # to be added to the body
+    if cssClass != 'application'
+      Ember.$('body').addClass(cssClass)
+  deactivate: ->
+    Ember.$('body').removeClass(this.toCssClass())
+  toCssClass: ->
+    @routeName.replace(/\./g, '-').dasherize()
