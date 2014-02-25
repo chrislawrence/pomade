@@ -1,0 +1,8 @@
+h2 Log In
+
+form submit='login' class='login-form'
+  label Email
+  = input type='text' value=email class='login-email'
+  label Password
+  = input type='password' value=password class='login-password'
+  button class='login-submit' Login
