@@ -8,5 +8,5 @@ test "user logs in", ->
   fillIn '.login-password', 'password'
   click '.login-submit'
   andThen ->
-    ok exists('.notice'), 'the notice displays'
+    ok find("p:contains('Logged in')").length, "Notice displays"
 
