@@ -18,3 +18,11 @@ test "user signs up", ->
   click '.signup-submit'
   andThen ->
     ok find("p:contains('Account created')").length, "Notice displays"
+
+test "user signs up with errors", ->
+  visit '/'
+  fillIn '.signup-email', 'chris@example.com'
+  fillIn '.signup-username', 'chris'
+  click '.signup-submit'
+  andThen ->
+    ok find("p:contains('Account could not be created')").length, "Notice displays"
