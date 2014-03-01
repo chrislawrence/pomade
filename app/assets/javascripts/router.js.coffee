@@ -1,8 +1,8 @@
 # For more information see: http://emberjs.com/guides/routing/
 
 App.Router.map ()->
-  # @resource('posts')
-  @route('timer', path: '/')
+  @route('landing', path: '/')
+  @route('timer')
   @route('login')
 
 App.Router.reopen

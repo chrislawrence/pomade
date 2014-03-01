@@ -1,0 +1,10 @@
+h2 Pomade is a simple time tracking app
+
+form submit='createAccount' class='signup-form'
+  label Username
+  = input type='text' value=username class='signup-username'
+  label Email
+  = input type='text' value=email class='signup-email'
+  label Password
+  = input type='password' value=password class='signup-password'
+  button class='signup-submit' Create Account

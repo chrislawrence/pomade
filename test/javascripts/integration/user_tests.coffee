@@ -10,3 +10,11 @@ test "user logs in", ->
   andThen ->
     ok find("p:contains('Logged in')").length, "Notice displays"
 
+test "user signs up", ->
+  visit '/'
+  fillIn '.signup-email', 'chris@example.com'
+  fillIn '.signup-username', 'chris'
+  fillIn '.signup-password', 'password'
+  click '.signup-submit'
+  andThen ->
+    ok find("p:contains('Account created')").length, "Notice displays"
