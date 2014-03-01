@@ -9,6 +9,7 @@ class Api::UsersController < Api::BaseController
 
   def create
     user = User.new(user_params)
+    user.password_confirmation = nil
     if user.save
       render json: user, status: 201
     else

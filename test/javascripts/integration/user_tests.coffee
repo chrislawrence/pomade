@@ -25,4 +25,4 @@ test "user signs up with errors", ->
   fillIn '.signup-username', 'chris'
   click '.signup-submit'
   andThen ->
-    ok find("p:contains('Account could not be created')").length, "Notice displays"
+    ok find("p:contains('can't be blank')").length, "Notice displays"

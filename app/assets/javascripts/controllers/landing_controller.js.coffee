@@ -1,10 +1,11 @@
-App.LandingController = Ember.Controller.extend
+App.LandingController = Ember.ObjectController.extend
   actions:
     createAccount: ->
-      @get('model').save()
-      if @get('model').errors
-        @transitionToRoute('landing')
-        @controllerFor('application').notify('Account could not be created')
-      else
-        @transitionToRoute('timer')
-        @controllerFor('application').notify('Account created')
+      me = this
+      @get('model').save().then(
+        ->
+          me.transitionToRoute('timer')
+          me.controllerFor('application').notify('Account created')
+        (errors) ->
+          me.set('errors', errors.errors)
+        )
