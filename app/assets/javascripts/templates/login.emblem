@@ -1,8 +1,8 @@
 h2 Log In
 
-form submit='login' class='login-form'
+form submit='authenticate' class='login-form'
   label Email
-  = input type='text' value=email class='login-email'
+  = input type='text' value=identification class='login-email'
   label Password
   = input type='password' value=password class='login-password'
   button class='login-submit' Login

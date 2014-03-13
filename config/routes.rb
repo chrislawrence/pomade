@@ -15,6 +15,8 @@ Pomade::Application.routes.draw do
   root to: 'home#index'
   get 'qunit', to: 'q_unit/rails/test#index'
   get '*foo', to: 'home#index', :constraints => FormatTest.new(:html)
+  
+  post 'token', to: 'api/sessions#new'
 
   namespace :api do
     resources :pomodoros

@@ -1,2 +1,5 @@
 h1 Pomade
-link-to 'login' class='login-link' | Log In
+= if session.isAuthenticated
+  a click='invalidateSession' Log Out
+= else
+  link-to 'login' class='login-link' | Log In
