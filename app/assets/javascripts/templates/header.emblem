@@ -1,5 +1,6 @@
 h1 Pomade
 = if session.isAuthenticated
+  = currentUser.name
   a click='invalidateSession' Log Out
 = else
   link-to 'login' class='login-link' | Log In
